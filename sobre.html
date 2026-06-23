@@ -2,35 +2,43 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
+    <meta name="robots" content="index, follow">
+    
     <!-- ═══════════ PRECONNECT ═══════════ -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <!-- ═══════════ FONTES ═══════════ -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap"></noscript>
-
     <!-- ═══════════ SEO ═══════════ -->
     <meta name="description" content="Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance.">
     <meta name="author" content="Eduardo Sidegum — Consultor Independente Herbalife">
-    <meta name="robots" content="noindex, nofollow">
+    
     <meta name="theme-color" content="#0d0d0d">
-
     <meta property="og:title" content="Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação">
     <meta property="og:description" content="Arquitetura da informação, estratégia digital e nutrição de alta performance. Soluções baseadas em análise, não em opinião.">
     <meta property="og:image" content="https://raw.githubusercontent.com/edusidegum/menu/main/ArtesOficiais/Herbalife-Logo-Distribuidor-Horizontal-RGB.png">
     <meta property="og:url" content="https://edusidegum.github.io/hypedrink/sobre.html">
     <meta property="og:type" content="profile">
     <meta property="og:locale" content="pt_BR">
-
     <title>Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação</title>
+    <link rel="canonical" href="https://edusidegum.github.io/hypedrink/sobre.html"> 
 
-    <link rel="canonical" href="https://edusidegum.github.io/hypedrink/sobre.html">
-
+<!-- ═══════════ PROTEÇÃO CONTRA CÓPIA ═══════════ -->
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<style>
+    body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
     <!-- ═══════════ JSON-LD ═══════════ -->
     <script type="application/ld+json">
     {
@@ -57,7 +65,6 @@
         }
     }
     </script>
-
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -69,25 +76,20 @@
         h1,h2,h3{font-family:'Montserrat',-apple-system,sans-serif;font-weight:600;color:#fff;letter-spacing:-.3px}
         a{color:#78BE20;text-decoration:none;transition:color .2s}
         a:hover{color:#a0e040}
-
         /* ── CONTAINER ── */
         .page{max-width:720px;margin:0 auto;padding:60px 20px 80px}
-
         /* ── CABEÇALHO ── */
         .header-sobre{text-align:center;margin-bottom:48px}
         .header-sobre .logo{height:48px;width:auto;margin-bottom:20px;opacity:.9}
         .header-sobre h1{font-size:1.5rem;font-weight:700;margin-bottom:6px;letter-spacing:-.5px}
         .header-sobre .tagline{font-size:.85rem;color:#78BE20;font-weight:400;letter-spacing:1.5px;text-transform:uppercase}
-
         /* ── SEPARADOR ── */
         .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(120,190,32,.25),transparent);margin:40px 0}
-
         /* ── SEÇÕES ── */
         .section{margin-bottom:40px}
         .section h2{font-size:1.1rem;color:#78BE20;margin-bottom:16px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
         .section p{margin-bottom:14px;font-size:.92rem;color:#b0b0b0}
         .section p strong{color:#ddd;font-weight:600}
-
         /* ── CITAÇÃO ── */
         blockquote{
             border-left:3px solid rgba(120,190,32,.4);
@@ -96,7 +98,6 @@
             border-radius:0 8px 8px 0;
             font-style:italic;color:#aaa;font-size:.88rem;
         }
-
         /* ── LISTA DE PILARES ── */
         .pilares{display:grid;grid-template-columns:1fr;gap:12px;margin:20px 0}
         .pilar{
@@ -106,31 +107,18 @@
         .pilar:hover{border-color:rgba(120,190,32,.25)}
         .pilar h3{font-size:.85rem;color:#78BE20;margin-bottom:6px;font-weight:600;text-transform:none;letter-spacing:0}
         .pilar p{font-size:.78rem;color:#999;margin:0}
-
-        /* ── CATÁLOGO CARD ── 
-        ..catalogo-card {
-    background: rgba(120,190,32,.04);
-    border: 1px solid rgba(120,190,32,.10);
-    border-radius: 8px;
-    padding: 14px 20px;
-    text-align: center;
-    margin-top: 24px;
-}
+        /* ── PILAR FULL WIDTH (BOX V) ── */
+        .pilar-full{
+            background:#141414;border:1px solid rgba(255,255,255,.06);
+            border-radius:10px;padding:22px 20px;transition:border-color .3s;
+            grid-column:1 / -1;
         }
-        .catalogo-card h3{font-size:1rem;color:#fff;margin-bottom:8px}
-        .catalogo-card p{font-size:.82rem;color:#aaa;margin-bottom:16px}
-        .catalogo-card .btn-catalogo{
-            display:inline-block;background:#78BE20;color:#0d0d0d;
-            font-family:'Montserrat',sans-serif;font-weight:700;font-size:.82rem;
-            text-transform:uppercase;text-decoration:none;padding:12px 28px;
-            border-radius:50px;letter-spacing:.5px;transition:all .3s;
-        }
-        .catalogo-card .btn-catalogo:hover{background:#8ae029;transform:translateY(-1px)}      */ 
-
+        .pilar-full:hover{border-color:rgba(120,190,32,.25)}
+        .pilar-full h3{font-size:.85rem;color:#78BE20;margin-bottom:6px;font-weight:600;text-transform:none;letter-spacing:0}
+        .pilar-full p{font-size:.78rem;color:#999;margin:0}
         /* ── CONTATO ── */
         .contato-info{font-size:.82rem;color:#888;text-align:center;margin-top:40px}
         .contato-info a{color:#78BE20}
-
         /* ── DESKTOP ── */
         @media(min-width:600px){
             .page{padding:80px 20px 100px}
@@ -138,22 +126,19 @@
             .pilares{grid-template-columns:repeat(2,1fr)}
             .section h2{font-size:1.25rem}
             .section p{font-size:.95rem}
+            .pilar-full{padding:24px 28px}
         }
     </style>
 </head>
 <body>
-
 <div class="page">
-
     <!-- ═══════════ CABEÇALHO ═══════════ -->
     <header class="header-sobre">
         <img src="https://raw.githubusercontent.com/edusidegum/menu/main/ArtesOficiais/Herbalife-Logo-Distribuidor-Horizontal-RGB.png" alt="Consultor Independente Herbalife" class="logo" width="192" height="48">
         <h1>Eduardo Sidegum</h1>
         <p class="tagline">Consultor &amp; Bacharel em Sistemas de Informação</p>
     </header>
-
     <div class="divider"></div>
-
     <!-- ═══════════ SOBRE ═══════════ -->
     <section class="section">
     <h2>Sobre</h2>
@@ -185,38 +170,34 @@
     </blockquote>
 </section>
     <div class="divider"></div>
-
-    <!-- ═══════════ PILARES ═══════════ -->
+    <!-- ═══════════ COMO TRABALHO (PILARES REFINADOS + BOX V FULL-WIDTH) ═══════════ -->
     <section class="section">
         <h2>Como Trabalho</h2>
-        <p>Três pilares orientam cada projeto e cada atendimento:</p>
-
+        <p>Cinco pilares orientam cada projeto e cada atendimento:</p>
         <div class="pilares">
             <div class="pilar">
                 <h3>Ⅰ. Arquitetura da Informação</h3>
-                <p>Antes de recomendar, eu escuto, organizo e estruturo. Seu objetivo, sua rotina, 
-                suas restrições — tudo vira dado que fundamenta a solução.</p>
+                <p>Antes de qualquer recomendação, eu escuto, organizo e estruturo. Seu objetivo, sua rotina, suas restrições — tudo vira dado que fundamenta a solução. <strong>Sem diagnóstico, não há direção.</strong></p>
             </div>
             <div class="pilar">
                 <h3>Ⅱ. Solução Sob Medida</h3>
-                <p>Não existe protocolo universal. O que funciona para um atleta pode ser 
-                excessivo para um profissional liberal. A recomendação certa é proporcional à necessidade real.</p>
+                <p>Não existe protocolo universal. O que funciona para um atleta de alta performance pode ser excessivo para um profissional liberal, e insuficiente para um empreendedor em escala. <strong>A recomendação certa é proporcional à necessidade real — nunca ao hype.</strong></p>
             </div>
             <div class="pilar">
                 <h3>Ⅲ. Tecnologia como Vantagem</h3>
-                <p>Automação com IA, análise de dados e presença digital estratégica não são 
-                modismos — são ferramentas que aplico para reduzir ruído e amplificar resultado.</p>
+                <p>Automação com IA, análise de dados e presença digital estratégica não são modismos — são ferramentas que aplico para <strong>reduzir ruído, amplificar resultado e eliminar o improviso</strong>. Onde outros veem complexidade, eu vejo processo.</p>
             </div>
             <div class="pilar">
                 <h3>Ⅳ. Experiência do Usuário</h3>
-                <p>Cada interação — seja numa página web, numa conversa ou na entrega de um 
-                produto — é projetada para ser fluida, clara e útil. O meio importa tanto quanto a mensagem.</p>
+                <p>Cada interação — seja numa página web, numa conversa ou na entrega de um produto — é projetada para ser fluida, clara e útil. <strong>O meio importa tanto quanto a mensagem, e a confiança se constrói em cada detalhe.</strong></p>
+            </div>
+            <div class="pilar-full">
+                <h3>Ⅴ. Análise, Código e Parceria Técnica</h3>
+                <p>Nem todo projeto se resolve sozinho — e isso não é fraqueza, é maturidade. Dentro do meu escopo de <strong>desenvolvimento assistido</strong>, atuo na análise profunda de propostas, definição de arquitetura e estruturação do projeto antes de uma linha de código ser escrita. Quando o caso exige especialização específica, mobilizo uma <strong>rede curada de profissionais de programação</strong> — selecionados com critério, não por conveniência. O resultado: <strong>propostas reais para resultados reais</strong> — com ética, transparência e execução de qualidade.</p>
             </div>
         </div>
     </section>
-
     <div class="divider"></div>
-
     <!-- ═══════════ HERBALIFE ═══════════ -->
     <section class="section">
         <h2>Por Que Herbalife</h2>
@@ -229,23 +210,16 @@
             Como Consultor Independente Herbalife, levo <strong>planos 
             acessíveis e realistas</strong> para quem busca performance, controle de peso ou 
             simplesmente mais energia no dia a dia, apresentando o 
-            <a href="https://catalogoherbalife.com.br/edusidegum" target="_blank" rel="noopener" class="btn-catalogo">Catálogo de Produtos</a>
-.
+            <strong><a href="https://catalogoherbalife.com.br/edusidegum" target="_blank" style="color:#7ac143;">Catálogo de Produtos</a></strong>.
+
         </p>
         <p>
             <strong>100% digital</strong>, com entrega em todo o Brasil. 
             Cada cliente recebe acompanhamento personalizado e acesso ao programa 
-            <strong><a href="https://edusidegum.github.io/cadastro/cadastro.html" target="_blank" style="color:#f97316;">Cliente Premium</a></strong>.
+            <strong><a href="https://edusidegum.github.io/cadastro/cadastro.html" target="_blank" style="color:#7ac143;">Cliente Premium</a></strong>.
 </strong>, com descontos progressivos de até 32%.
         </p>
     </section>
-
-    <!-- ═══════════ CATÁLOGO ═══════════
-    <div class="catalogo-card">
-    <h3>📖 <a href="https://catalogoherbalife.com.br/edusidegum" target="_blank" rel="noopener" class="btn-catalogo">Catálogo Oficial de Produtos</a></h3>
-</div>
-<div class="divider"></div>       -->
-
     <!-- ═══════════ CONTATO ═══════════ -->
     <section class="section" style="text-align:center;">
         <h2 style="text-align:center;">Contato</h2><p style="text-align:center;">
@@ -258,7 +232,6 @@
             <strong>E-mail:</strong> <a href="mailto:edusidegum@gmail.com">edusidegum@gmail.com</a>
         </p>
     </section>
-
     <!-- ═══════════ RODAPÉ ═══════════ -->
     <footer style="text-align:center;margin-top:40px;">
         <p style="font-size:.7rem;color:#555;">
@@ -266,8 +239,6 @@
             As informações contidas nesta página têm caráter informativo. 
         </p>
     </footer>
-
 </div>
-
 </body>
 </html>
