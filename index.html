@@ -1,591 +1,581 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eduardo Sidegum — Arquitetura de Sites</title>
-  <meta name="description" content="Página sobre Eduardo Sidegum, com foco em arquitetura de sites, estratégia digital e presença profissional." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação</title>
+  <meta name="description" content="Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#071019" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Eduardo Sidegum — Arquitetura de Sites" />
-  <meta property="og:description" content="Estratégia, estrutura e presença digital para projetos web com foco profissional." />
-  <meta property="og:image" content="img/og-image-e.png" />
-  <meta property="og:image:alt" content="Eduardo Sidegum" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="./img/favicon.png" />
   <style>
-    :root {
-      --bg: #050b12;
-      --bg-soft: #0b1520;
-      --surface: rgba(9, 16, 25, 0.72);
-      --surface-2: rgba(13, 23, 35, 0.86);
-      --line: rgba(255, 255, 255, 0.08);
-      --text: #eef4ff;
-      --muted: #a9b6c8;
-      --accent: #67d48a;
-      --accent-2: #8fe3aa;
-      --accent-dark: #2f8c54;
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.42);
-      --radius: 24px;
-      --radius-sm: 16px;
-      --max: 1140px;
+    :root{
+      --bg:#070b0a;
+      --bg-2:#0b1210;
+      --panel:rgba(10,18,15,.72);
+      --panel-2:rgba(14,23,19,.84);
+      --line:rgba(145, 255, 204, .14);
+      --line-strong:rgba(145, 255, 204, .24);
+      --text:#edf6ef;
+      --muted:#a7b8af;
+      --soft:#7f9489;
+      --accent:#6ce6a6;
+      --accent-2:#36c981;
+      --accent-3:#1f8f5a;
+      --shadow:0 24px 70px rgba(0,0,0,.42);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1140px;
     }
 
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
       background:
-        radial-gradient(circle at top, rgba(103, 212, 138, 0.14), transparent 26%),
-        radial-gradient(circle at 20% 20%, rgba(62, 163, 99, 0.11), transparent 18%),
-        linear-gradient(180deg, #04080d 0%, #071019 32%, #050b12 100%);
+        radial-gradient(1000px 500px at 15% 0%, rgba(108,230,166,.12), transparent 55%),
+        radial-gradient(800px 500px at 85% 12%, rgba(54,201,129,.10), transparent 45%),
+        linear-gradient(180deg, var(--bg) 0%, #08100d 28%, #070b0a 100%);
+      font:16px/1.75 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x:hidden;
     }
 
-    body {
-      margin: 0;
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
       background:
-        linear-gradient(180deg, rgba(7, 16, 25, 0.6), rgba(5, 11, 18, 0.82)),
-        radial-gradient(circle at top, rgba(103, 212, 138, 0.10), transparent 28%),
-        #050b12;
-      min-height: 100vh;
-      overflow-x: hidden;
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent 16%),
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,.08) 1px, transparent 0);
+      background-size:100% 100%, 22px 22px;
+      opacity:.12;
+      mix-blend-mode:soft-light;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
+    .wrap{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+
+    header{
+      position:relative;
+      min-height:min(78vh, 860px);
+      display:grid;
+      align-items:end;
+      padding:28px 0 42px;
+      isolation:isolate;
+      overflow:hidden;
+      border-bottom:1px solid rgba(255,255,255,.06);
       background:
-        linear-gradient(120deg, rgba(255,255,255,0.025) 0%, transparent 20%, transparent 80%, rgba(255,255,255,0.025) 100%),
-        radial-gradient(circle at 50% 0%, rgba(143, 227, 170, 0.08), transparent 25%);
-      mix-blend-mode: screen;
-      opacity: 0.8;
+        linear-gradient(180deg, rgba(7,11,10,.14) 0%, rgba(7,11,10,.58) 100%),
+        linear-gradient(135deg, rgba(11,18,16,.7), rgba(7,11,10,.15));
     }
 
-    a { color: inherit; }
-
-    .page {
-      position: relative;
-      width: 100%;
-      isolation: isolate;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      align-items: start;
-      padding: 0 0 4rem;
-    }
-
-    .hero-banner {
-      position: relative;
-      min-height: min(74vh, 820px);
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      z-index:-2;
       background:
-        linear-gradient(180deg, rgba(5, 11, 18, 0.18) 0%, rgba(5, 11, 18, 0.72) 100%),
-        url('img/banner.png') center center / cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+        linear-gradient(180deg, rgba(4,7,6,.18), rgba(4,7,6,.78)),
+        url("./img/banner.png") center/cover no-repeat;
+      transform:scale(1.02);
+      filter:saturate(1.02) contrast(1.04);
     }
 
-    .hero-banner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
+    .hero-overlay{
+      position:absolute;
+      inset:auto 0 0 0;
+      height:58%;
       background:
-        linear-gradient(180deg, rgba(5,11,18,0.18) 0%, rgba(5,11,18,0.88) 94%),
-        radial-gradient(circle at center, rgba(103,212,138,0.14), transparent 34%);
-      pointer-events: none;
+        linear-gradient(180deg, transparent, rgba(7,11,10,.72) 55%, rgba(7,11,10,.98) 100%);
+      z-index:-1;
     }
 
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      width: min(var(--max), calc(100% - 2rem));
-      margin: 0 auto;
-      padding: 7rem 0 6rem;
-      display: grid;
-      gap: 1.5rem;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0, 1.25fr) minmax(320px, .75fr);
+      gap:28px;
+      align-items:end;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-self: start;
-      gap: 0.5rem;
-      align-items: center;
-      padding: 0.55rem 0.9rem;
-      border: 1px solid rgba(143,227,170,0.22);
-      border-radius: 999px;
-      background: rgba(4, 10, 16, 0.36);
-      color: var(--accent-2);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.72rem;
-      font-weight: 700;
-      backdrop-filter: blur(10px);
-      width: fit-content;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      width:max-content;
+      padding:9px 14px;
+      margin-bottom:18px;
+      border:1px solid var(--line-strong);
+      border-radius:999px;
+      background:rgba(7,11,10,.38);
+      color:var(--accent);
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:.72rem;
+      font-weight:700;
     }
 
-    .hero-title {
-      margin: 0;
-      font-size: clamp(2.45rem, 4.8vw, 5.4rem);
-      line-height: 0.94;
-      letter-spacing: -0.05em;
-      text-wrap: balance;
-      max-width: 12ch;
-      text-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    .eyebrow::before{
+      content:"";
+      width:8px; height:8px; border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), #b6ffd9);
+      box-shadow:0 0 0 6px rgba(108,230,166,.12);
     }
 
-    .hero-title span {
-      color: var(--accent-2);
-      text-shadow: 0 0 24px rgba(103, 212, 138, 0.18);
+    h1,h2,h3,p{margin:0}
+
+    .hero-copy{
+      padding:34px 0 0;
+      max-width:820px;
     }
 
-    .hero-copy {
-      max-width: 760px;
-      font-size: clamp(1rem, 1.18vw, 1.22rem);
-      line-height: 1.8;
-      color: rgba(238, 244, 255, 0.88);
-      background: rgba(7, 13, 20, 0.33);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 24px;
-      padding: 1.1rem 1.2rem;
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow);
-      animation: floatUp 0.9s ease both;
+    .hero-copy h1{
+      font-size:clamp(2.3rem, 6vw, 5.3rem);
+      line-height:.94;
+      letter-spacing:-.05em;
+      text-wrap:balance;
     }
 
-    .hero-copy p {
-      margin: 0;
+    .hero-copy .kicker{
+      margin-top:14px;
+      color:var(--muted);
+      max-width:48rem;
+      font-size:1.03rem;
     }
 
-    .panel {
-      width: min(var(--max), calc(100% - 2rem));
-      margin: -3.25rem auto 0;
-      position: relative;
-      z-index: 3;
-      display: grid;
-      gap: 1.25rem;
+    .hero-side{
+      padding:20px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(10,18,15,.74), rgba(10,18,15,.46));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
     }
 
-    .section-card {
-      background: linear-gradient(180deg, rgba(14, 23, 35, 0.90), rgba(8, 15, 24, 0.86));
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-      overflow: hidden;
-      position: relative;
+    .hero-side .meta{
+      display:grid;
+      gap:14px;
     }
 
-    .section-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    .meta-card{
+      padding:16px 16px 15px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+
+    .meta-card strong{
+      display:block;
+      font-size:.82rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--accent);
+      margin-bottom:6px;
+    }
+
+    .meta-card span{
+      display:block;
+      color:var(--muted);
+      font-size:.96rem;
+      line-height:1.5;
+    }
+
+    main{padding:26px 0 72px}
+
+    .section{
+      margin-top:24px;
+      padding:26px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .section::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(108,230,166,.09), transparent 36%, transparent 62%, rgba(54,201,129,.07));
+      pointer-events:none;
+    }
+
+    .section > *{position:relative; z-index:1}
+
+    .section h2{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:18px;
+      font-size:clamp(1.4rem, 2vw, 2rem);
+      letter-spacing:-.03em;
+    }
+
+    .section h2::after{
+      content:"";
+      height:1px;
+      flex:1;
+      background:linear-gradient(90deg, var(--line-strong), transparent);
+    }
+
+    .lead p,
+    .rich p{
+      color:rgba(237,246,239,.94);
+      margin-top:14px;
+      text-wrap:pretty;
+    }
+
+    .rich strong{color:#f3fff6}
+    .rich em{color:#d3e7da}
+
+    .quote{
+      margin-top:20px;
+      padding:18px 20px;
+      border-left:3px solid var(--accent);
+      border-radius:18px;
+      background:rgba(108,230,166,.08);
+      color:#ecfff2;
+      font-style:italic;
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      color:#eaf6ee;
+      font-size:.92rem;
+    }
+
+    .pill::before{
+      content:"";
+      width:7px; height:7px; border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 0 5px rgba(108,230,166,.12);
+    }
+
+    .grid-5{
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0,1fr));
+      gap:14px;
+    }
+
+    .work-card{
+      padding:16px;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      min-height:180px;
+      transition:transform .35s ease, border-color .35s ease, background .35s ease;
+    }
+
+    .work-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(108,230,166,.28);
+      background:linear-gradient(180deg, rgba(108,230,166,.07), rgba(255,255,255,.015));
+    }
+
+    .work-card h3{
+      font-size:1rem;
+      margin-bottom:10px;
+      color:#f5fff8;
+    }
+
+    .work-card p{color:var(--muted); font-size:.95rem}
+
+    .work-card b{color:var(--accent)}
+
+    .herbalife .entry{
+      display:grid;
+      gap:16px;
+      font-size:1rem;
+    }
+
+    .herbalife .entry a{
+      color:#dfffe9;
+      text-decoration:underline;
+      text-decoration-color:rgba(108,230,166,.55);
+      text-underline-offset:4px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+    }
+
+    .contact-card{
+      padding:18px 18px 19px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:20px;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+    }
+
+    .contact-card .label{
+      display:block;
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:.74rem;
+      margin-bottom:8px;
+      font-weight:800;
+    }
+
+    .contact-card a{
+      word-break:break-word;
+      color:#f0fff4;
+      font-weight:700;
+    }
+
+    footer{
+      position:relative;
+      margin-top:30px;
+      padding:82px 0 36px;
+      overflow:hidden;
+      border-top:1px solid rgba(255,255,255,.06);
       background:
-        linear-gradient(90deg, rgba(103,212,138,0.08), transparent 28%, transparent 72%, rgba(103,212,138,0.05));
-      pointer-events: none;
-      opacity: 0.65;
+        linear-gradient(180deg, rgba(7,11,10,.14), rgba(7,11,10,.9)),
+        url("./img/footer.png") center/cover no-repeat;
     }
 
-    .section-inner {
-      position: relative;
-      padding: clamp(1.2rem, 2.8vw, 2rem);
+    footer::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(7,11,10,.26), rgba(7,11,10,.88));
+      pointer-events:none;
     }
 
-    .section-title {
-      margin: 0 0 1rem;
-      font-size: clamp(1.45rem, 2.1vw, 2.05rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      color: var(--text);
+    .footer-inner{
+      position:relative;
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:20px;
     }
 
-    .about {
-      text-align: center;
-      padding-inline: clamp(0.6rem, 2vw, 2rem);
+    .footer-brand{
+      max-width:680px;
     }
 
-    .about .section-title {
-      font-family: "Brush Script MT", "Segoe Script", "Snell Roundhand", cursive;
-      font-size: clamp(2.1rem, 4.1vw, 3.8rem);
-      line-height: 1.15;
-      margin-bottom: 0.6rem;
-      font-weight: 500;
-      letter-spacing: 0;
+    .footer-brand .small{
+      display:inline-flex;
+      margin-bottom:10px;
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.72rem;
+      font-weight:800;
     }
 
-    .about .about-text {
-      font-family: "Brush Script MT", "Segoe Script", "Snell Roundhand", cursive;
-      font-size: clamp(1.18rem, 2.05vw, 1.55rem);
-      line-height: 1.95;
-      max-width: 920px;
-      margin: 0 auto;
-      color: rgba(238,244,255,0.92);
+    .footer-brand p{
+      color:rgba(233,247,237,.84);
+      font-size:.96rem;
     }
 
-    .about .about-text p {
-      margin: 0 0 0.8rem;
+    .footer-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
-    .grid {
-      display: grid;
-      gap: 1.25rem;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
+    .footer-links a{
+      padding:11px 14px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:999px;
+      color:#edf7ef;
+      background:rgba(255,255,255,.03);
     }
 
-    .card {
-      grid-column: span 12;
-      background: linear-gradient(180deg, rgba(12, 21, 33, 0.92), rgba(8, 15, 24, 0.82));
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: var(--radius-sm);
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.26);
-      overflow: hidden;
-      position: relative;
-      transform: translateY(24px);
-      opacity: 0;
-      animation: rise 0.85s ease forwards;
+    .footer-links a:hover{border-color:rgba(108,230,166,.3)}
+
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1);
+    }
+    .reveal.is-visible{
+      opacity:1;
+      transform:none;
     }
 
-    .card:nth-child(2) { animation-delay: 0.07s; }
-    .card:nth-child(3) { animation-delay: 0.14s; }
-    .card:nth-child(4) { animation-delay: 0.21s; }
-    .card:nth-child(5) { animation-delay: 0.28s; }
-    .card:nth-child(6) { animation-delay: 0.35s; }
-
-    .card .section-inner {
-      padding: clamp(1.1rem, 2.3vw, 1.7rem);
+    @media (max-width: 1024px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid-5{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .contact-grid{grid-template-columns:1fr}
+      .footer-inner{flex-direction:column; align-items:flex-start}
     }
 
-    .card h3 {
-      margin: 0 0 0.75rem;
-      font-size: clamp(1.1rem, 1.35vw, 1.38rem);
-      letter-spacing: -0.02em;
-    }
-
-    .card p, .card li {
-      color: rgba(233, 240, 250, 0.86);
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    .card ul {
-      margin: 0.85rem 0 0;
-      padding-left: 1.15rem;
-      display: grid;
-      gap: 0.55rem;
-    }
-
-    .stack-2 { grid-column: span 12; }
-    .stack-3 { grid-column: span 12; }
-
-    .reference {
-      grid-column: span 12;
-      display: grid;
-      gap: 1rem;
-      align-items: start;
-    }
-
-    .reference .mini {
-      padding: 1.1rem;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: rgba(233,240,250,0.82);
-      line-height: 1.8;
-    }
-
-    .focus {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .focus .highlight {
-      color: var(--accent-2);
-      font-weight: 700;
-    }
-
-    .contact-wrap {
-      position: relative;
-      width: min(var(--max), calc(100% - 2rem));
-      margin: 1.2rem auto 0;
-    }
-
-    .footer-banner {
-      position: relative;
-      min-height: 310px;
-      border-radius: 28px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: var(--shadow);
-      background:
-        linear-gradient(180deg, rgba(5,11,18,0.12), rgba(5,11,18,0.78)),
-        url('img/footer.png') center center / cover no-repeat;
-    }
-
-    .footer-banner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(5,11,18,0.28) 0%, rgba(5,11,18,0.88) 82%);
-      pointer-events: none;
-    }
-
-    .contact-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.25rem;
-      z-index: 2;
-    }
-
-    .contact-card {
-      width: min(820px, 100%);
-      text-align: center;
-      background: rgba(5, 11, 18, 0.42);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 26px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 18px 46px rgba(0,0,0,0.28);
-      padding: 1.35rem 1.25rem;
-    }
-
-    .contact-card h2 {
-      margin: 0 0 0.5rem;
-      font-size: clamp(1.7rem, 3vw, 2.5rem);
-      letter-spacing: -0.03em;
-      color: var(--accent-2);
-      text-transform: lowercase;
-    }
-
-    .contact-card p {
-      margin: 0 0 1rem;
-      color: rgba(238,244,255,0.86);
-      line-height: 1.8;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.65rem;
-      padding: 0.95rem 1.2rem;
-      border-radius: 999px;
-      text-decoration: none;
-      border: 1px solid rgba(143,227,170,0.22);
-      transition: transform .24s ease, border-color .24s ease, background .24s ease, color .24s ease, box-shadow .24s ease;
-      background: rgba(8, 15, 24, 0.55);
-      color: var(--text);
-      min-height: 48px;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(143,227,170,0.5);
-      background: rgba(103, 212, 138, 0.12);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.2);
-    }
-
-    .btn.email {
-      color: var(--accent-2);
-    }
-
-    .btn.whatsapp {
-      background: linear-gradient(135deg, rgba(41, 180, 97, 0.18), rgba(15, 93, 45, 0.22));
-      color: #dbffe8;
-    }
-
-    .icon {
-      width: 1.05rem;
-      height: 1.05rem;
-      display: inline-block;
-      flex: 0 0 auto;
-    }
-
-    .footer-note {
-      width: min(var(--max), calc(100% - 2rem));
-      margin: 0 auto;
-      padding: 1rem 0 2rem;
-      text-align: center;
-      color: rgba(167, 183, 201, 0.76);
-      font-size: 0.94rem;
-    }
-
-    .subtle { color: rgba(238,244,255,0.78); }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes floatUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (min-width: 760px) {
-      .stack-2 { grid-column: span 6; }
-      .stack-3 { grid-column: span 4; }
-      .reference { grid-column: span 12; grid-template-columns: 1.2fr 0.8fr; }
-      .focus { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 759px) {
-      .hero-inner { padding-top: 5rem; }
-      .hero-title { max-width: 100%; }
-      .contact-card { padding: 1rem; }
-      .contact-links { flex-direction: column; }
+    @media (max-width: 680px){
+      .wrap{width:min(var(--max), calc(100% - 24px))}
+      header{min-height:auto; padding-top:18px}
+      .hero-copy{padding-top:18px}
+      .section{padding:18px}
+      .grid-5{grid-template-columns:1fr}
+      .hero-side{padding:14px}
+      .hero-copy h1{font-size:clamp(2.05rem, 13vw, 3.7rem)}
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <section class="hero" aria-labelledby="sobre-hero">
-      <div class="hero-banner">
-        <div class="hero-inner">
-          <div class="eyebrow">Arquitetura digital • presença profissional</div>
-          <h1 id="sobre-hero" class="hero-title">Eduardo <span>Sidegum</span></h1>
-          <div class="hero-copy">
-            <p>Este espaço apresenta uma visão objetiva sobre repertório, processo e posicionamento para projetos web com foco em estrutura, clareza e valor percebido.</p>
+  <header>
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">Sobre</div>
+        <h1>Eduardo Sidegum</h1>
+        <p class="kicker">Consultor | Bacharel em Sistemas de Informação</p>
+      </div>
+      <aside class="hero-side reveal">
+        <div class="meta">
+          <div class="meta-card">
+            <strong>Perfil</strong>
+            <span>Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance.</span>
+          </div>
+          <div class="meta-card">
+            <strong>Direção</strong>
+            <span>Uma página sobre com leitura limpa, presença executiva e estética escura premium, sem menu e sem ruído desnecessário.</span>
           </div>
         </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section lead reveal">
+      <h2>Sobre</h2>
+      <div class="rich">
+        <p>Minha formação em <strong>Sistemas de Informação</strong> — com toda a visão de <strong>arquitetura, fluxo e estrutura de dados</strong> que ela exige
+— combinada à experiência como <strong>engenheiro de sistemas Microsoft</strong> em ambiente corporativo de alto volume,
+me deu uma lente incomum para enxergar o mercado de bem-estar. Enquanto a maioria olha para produtos isolados,
+eu olho para <strong>sistemas completos</strong>: a rotina do cliente é um processo, os hábitos são dados, os resultados são métricas.
+E toda melhoria sustentável nasce de um <strong>diagnóstico bem feito</strong> — não de chutes. Essa abordagem, que funcionou para servidores e redes,
+funciona também para corpos, mentes e negócios. <strong>Estrutura, fluxo, evidência e resultado mensurável</strong> — esse é o meu método,
+aplicado onde quer que eu atue.</p>
+
+        <p>Hoje, esse raciocínio se traduz em entregas concretas: integro <strong>estratégia digital</strong>, <strong>automação com inteligência artificial</strong>
+e um conhecimento de mercado construído na prática para desenhar soluções que respeitam o tamanho, o momento e o objetivo
+de cada pessoa ou negócio. Não entrego fórmula pronta — entrego <strong>projeto sob medida</strong>. Seja para o atleta que busca performance
+com suplementação precisa, seja para o empreendedor que quer agregar uma nova linha de receita ao negócio sem complexidade,
+o ponto de partida é o mesmo: <strong>entender o sistema antes de intervir</strong>. Meu papel é fazer a ponte entre o que a ciência entrega
+e o que o dia a dia absorve — de forma prática, automatizada onde possível, e sempre <em>orientada a resultado</em>.</p>
+
+        <p>Em busca de <strong>qualidade de vida</strong>, migrei para o interior do RS — uma decisão que alinhou propósito e rotina.
+Há mais de dez anos como usuário de suplementação premium, em tempo parcial atuo como consultor independente
+em nutrição e bem-estar, construindo minha prática sobre um princípio que carrego de tudo que aprendi em tecnologia:
+<strong>cada pessoa é um sistema único</strong>, e a solução certa exige <strong>análise — nunca achismo</strong>. Se posso ajudar quem busca melhorar, assim o faço.</p>
+
+        <div class="quote">_"Não ofereço o que está na moda. Ofereço o que resiste à análise."_</div>
       </div>
+    </section>
 
-      <div class="panel">
-        <section class="section-card about" aria-labelledby="sobre">
-          <div class="section-inner">
-            <h2 id="sobre" class="section-title">Sobre</h2>
-            <div class="about-text">
-              <p>Texto completo da section sobre, mantido em ritmo centralizado para leitura elegante e com presença visual no banner superior.</p>
-              <p>Essa composição foi pensada para destacar o conteúdo principal sem ruído, reforçando uma imagem profissional e consistente.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="grid" aria-label="Conteúdo principal">
-          <article class="card stack-2">
-            <div class="section-inner">
-              <h3>Referência e marca</h3>
-              <p>Estrutura, consistência e leitura limpa criam uma apresentação mais confiável. O foco aqui é transmitir maturidade visual sem exagero.</p>
-            </div>
-          </article>
-
-          <article class="card stack-2">
-            <div class="section-inner">
-              <h3>Atuação</h3>
-              <p>Organização de conteúdo, arquitetura da informação e refinamento de interface para páginas institucionais com personalidade própria.</p>
-            </div>
-          </article>
-
-          <article class="card stack-3">
-            <div class="section-inner">
-              <h3>Direção visual</h3>
-              <ul>
-                <li>Fundo escuro com variações de verde.</li>
-                <li>Camadas sutis e contraste controlado.</li>
-                <li>Hero forte com banner principal.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card stack-3">
-            <div class="section-inner">
-              <h3>Foco de apresentação</h3>
-              <ul>
-                <li>Leitura rápida e sofisticada.</li>
-                <li>Seções com hierarquia clara.</li>
-                <li>Elementos visuais discretos.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card stack-3">
-            <div class="section-inner">
-              <h3>Boas práticas</h3>
-              <ul>
-                <li>Menos ruído, mais precisão.</li>
-                <li>Conteúdo direto ao ponto.</li>
-                <li>Composição limpa e premium.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card reference">
-            <div class="section-inner">
-              <h3>Por que Herbalife</h3>
-              <div class="focus">
-                <div class="mini">
-                  O bloco foi mantido discreto, com leitura contida e sem competir com a narrativa principal da página.
-                </div>
-                <div class="mini">
-                  <span class="highlight">Catálogo Herbalife</span> e <span class="highlight">Cliente Premium</span> seguem presentes como referências internas, sem destaque excessivo.
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
+    <section class="section reveal">
+      <h2>Como Trabalho</h2>
+      <div class="grid-5">
+        <article class="work-card">
+          <h3>Ⅰ. Arquitetura da Informação</h3>
+          <p>Antes de qualquer recomendação, eu escuto, organizo e estruturo. Seu objetivo, sua rotina, suas restrições — tudo vira dado que fundamenta a solução. <b>Sem diagnóstico, não há direção.</b></p>
+        </article>
+        <article class="work-card">
+          <h3>Ⅱ. Solução Sob Medida</h3>
+          <p>Não existe protocolo universal. O que funciona para um atleta de alta performance pode ser excessivo para um profissional liberal, e insuficiente para um empreendedor em escala. <b>A recomendação certa é proporcional à necessidade real — nunca ao hype.</b></p>
+        </article>
+        <article class="work-card">
+          <h3>Ⅲ. Tecnologia como Vantagem</h3>
+          <p>Automação com IA, análise de dados e presença digital estratégica não são modismos — são ferramentas que aplico para <b>reduzir ruído, amplificar resultado e eliminar o improviso</b>. Onde outros veem complexidade, eu vejo processo.</p>
+        </article>
+        <article class="work-card">
+          <h3>Ⅳ. Experiência do Usuário</h3>
+          <p>Cada interação — seja numa página web, numa conversa ou na entrega de um produto — é projetada para ser fluida, clara e útil. <b>O meio importa tanto quanto a mensagem, e a confiança se constrói em cada detalhe.</b></p>
+        </article>
+        <article class="work-card">
+          <h3>Ⅴ. Análise, Código e Parceria Técnica</h3>
+          <p>Nem todo projeto se resolve sozinho — e isso não é fraqueza, é maturidade. Dentro do meu escopo de <b>desenvolvimento assistido</b>, atuo na análise profunda de propostas, definição de arquitetura e estruturação do projeto antes de uma linha de código ser escrita. Quando o caso exige especialização específica, mobilizo uma <b>rede curada de profissionais de programação</b> — selecionados com critério, não por conveniência. O resultado: <b>propostas reais para resultados reais</b> — com ética, transparência e execução de qualidade.</p>
+        </article>
       </div>
+    </section>
 
-      <section class="contact-wrap" aria-labelledby="contato">
-        <div class="footer-banner">
-          <div class="contact-overlay">
-            <div class="contact-card">
-              <h2 id="contato">contato</h2>
-              <p>Entre em contato para falar sobre arquitetura de site da empresa.</p>
-              <div class="contact-links">
-                <a class="btn email" href="mailto:dusidegum@gmail.com" aria-label="Enviar e-mail para dusidegum@gmail.com">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M4 6.5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.7"/>
-                    <path d="m5 7.5 7 6 7-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  dusidegum@gmail.com
-                </a>
-                <a class="btn whatsapp" href="https://wa.me/5551999663200" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp para conversa">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M20.4 11.8a8.3 8.3 0 0 1-11.4 7.7L4 20l.6-4.7A8.3 8.3 0 1 1 20.4 11.8Z" stroke="currentColor" stroke-width="1.7"/>
-                    <path d="M9.2 8.8c.2-.4.4-.5.7-.5h.5c.2 0 .4 0 .5.4l.7 1.8c.1.3 0 .5-.1.7l-.5.6c-.1.1-.2.3-.1.5.4.9 1.8 2.2 2.7 2.7.2.1.4.1.5 0l.7-.4c.2-.1.5-.2.7-.1l1.8.7c.3.1.4.3.4.5v.5c0 .3-.1.5-.5.7-.3.2-.9.3-1.4.3-4.8 0-8.8-4-8.8-8.8 0-.5.1-1.1.3-1.4Z" fill="currentColor"/>
-                  </svg>
-                  quero falar sobre arquitetura de site da empresa.
-                </a>
-              </div>
-            </div>
-          </div>
+    <section class="section herbalife reveal">
+      <h2><a href="https://raw.githubusercontent.com/edusidegum/edusidegum/refs/heads/main/manifesto.html">Por Que Herbalife</a></h2>
+      <div class="entry">
+        <p>A Herbalife é a <strong>marca número 1 em nutrição e bem-estar do mundo</strong>,
+com mais de 40 anos de pesquisa, <strong>300+ cientistas e PhDs</strong> e presença
+em 95 países. Não é sobre tendência — é sobre <strong>lastro científico</strong>.</p>
+
+        <p>Atuando como Distribuidor Independente Herbalife, posso levar <strong>planos</strong>
+<strong>acessíveis e realistas</strong> para quem busca performance, controle de peso ou
+simplesmente mais energia no dia a dia, através do
+<strong><a href="https://catalogoherbalife.com.br/edusidegum">Catálogo de Produtos Herbalife Nutrition</a></strong>.</p>
+
+        <p><strong>100% digital</strong>, com entrega em todo o Brasil, com a qualidade e garantia 'direto de fábrica'.
+Cada pessoa recebe acompanhamento personalizado, individualizado, e suporte Herbalife, através do programa
+<strong><a href="https://edusidegum.github.io/cadastro/cadastro.html">Cliente Premium</a></strong>
+, com descontos progressivos de até 32%.</p>
+      </div>
+      <div class="pill-row" aria-label="Referências discretas">
+        <span class="pill">Catálogo Herbalife</span>
+        <span class="pill">Cliente Premium</span>
+        <span class="pill">Acompanhamento personalizado</span>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2>Contato</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="label">WhatsApp</span>
+          <a href="https://wa.me/5551999663200">(51) 9 9966-3200</a>
         </div>
-      </section>
-
-      <div class="footer-note">
-        <span class="subtle">Eduardo Sidegum</span>
+        <div class="contact-card">
+          <span class="label">E-mail</span>
+          <a href="mailto:edusidegum@gmail.com">edusidegum@gmail.com</a>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <span class="small">Contato</span>
+        <p>Eduardo Sidegum • Consultor | Bacharel em Sistemas de Informação • Novo Hamburgo/RS</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://wa.me/5551999663200">WhatsApp</a>
+        <a href="mailto:edusidegum@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 90}ms`;
+      io.observe(el);
+    });
+  </script>
 </body>
 </html>
