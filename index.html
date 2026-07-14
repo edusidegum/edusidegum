@@ -3,38 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eduardo Sidegum — Arquitetura de Sites</title>
+  <meta name="description" content="Página sobre Eduardo Sidegum, com foco em arquitetura de sites, estratégia digital e presença profissional." />
   <meta name="robots" content="index,follow" />
-  <meta name="description" content="Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance." />
-  <title>Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação</title>
+  <meta name="theme-color" content="#071019" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Eduardo Sidegum — Arquitetura de Sites" />
+  <meta property="og:description" content="Estratégia, estrutura e presença digital para projetos web com foco profissional." />
+  <meta property="og:image" content="img/og-image-e.png" />
+  <meta property="og:image:alt" content="Eduardo Sidegum" />
+  <meta name="twitter:card" content="summary_large_image" />
   <style>
     :root {
-      --bg: #07110c;
-      --bg-2: #0c1711;
-      --panel: rgba(9, 20, 14, 0.78);
-      --panel-2: rgba(14, 26, 19, 0.92);
-      --line: rgba(140, 255, 176, 0.12);
-      --line-2: rgba(140, 255, 176, 0.2);
-      --text: #eaf7ee;
-      --muted: #a4c2af;
-      --soft: #7fa88b;
-      --accent: #8cffb0;
-      --accent-2: #56d98a;
-      --accent-3: #c8ffd8;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.48);
-      --radius: 28px;
-      --radius-sm: 18px;
+      --bg: #050b12;
+      --bg-soft: #0b1520;
+      --surface: rgba(9, 16, 25, 0.72);
+      --surface-2: rgba(13, 23, 35, 0.86);
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #eef4ff;
+      --muted: #a9b6c8;
+      --accent: #67d48a;
+      --accent-2: #8fe3aa;
+      --accent-dark: #2f8c54;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.42);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1140px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+      background:
+        radial-gradient(circle at top, rgba(103, 212, 138, 0.14), transparent 26%),
+        radial-gradient(circle at 20% 20%, rgba(62, 163, 99, 0.11), transparent 18%),
+        linear-gradient(180deg, #04080d 0%, #071019 32%, #050b12 100%);
+    }
+
     body {
       margin: 0;
       color: var(--text);
-      background:
-        radial-gradient(circle at 20% 10%, rgba(92, 255, 160, 0.10), transparent 34%),
-        radial-gradient(circle at 85% 18%, rgba(63, 190, 110, 0.11), transparent 26%),
-        linear-gradient(180deg, #06110c 0%, #091510 42%, #06100b 100%);
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        linear-gradient(180deg, rgba(7, 16, 25, 0.6), rgba(5, 11, 18, 0.82)),
+        radial-gradient(circle at top, rgba(103, 212, 138, 0.10), transparent 28%),
+        #050b12;
+      min-height: 100vh;
       overflow-x: hidden;
     }
 
@@ -43,400 +58,377 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 72px 72px;
-      opacity: .18;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
+      background:
+        linear-gradient(120deg, rgba(255,255,255,0.025) 0%, transparent 20%, transparent 80%, rgba(255,255,255,0.025) 100%),
+        radial-gradient(circle at 50% 0%, rgba(143, 227, 170, 0.08), transparent 25%);
+      mix-blend-mode: screen;
+      opacity: 0.8;
     }
 
+    a { color: inherit; }
+
     .page {
-      width: min(1220px, calc(100% - 32px));
-      margin: 0 auto;
       position: relative;
-      z-index: 1;
+      width: 100%;
+      isolation: isolate;
     }
 
     .hero {
       position: relative;
-      overflow: hidden;
-      border-radius: 0 0 34px 34px;
-      border: 1px solid rgba(140, 255, 176, 0.08);
-      box-shadow: var(--shadow);
-      margin-top: 14px;
-      background:
-        linear-gradient(180deg, rgba(3, 8, 5, 0.35), rgba(3, 8, 5, 0.74)),
-        radial-gradient(circle at top left, rgba(110, 255, 170, 0.15), transparent 28%),
-        #06110c;
-      min-height: clamp(300px, 42vw, 520px);
-      isolation: isolate;
+      min-height: 100vh;
+      display: grid;
+      align-items: start;
+      padding: 0 0 4rem;
     }
 
-    .hero::before {
+    .hero-banner {
+      position: relative;
+      min-height: min(74vh, 820px);
+      background:
+        linear-gradient(180deg, rgba(5, 11, 18, 0.18) 0%, rgba(5, 11, 18, 0.72) 100%),
+        url('img/banner.png') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .hero-banner::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(120deg, rgba(140, 255, 176, 0.18), transparent 34%),
-        linear-gradient(260deg, transparent 55%, rgba(88, 217, 136, 0.10) 100%);
-      mix-blend-mode: screen;
-      z-index: 1;
+        linear-gradient(180deg, rgba(5,11,18,0.18) 0%, rgba(5,11,18,0.88) 94%),
+        radial-gradient(circle at center, rgba(103,212,138,0.14), transparent 34%);
       pointer-events: none;
-      animation: drift 18s ease-in-out infinite alternate;
     }
 
-    .hero img {
-      width: 100%;
-      height: 100%;
-      min-height: inherit;
-      object-fit: cover;
-      display: block;
-      filter: saturate(1.02) contrast(1.03) brightness(.8);
-      transform: scale(1.01);
-    }
-
-    .hero-content {
-      position: absolute;
-      inset: auto 0 0 0;
+    .hero-inner {
+      position: relative;
       z-index: 2;
-      padding: clamp(20px, 4vw, 42px);
-      background: linear-gradient(180deg, transparent, rgba(4, 12, 8, 0.94) 68%);
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 7rem 0 6rem;
+      display: grid;
+      gap: 1.5rem;
     }
 
     .eyebrow {
       display: inline-flex;
+      align-self: start;
+      gap: 0.5rem;
       align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid rgba(143,227,170,0.22);
       border-radius: 999px;
-      border: 1px solid rgba(140, 255, 176, 0.15);
-      background: rgba(5, 16, 10, 0.46);
-      color: var(--accent-3);
-      letter-spacing: .14em;
+      background: rgba(4, 10, 16, 0.36);
+      color: var(--accent-2);
       text-transform: uppercase;
-      font-size: .72rem;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
       font-weight: 700;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
+      width: fit-content;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
     }
 
-    .hero h1 {
-      margin: 14px 0 10px;
-      font-size: clamp(2rem, 5.4vw, 4.8rem);
-      line-height: .94;
-      letter-spacing: -.05em;
-      text-wrap: balance;
-    }
-
-    .hero p {
+    .hero-title {
       margin: 0;
-      max-width: 58rem;
-      color: rgba(231, 248, 236, 0.84);
-      font-size: clamp(1rem, 1.5vw, 1.08rem);
-      line-height: 1.7;
+      font-size: clamp(2.45rem, 4.8vw, 5.4rem);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
+      max-width: 12ch;
+      text-shadow: 0 10px 40px rgba(0,0,0,0.4);
     }
 
-    main {
-      display: grid;
-      gap: 22px;
-      padding: 22px 0 0;
+    .hero-title span {
+      color: var(--accent-2);
+      text-shadow: 0 0 24px rgba(103, 212, 138, 0.18);
     }
 
-    section {
+    .hero-copy {
+      max-width: 760px;
+      font-size: clamp(1rem, 1.18vw, 1.22rem);
+      line-height: 1.8;
+      color: rgba(238, 244, 255, 0.88);
+      background: rgba(7, 13, 20, 0.33);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 24px;
+      padding: 1.1rem 1.2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      animation: floatUp 0.9s ease both;
+    }
+
+    .hero-copy p {
+      margin: 0;
+    }
+
+    .panel {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: -3.25rem auto 0;
       position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(140, 255, 176, 0.08);
-      background: linear-gradient(180deg, rgba(10, 23, 16, 0.82), rgba(8, 17, 12, 0.92));
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
-      border-radius: var(--radius);
+      z-index: 3;
+      display: grid;
+      gap: 1.25rem;
     }
 
-    section .inner {
-      padding: clamp(24px, 4vw, 44px);
+    .section-card {
+      background: linear-gradient(180deg, rgba(14, 23, 35, 0.90), rgba(8, 15, 24, 0.86));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .section-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(103,212,138,0.08), transparent 28%, transparent 72%, rgba(103,212,138,0.05));
+      pointer-events: none;
+      opacity: 0.65;
+    }
+
+    .section-inner {
+      position: relative;
+      padding: clamp(1.2rem, 2.8vw, 2rem);
     }
 
     .section-title {
-      margin: 0 0 18px;
-      font-size: clamp(1.2rem, 1.9vw, 1.6rem);
-      letter-spacing: -.02em;
-      color: var(--accent-3);
-    }
-
-    .floating {
-      position: absolute;
-      inset: auto -90px -60px auto;
-      width: 240px;
-      height: 240px;
-      background: radial-gradient(circle, rgba(140, 255, 176, 0.18), transparent 64%);
-      filter: blur(8px);
-      pointer-events: none;
-      animation: float 12s ease-in-out infinite;
+      margin: 0 0 1rem;
+      font-size: clamp(1.45rem, 2.1vw, 2.05rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--text);
     }
 
     .about {
       text-align: center;
-      background:
-        linear-gradient(180deg, rgba(8, 20, 13, 0.92), rgba(6, 15, 10, 0.94)),
-        radial-gradient(circle at 50% 20%, rgba(140, 255, 176, 0.08), transparent 34%);
+      padding-inline: clamp(0.6rem, 2vw, 2rem);
     }
 
-    .about .name {
-      margin: 0 0 14px;
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      letter-spacing: -.05em;
-      line-height: 1;
-      color: var(--accent-3);
-    }
-
-    .about-copy {
-      font-family: "Segoe Script", "Brush Script MT", "Snell Roundhand", cursive;
-      font-size: clamp(1.28rem, 1.45vw + 1rem, 1.72rem);
-      line-height: 1.9;
-      margin: 0 auto;
-      max-width: 940px;
-      text-align: center;
-      color: rgba(237, 252, 241, 0.95);
-      text-wrap: pretty;
+    .about .section-title {
+      font-family: "Brush Script MT", "Segoe Script", "Snell Roundhand", cursive;
+      font-size: clamp(2.1rem, 4.1vw, 3.8rem);
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
       font-weight: 500;
-      letter-spacing: .01em;
+      letter-spacing: 0;
     }
 
-    .about-copy p {
-      margin: 0 0 1rem;
+    .about .about-text {
+      font-family: "Brush Script MT", "Segoe Script", "Snell Roundhand", cursive;
+      font-size: clamp(1.18rem, 2.05vw, 1.55rem);
+      line-height: 1.95;
+      max-width: 920px;
+      margin: 0 auto;
+      color: rgba(238,244,255,0.92);
     }
 
-    .quote {
-      margin: 22px auto 0;
-      width: fit-content;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: rgba(140, 255, 176, 0.08);
-      color: var(--accent-3);
-      border: 1px solid rgba(140, 255, 176, 0.10);
-      font-size: .98rem;
-      font-style: italic;
+    .about .about-text p {
+      margin: 0 0 0.8rem;
     }
 
-    .work {
-      padding-top: 6px;
-      background: linear-gradient(180deg, rgba(8, 16, 11, 0.92), rgba(6, 13, 9, 0.96));
-    }
-
-    .work-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
+      gap: 1.25rem;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
     }
 
-    .pillar {
-      grid-column: span 6;
-      border-radius: var(--radius-sm);
-      background: linear-gradient(180deg, rgba(16, 34, 24, 0.9), rgba(9, 21, 14, 0.96));
-      border: 1px solid rgba(140, 255, 176, 0.08);
-      padding: 18px 18px 16px;
-      position: relative;
-      overflow: hidden;
-      min-height: 160px;
-      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
-    }
-
-    .pillar:hover {
-      transform: translateY(-4px);
-      border-color: rgba(140, 255, 176, 0.22);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
-    }
-
-    .pillar::after {
-      content: "";
-      position: absolute;
-      inset: auto -20px -20px auto;
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, rgba(140, 255, 176, 0.13), transparent 62%);
-      filter: blur(6px);
-      pointer-events: none;
-    }
-
-    .pillar h3 {
-      margin: 0 0 10px;
-      font-size: 1.08rem;
-      color: var(--accent-3);
-      letter-spacing: -.01em;
-    }
-
-    .pillar p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.78;
-      font-size: .98rem;
-    }
-
-    .pillar.full {
+    .card {
       grid-column: span 12;
+      background: linear-gradient(180deg, rgba(12, 21, 33, 0.92), rgba(8, 15, 24, 0.82));
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-sm);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.26);
+      overflow: hidden;
+      position: relative;
+      transform: translateY(24px);
+      opacity: 0;
+      animation: rise 0.85s ease forwards;
     }
 
-    .pillar.full p strong {
-      color: var(--accent-3);
+    .card:nth-child(2) { animation-delay: 0.07s; }
+    .card:nth-child(3) { animation-delay: 0.14s; }
+    .card:nth-child(4) { animation-delay: 0.21s; }
+    .card:nth-child(5) { animation-delay: 0.28s; }
+    .card:nth-child(6) { animation-delay: 0.35s; }
+
+    .card .section-inner {
+      padding: clamp(1.1rem, 2.3vw, 1.7rem);
     }
 
-    .herbalife {
-      background: linear-gradient(180deg, rgba(9, 20, 14, 0.92), rgba(5, 13, 9, 0.96));
+    .card h3 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.1rem, 1.35vw, 1.38rem);
+      letter-spacing: -0.02em;
     }
 
-    .herbalife .content {
-      display: grid;
-      gap: 14px;
-      max-width: 980px;
-    }
-
-    .herbalife .tag {
-      display: inline-flex;
-      width: fit-content;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(140, 255, 176, 0.16);
-      background: rgba(140, 255, 176, 0.06);
-      color: var(--accent-3);
-      font-size: .76rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .herbalife h2 {
-      margin: 0;
-      font-size: clamp(1.4rem, 2.6vw, 2.1rem);
-      letter-spacing: -.03em;
-    }
-
-    .herbalife p {
-      margin: 0;
-      color: rgba(225, 244, 230, 0.87);
+    .card p, .card li {
+      color: rgba(233, 240, 250, 0.86);
       line-height: 1.8;
-      font-size: 1rem;
+      margin: 0;
     }
 
-    .herbalife a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(140, 255, 176, 0.28);
-      transition: color .25s ease, border-color .25s ease, opacity .25s ease;
-      white-space: nowrap;
+    .card ul {
+      margin: 0.85rem 0 0;
+      padding-left: 1.15rem;
+      display: grid;
+      gap: 0.55rem;
     }
 
-    .herbalife a:hover {
-      color: #d7ffe5;
-      border-bottom-color: rgba(215, 255, 229, 0.8);
+    .stack-2 { grid-column: span 12; }
+    .stack-3 { grid-column: span 12; }
+
+    .reference {
+      grid-column: span 12;
+      display: grid;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .reference .mini {
+      padding: 1.1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: rgba(233,240,250,0.82);
+      line-height: 1.8;
+    }
+
+    .focus {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .focus .highlight {
+      color: var(--accent-2);
+      font-weight: 700;
     }
 
     .contact-wrap {
-      padding: 0;
-      border: 0;
-      background: transparent;
-      box-shadow: none;
-      overflow: visible;
-    }
-
-    .contact-stage {
       position: relative;
-      border-radius: 34px;
-      overflow: hidden;
-      border: 1px solid rgba(140, 255, 176, 0.09);
-      box-shadow: var(--shadow);
-      min-height: 340px;
-      background:
-        linear-gradient(180deg, rgba(4, 10, 7, 0.12), rgba(4, 10, 7, 0.62)),
-        #07110c;
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 1.2rem auto 0;
     }
 
-    .contact-stage::before {
+    .footer-banner {
+      position: relative;
+      min-height: 310px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(5,11,18,0.12), rgba(5,11,18,0.78)),
+        url('img/footer.png') center center / cover no-repeat;
+    }
+
+    .footer-banner::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(4,12,8,0.05), rgba(4,12,8,0.60));
-      z-index: 1;
+      background: linear-gradient(180deg, rgba(5,11,18,0.28) 0%, rgba(5,11,18,0.88) 82%);
       pointer-events: none;
     }
 
-    .contact-stage img {
-      width: 100%;
-      height: 100%;
-      min-height: 340px;
-      object-fit: cover;
-      display: block;
-      filter: saturate(.95) contrast(1.04) brightness(.74);
+    .contact-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      z-index: 2;
     }
 
     .contact-card {
-      position: absolute;
-      left: clamp(16px, 4vw, 40px);
-      right: clamp(16px, 4vw, 40px);
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
-      max-width: 620px;
-      padding: clamp(20px, 3vw, 30px);
-      border-radius: 24px;
-      background: rgba(6, 18, 11, 0.74);
-      border: 1px solid rgba(140, 255, 176, 0.14);
-      backdrop-filter: blur(14px);
+      width: min(820px, 100%);
+      text-align: center;
+      background: rgba(5, 11, 18, 0.42);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 26px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 18px 46px rgba(0,0,0,0.28);
+      padding: 1.35rem 1.25rem;
     }
 
     .contact-card h2 {
-      margin: 0 0 10px;
-      font-size: clamp(1.4rem, 2.5vw, 2.1rem);
-      letter-spacing: -.03em;
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      letter-spacing: -0.03em;
+      color: var(--accent-2);
+      text-transform: lowercase;
     }
 
     .contact-card p {
-      margin: 0 0 18px;
-      color: rgba(231, 248, 236, 0.82);
-      line-height: 1.72;
+      margin: 0 0 1rem;
+      color: rgba(238,244,255,0.86);
+      line-height: 1.8;
     }
 
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 0.9rem;
+      align-items: center;
+      justify-content: center;
     }
 
-    .contact-links a {
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 16px;
-      border-radius: 14px;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.95rem 1.2rem;
+      border-radius: 999px;
       text-decoration: none;
+      border: 1px solid rgba(143,227,170,0.22);
+      transition: transform .24s ease, border-color .24s ease, background .24s ease, color .24s ease, box-shadow .24s ease;
+      background: rgba(8, 15, 24, 0.55);
       color: var(--text);
-      background: linear-gradient(180deg, rgba(140, 255, 176, 0.12), rgba(140, 255, 176, 0.06));
-      border: 1px solid rgba(140, 255, 176, 0.14);
-      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+      min-height: 48px;
     }
 
-    .contact-links a:hover {
+    .btn:hover {
       transform: translateY(-2px);
-      border-color: rgba(140, 255, 176, 0.28);
-      background: linear-gradient(180deg, rgba(140, 255, 176, 0.18), rgba(140, 255, 176, 0.08));
+      border-color: rgba(143,227,170,0.5);
+      background: rgba(103, 212, 138, 0.12);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.2);
     }
 
-    footer {
-      margin: 20px 0 8px;
-      color: rgba(205, 234, 214, 0.72);
+    .btn.email {
+      color: var(--accent-2);
+    }
+
+    .btn.whatsapp {
+      background: linear-gradient(135deg, rgba(41, 180, 97, 0.18), rgba(15, 93, 45, 0.22));
+      color: #dbffe8;
+    }
+
+    .icon {
+      width: 1.05rem;
+      height: 1.05rem;
+      display: inline-block;
+      flex: 0 0 auto;
+    }
+
+    .footer-note {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1rem 0 2rem;
       text-align: center;
-      font-size: .92rem;
-      letter-spacing: .02em;
+      color: rgba(167, 183, 201, 0.76);
+      font-size: 0.94rem;
     }
 
-    .footer-image {
-      display: block;
-      width: 100%;
-      max-height: 220px;
-      object-fit: cover;
-      border-radius: 28px;
-      margin-top: 18px;
-      filter: saturate(.98) contrast(1.02) brightness(.72) hue-rotate(-6deg);
-      border: 1px solid rgba(140, 255, 176, 0.08);
-    }
+    .subtle { color: rgba(238,244,255,0.78); }
 
     .sr-only {
       position: absolute;
@@ -450,122 +442,150 @@
       border: 0;
     }
 
-    @keyframes float {
-      0% { transform: translate3d(0, 0, 0) scale(1); opacity: .68; }
-      50% { transform: translate3d(-8px, -18px, 0) scale(1.04); opacity: .9; }
-      100% { transform: translate3d(6px, 10px, 0) scale(.98); opacity: .72; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes drift {
-      0% { transform: translateX(-1.5%) translateY(0); }
-      100% { transform: translateX(1.5%) translateY(-1%); }
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 860px) {
-      .pillar, .pillar.full { grid-column: span 12; }
-      .hero h1 { line-height: 1.02; }
-      .contact-card {
-        top: auto;
-        bottom: 16px;
-        transform: none;
-      }
+    @media (min-width: 760px) {
+      .stack-2 { grid-column: span 6; }
+      .stack-3 { grid-column: span 4; }
+      .reference { grid-column: span 12; grid-template-columns: 1.2fr 0.8fr; }
+      .focus { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 620px) {
-      .page { width: min(100% - 20px, 1220px); }
-      section .inner { padding: 20px; }
-      .contact-links a { width: 100%; justify-content: center; }
-      .about-copy { font-size: 1.14rem; line-height: 1.85; }
-      .hero { min-height: 360px; }
+    @media (max-width: 759px) {
+      .hero-inner { padding-top: 5rem; }
+      .hero-title { max-width: 100%; }
+      .contact-card { padding: 1rem; }
+      .contact-links { flex-direction: column; }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <header class="hero" aria-label="Banner principal">
-      <img src="img/banner.png" alt="Banner principal" />
-      <div class="hero-content">
-        <span class="eyebrow">Consultor Independente • Sistemas • Bem-estar</span>
-        <h1>Eduardo Sidegum</h1>
-        <p>Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance.</p>
-      </div>
-    </header>
-
-    <section class="about" id="sobre">
-      <div class="inner">
-        <h2 class="name">Eduardo Sidegum</h2>
-        <div class="about-copy">
-          <p>Formação em <strong>Sistemas de Informação</strong> — com toda a visão de <strong>arquitetura, fluxo e estrutura de dados</strong> que ela exige — combinada à experiência como <strong>engenheiro de sistemas Microsoft</strong> em ambiente corporativo de alto volume, me deu uma lente incomum para enxergar o mercado de bem-estar. Enquanto a maioria olha para produtos isolados, eu olho para <strong>sistemas completos</strong>: a rotina do cliente é um processo, os hábitos são dados, os resultados são métricas. E toda melhoria sustentável nasce de um <strong>diagnóstico bem feito</strong> — não de chutes. Essa abordagem, que funcionou para servidores e redes, funciona também para corpos, mentes e negócios. <strong>Estrutura, fluxo, evidência e resultado mensurável</strong> — esse é o meu método, aplicado onde quer que eu atue.</p>
-
-          <p>Hoje, esse raciocínio se traduz em entregas concretas: integro <strong>estratégia digital</strong>, <strong>automação com inteligência artificial</strong> e um conhecimento de mercado construído na prática para desenhar soluções que respeitam o tamanho, o momento e o objetivo de cada pessoa ou negócio. Não entrego fórmula pronta — entrego <strong>projeto sob medida</strong>. Seja para o atleta que busca performance com suplementação precisa, seja para o empreendedor que quer agregar uma nova linha de receita ao negócio sem complexidade, o ponto de partida é o mesmo: <strong>entender o sistema antes de intervir</strong>. Meu papel é fazer a ponte entre o que a ciência entrega e o que o dia a dia absorve — de forma prática, automatizada onde possível, e sempre <em>orientada a resultado</em>.</p>
-
-          <p>Em busca de <strong>qualidade de vida</strong>, migrei para o interior do RS — uma decisão que alinhou propósito e rotina. Há mais de dez anos como usuário de suplementação premium, em tempo parcial atuo como consultor independente em nutrição e bem-estar, construindo minha prática sobre um princípio que carrego de tudo que aprendi em tecnologia: <strong>cada pessoa é um sistema único</strong>, e a solução certa exige <strong>análise — nunca achismo</strong>. Se posso ajudar quem busca melhorar, assim o faço.</p>
-        </div>
-        <div class="quote">“Não ofereço o que está na moda. Ofereço o que resiste à análise.”</div>
-      </div>
-    </section>
-
-    <section class="work" aria-label="Princípios de trabalho">
-      <div class="inner">
-        <div class="work-grid">
-          <article class="pillar">
-            <h3>Ⅰ. Arquitetura da Informação</h3>
-            <p>Antes de qualquer recomendação, eu escuto, organizo e estruturo. Seu objetivo, sua rotina, suas restrições — tudo vira dado que fundamenta a solução. <strong>Sem diagnóstico, não há direção.</strong></p>
-          </article>
-
-          <article class="pillar">
-            <h3>Ⅱ. Solução Sob Medida</h3>
-            <p>Não existe protocolo universal. O que funciona para um atleta de alta performance pode ser excessivo para um profissional liberal, e insuficiente para um empreendedor em escala. <strong>A recomendação certa é proporcional à necessidade real — nunca ao hype.</strong></p>
-          </article>
-
-          <article class="pillar">
-            <h3>Ⅲ. Tecnologia como Vantagem</h3>
-            <p>Automação com IA, análise de dados e presença digital estratégica não são modismos — são ferramentas que aplico para <strong>reduzir ruído, amplificar resultado e eliminar o improviso</strong>. Onde outros veem complexidade, eu vejo processo.</p>
-          </article>
-
-          <article class="pillar">
-            <h3>Ⅳ. Experiência do Usuário</h3>
-            <p>Cada interação — seja numa página web, numa conversa ou na entrega de um produto — é projetada para ser fluida, clara e útil. <strong>O meio importa tanto quanto a mensagem, e a confiança se constrói em cada detalhe.</strong></p>
-          </article>
-
-          <article class="pillar full">
-            <h3>Ⅴ. Análise, Código e Parceria Técnica</h3>
-            <p>Nem todo projeto se resolve sozinho — e isso não é fraqueza, é maturidade. Dentro do meu escopo de <strong>desenvolvimento assistido</strong>, atuo na análise profunda de propostas, definição de arquitetura e estruturação do projeto. Quando o caso exige especialização específica, mobilizo uma <strong>rede curada de profissionais de programação</strong> — selecionados com critério, não por conveniência. O resultado: <strong>propostas reais para resultados reais</strong> — com ética, transparência e execução de qualidade.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="herbalife" aria-label="Por que Herbalife">
-      <div class="inner">
-        <div class="content">
-          <span class="tag">Referência de marca</span>
-          <h2>Por Que Herbalife</h2>
-          <p>A Herbalife é a <strong>marca número 1 em nutrição e bem-estar do mundo</strong>, com mais de 40 anos de pesquisa, <strong>300+ cientistas e PhDs</strong> e presença em 95 países. Não é sobre tendência — é sobre <strong>lastro científico</strong>.</p>
-          <p>Atuando como Distribuidor Independente Herbalife, posso levar <strong>planos acessíveis e realistas</strong> para quem busca performance, controle de peso ou simplesmente mais energia no dia a dia, através do <a href="https://catalogoherbalife.com.br/edusidegum" target="_blank" rel="noopener noreferrer">Catálogo de Produtos Herbalife Nutrition</a>.</p>
-          <p><strong>100% digital</strong>, com entrega em todo o Brasil, com a qualidade e garantia 'direto de fábrica'. Cada pessoa recebe acompanhamento personalizado, individualizado, e suporte Herbalife, através do programa <a href="https://edusidegum.github.io/cadastro/cadastro.html" target="_blank" rel="noopener noreferrer">Cliente Premium</a>, com descontos progressivos de até 32%.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-wrap" id="contato" aria-label="Contato">
-      <div class="contact-stage">
-        <img src="img/footer.png" alt="Rodapé visual" />
-        <div class="contact-card">
-          <h2>Contato</h2>
-          <p>WhatsApp e e-mail disponíveis para conversa direta, objetiva e com resposta rápida.</p>
-          <div class="contact-links">
-            <a href="https://wa.me/5551999663200" target="_blank" rel="noopener noreferrer">WhatsApp • (51) 9 9966-3200</a>
-            <a href="mailto:edusidegum@gmail.com">E-mail • edusidegum@gmail.com</a>
+    <section class="hero" aria-labelledby="sobre-hero">
+      <div class="hero-banner">
+        <div class="hero-inner">
+          <div class="eyebrow">Arquitetura digital • presença profissional</div>
+          <h1 id="sobre-hero" class="hero-title">Eduardo <span>Sidegum</span></h1>
+          <div class="hero-copy">
+            <p>Este espaço apresenta uma visão objetiva sobre repertório, processo e posicionamento para projetos web com foco em estrutura, clareza e valor percebido.</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <footer>
-      <img class="footer-image" src="img/footer.png" alt="Rodapé" />
-      <p>Eduardo Sidegum • Consultor Independente • Novo Hamburgo/RS</p>
-    </footer>
+      <div class="panel">
+        <section class="section-card about" aria-labelledby="sobre">
+          <div class="section-inner">
+            <h2 id="sobre" class="section-title">Sobre</h2>
+            <div class="about-text">
+              <p>Texto completo da section sobre, mantido em ritmo centralizado para leitura elegante e com presença visual no banner superior.</p>
+              <p>Essa composição foi pensada para destacar o conteúdo principal sem ruído, reforçando uma imagem profissional e consistente.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid" aria-label="Conteúdo principal">
+          <article class="card stack-2">
+            <div class="section-inner">
+              <h3>Referência e marca</h3>
+              <p>Estrutura, consistência e leitura limpa criam uma apresentação mais confiável. O foco aqui é transmitir maturidade visual sem exagero.</p>
+            </div>
+          </article>
+
+          <article class="card stack-2">
+            <div class="section-inner">
+              <h3>Atuação</h3>
+              <p>Organização de conteúdo, arquitetura da informação e refinamento de interface para páginas institucionais com personalidade própria.</p>
+            </div>
+          </article>
+
+          <article class="card stack-3">
+            <div class="section-inner">
+              <h3>Direção visual</h3>
+              <ul>
+                <li>Fundo escuro com variações de verde.</li>
+                <li>Camadas sutis e contraste controlado.</li>
+                <li>Hero forte com banner principal.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card stack-3">
+            <div class="section-inner">
+              <h3>Foco de apresentação</h3>
+              <ul>
+                <li>Leitura rápida e sofisticada.</li>
+                <li>Seções com hierarquia clara.</li>
+                <li>Elementos visuais discretos.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card stack-3">
+            <div class="section-inner">
+              <h3>Boas práticas</h3>
+              <ul>
+                <li>Menos ruído, mais precisão.</li>
+                <li>Conteúdo direto ao ponto.</li>
+                <li>Composição limpa e premium.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card reference">
+            <div class="section-inner">
+              <h3>Por que Herbalife</h3>
+              <div class="focus">
+                <div class="mini">
+                  O bloco foi mantido discreto, com leitura contida e sem competir com a narrativa principal da página.
+                </div>
+                <div class="mini">
+                  <span class="highlight">Catálogo Herbalife</span> e <span class="highlight">Cliente Premium</span> seguem presentes como referências internas, sem destaque excessivo.
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+
+      <section class="contact-wrap" aria-labelledby="contato">
+        <div class="footer-banner">
+          <div class="contact-overlay">
+            <div class="contact-card">
+              <h2 id="contato">contato</h2>
+              <p>Entre em contato para falar sobre arquitetura de site da empresa.</p>
+              <div class="contact-links">
+                <a class="btn email" href="mailto:dusidegum@gmail.com" aria-label="Enviar e-mail para dusidegum@gmail.com">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 6.5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.7"/>
+                    <path d="m5 7.5 7 6 7-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  dusidegum@gmail.com
+                </a>
+                <a class="btn whatsapp" href="https://wa.me/5551999663200" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp para conversa">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M20.4 11.8a8.3 8.3 0 0 1-11.4 7.7L4 20l.6-4.7A8.3 8.3 0 1 1 20.4 11.8Z" stroke="currentColor" stroke-width="1.7"/>
+                    <path d="M9.2 8.8c.2-.4.4-.5.7-.5h.5c.2 0 .4 0 .5.4l.7 1.8c.1.3 0 .5-.1.7l-.5.6c-.1.1-.2.3-.1.5.4.9 1.8 2.2 2.7 2.7.2.1.4.1.5 0l.7-.4c.2-.1.5-.2.7-.1l1.8.7c.3.1.4.3.4.5v.5c0 .3-.1.5-.5.7-.3.2-.9.3-1.4.3-4.8 0-8.8-4-8.8-8.8 0-.5.1-1.1.3-1.4Z" fill="currentColor"/>
+                  </svg>
+                  quero falar sobre arquitetura de site da empresa.
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-note">
+        <span class="subtle">Eduardo Sidegum</span>
+      </div>
+    </section>
   </main>
 </body>
 </html>
