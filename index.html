@@ -3,58 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07110c" />
-  <title>Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação</title>
-  <meta name="description" content="Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance." />
   <meta name="robots" content="index,follow" />
-  <meta name="author" content="Eduardo Sidegum" />
-  <meta name="keywords" content="Eduardo Sidegum, Consultor Independente Herbalife, sistemas de informação, arquitetura da informação, estratégia digital, inteligência artificial, bem-estar, nutrição, Novo Hamburgo" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação" />
-  <meta property="og:description" content="Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance." />
-  <meta property="og:image" content="img/og-image-e.png" />
-  <meta property="og:image:alt" content="Eduardo Sidegum — consultor e arquiteto de sistemas aplicado ao bem-estar" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sobre — Eduardo Sidegum" />
-  <meta name="twitter:description" content="Consultoria, sistemas, estratégia digital e bem-estar com abordagem analítica." />
-  <meta name="twitter:image" content="img/og-image-e.png" />
-  <link rel="icon" href="img/favicon.png" />
+  <meta name="description" content="Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance." />
+  <title>Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação</title>
   <style>
     :root {
-      --bg: #06110c;
-      --bg-2: #091913;
-      --surface: rgba(12, 26, 19, 0.82);
-      --surface-2: rgba(16, 35, 26, 0.88);
-      --line: rgba(128, 255, 188, 0.14);
-      --line-strong: rgba(126, 255, 179, 0.24);
-      --text: #e8f7ef;
-      --muted: #a7c7b4;
-      --muted-2: #7ca18b;
-      --accent: #7ef0a8;
-      --accent-2: #3dbf83;
-      --accent-3: #1c6f51;
-      --shadow: 0 30px 90px rgba(0, 0, 0, 0.48);
+      --bg: #07110c;
+      --bg-2: #0c1711;
+      --panel: rgba(9, 20, 14, 0.78);
+      --panel-2: rgba(14, 26, 19, 0.92);
+      --line: rgba(140, 255, 176, 0.12);
+      --line-2: rgba(140, 255, 176, 0.2);
+      --text: #eaf7ee;
+      --muted: #a4c2af;
+      --soft: #7fa88b;
+      --accent: #8cffb0;
+      --accent-2: #56d98a;
+      --accent-3: #c8ffd8;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.48);
       --radius: 28px;
       --radius-sm: 18px;
-      --script: "Segoe Script", "Snell Roundhand", "Brush Script MT", cursive;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      min-height: 100vh;
       color: var(--text);
-      font-family: var(--sans);
       background:
-        radial-gradient(circle at top left, rgba(61, 191, 131, 0.14), transparent 34%),
-        radial-gradient(circle at top right, rgba(126, 240, 168, 0.08), transparent 28%),
-        linear-gradient(180deg, #040a07 0%, #07110c 26%, #08130e 56%, #050906 100%);
+        radial-gradient(circle at 20% 10%, rgba(92, 255, 160, 0.10), transparent 34%),
+        radial-gradient(circle at 85% 18%, rgba(63, 190, 110, 0.11), transparent 26%),
+        linear-gradient(180deg, #06110c 0%, #091510 42%, #06100b 100%);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       overflow-x: hidden;
     }
 
@@ -63,802 +43,528 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.35) 68%, rgba(0,0,0,0.12));
-      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 72px 72px;
+      opacity: .18;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
     }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: auto -10% -24% -10%;
-      height: 42vh;
-      pointer-events: none;
-      background: radial-gradient(circle at 50% 0%, rgba(126, 240, 168, 0.16), transparent 62%);
-      filter: blur(28px);
-      opacity: 0.9;
-    }
-
-    a { color: inherit; }
 
     .page {
+      width: min(1220px, calc(100% - 32px));
+      margin: 0 auto;
       position: relative;
       z-index: 1;
-      width: min(1240px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 28px 0 42px;
-    }
-
-    .ambient {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: -1;
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(6px);
-      opacity: 0.65;
-      animation: float 14s ease-in-out infinite;
-    }
-
-    .orb.one {
-      width: 320px;
-      height: 320px;
-      left: -110px;
-      top: 50px;
-      background: radial-gradient(circle at 30% 30%, rgba(126, 240, 168, 0.28), rgba(126, 240, 168, 0.04) 58%, transparent 70%);
-    }
-
-    .orb.two {
-      width: 220px;
-      height: 220px;
-      right: 8%;
-      top: 190px;
-      background: radial-gradient(circle at 35% 35%, rgba(61, 191, 131, 0.22), rgba(61, 191, 131, 0.03) 54%, transparent 72%);
-      animation-delay: -5s;
-    }
-
-    .orb.three {
-      width: 360px;
-      height: 360px;
-      right: -140px;
-      bottom: 120px;
-      background: radial-gradient(circle at 40% 40%, rgba(28, 111, 81, 0.2), rgba(28, 111, 81, 0.03) 58%, transparent 74%);
-      animation-delay: -9s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-      50% { transform: translate3d(0, -16px, 0) scale(1.03); }
     }
 
     .hero {
       position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-      gap: 22px;
-      align-items: stretch;
-      margin-bottom: 22px;
-    }
-
-    .hero-panel,
-    .hero-visual,
-    .section,
-    .footer-shell {
-      background: linear-gradient(180deg, rgba(20, 39, 31, 0.92), rgba(7, 15, 11, 0.9));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .hero-panel {
-      padding: 26px 26px 22px;
-      position: relative;
       overflow: hidden;
+      border-radius: 0 0 34px 34px;
+      border: 1px solid rgba(140, 255, 176, 0.08);
+      box-shadow: var(--shadow);
+      margin-top: 14px;
+      background:
+        linear-gradient(180deg, rgba(3, 8, 5, 0.35), rgba(3, 8, 5, 0.74)),
+        radial-gradient(circle at top left, rgba(110, 255, 170, 0.15), transparent 28%),
+        #06110c;
+      min-height: clamp(300px, 42vw, 520px);
+      isolation: isolate;
     }
 
-    .hero-panel::before {
+    .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(126, 240, 168, 0.12), transparent 36%);
-      pointer-events: none;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 18px;
-      position: relative;
+      background:
+        linear-gradient(120deg, rgba(140, 255, 176, 0.18), transparent 34%),
+        linear-gradient(260deg, transparent 55%, rgba(88, 217, 136, 0.10) 100%);
+      mix-blend-mode: screen;
       z-index: 1;
+      pointer-events: none;
+      animation: drift 18s ease-in-out infinite alternate;
     }
 
-    .brand img {
+    .hero img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
       display: block;
-      width: min(280px, 68vw);
-      height: auto;
-      filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.36));
+      filter: saturate(1.02) contrast(1.03) brightness(.8);
+      transform: scale(1.01);
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: auto 0 0 0;
+      z-index: 2;
+      padding: clamp(20px, 4vw, 42px);
+      background: linear-gradient(180deg, transparent, rgba(4, 12, 8, 0.94) 68%);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      font-size: 0.72rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 38px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    }
-
-    h1 {
-      margin: 0 0 16px;
-      font-size: clamp(2.05rem, 4.8vw, 4.25rem);
-      line-height: 0.96;
-      letter-spacing: -0.05em;
-      max-width: 11ch;
-    }
-
-    .hero-copy {
-      color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.8;
-      max-width: 66ch;
-      margin: 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-copy strong { color: var(--text); }
-
-    .hero-meta {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .meta-chip {
-      padding: 14px 14px 13px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.45;
-    }
-
-    .meta-chip strong {
-      display: block;
-      color: var(--text);
-      font-size: 0.92rem;
-      margin-bottom: 4px;
-      letter-spacing: 0.01em;
-    }
-
-    .hero-visual {
-      position: relative;
-      overflow: hidden;
-      min-height: 100%;
-      padding: 14px;
-    }
-
-    .hero-image {
-      position: relative;
-      height: 100%;
-      min-height: 430px;
-      border-radius: calc(var(--radius) - 4px);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.07);
-      background:
-        linear-gradient(180deg, rgba(4,10,7,0.02), rgba(4,10,7,0.64)),
-        url("img/banner.png") center/cover no-repeat;
-      transform: translateZ(0);
-    }
-
-    .hero-image::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(7, 17, 12, 0.12), rgba(7, 17, 12, 0.62) 72%, rgba(7, 17, 12, 0.9)),
-        radial-gradient(circle at 50% 18%, rgba(126, 240, 168, 0.16), transparent 38%);
-    }
-
-    .hero-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.06) 50%, transparent 80%);
-      transform: translateX(-120%);
-      animation: shimmer 9s ease-in-out infinite;
-      opacity: 0.55;
-    }
-
-    @keyframes shimmer {
-      0%, 55% { transform: translateX(-120%); }
-      70%, 100% { transform: translateX(120%); }
-    }
-
-    .hero-badge {
-      position: absolute;
-      left: 18px;
-      top: 18px;
-      z-index: 2;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
+      padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(6, 17, 12, 0.5);
-      border: 1px solid rgba(126, 240, 168, 0.2);
-      color: var(--accent);
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
+      border: 1px solid rgba(140, 255, 176, 0.15);
+      background: rgba(5, 16, 10, 0.46);
+      color: var(--accent-3);
+      letter-spacing: .14em;
       text-transform: uppercase;
-      backdrop-filter: blur(14px);
+      font-size: .72rem;
+      font-weight: 700;
+      backdrop-filter: blur(12px);
     }
 
-    .hero-badge::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(126, 240, 168, 0.12);
+    .hero h1 {
+      margin: 14px 0 10px;
+      font-size: clamp(2rem, 5.4vw, 4.8rem);
+      line-height: .94;
+      letter-spacing: -.05em;
+      text-wrap: balance;
     }
 
-    .hero-badge img {
-      width: 64px;
-      height: auto;
-      margin-left: 6px;
-      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.28));
+    .hero p {
+      margin: 0;
+      max-width: 58rem;
+      color: rgba(231, 248, 236, 0.84);
+      font-size: clamp(1rem, 1.5vw, 1.08rem);
+      line-height: 1.7;
     }
 
-    .hero-caption {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      z-index: 2;
-      padding: 18px 18px 17px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(8, 16, 12, 0.18), rgba(8, 16, 12, 0.72));
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--text);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.24);
+    main {
+      display: grid;
+      gap: 22px;
+      padding: 22px 0 0;
     }
 
-    .hero-caption strong {
-      display: block;
-      font-size: 1.02rem;
-      margin-bottom: 6px;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-caption span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.55;
-    }
-
-    .section {
-      margin-top: 18px;
-      padding: 24px;
+    section {
       position: relative;
       overflow: hidden;
+      border: 1px solid rgba(140, 255, 176, 0.08);
+      background: linear-gradient(180deg, rgba(10, 23, 16, 0.82), rgba(8, 17, 12, 0.92));
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+      border-radius: var(--radius);
     }
 
-    .section + .section { margin-top: 16px; }
-
-    .section::before {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      border-radius: calc(var(--radius) - 1px);
-      pointer-events: none;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent 40%);
-    }
-
-    .section-head {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: end;
-      gap: 12px;
-      margin-bottom: 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-label {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 0.72rem;
-      font-weight: 800;
+    section .inner {
+      padding: clamp(24px, 4vw, 44px);
     }
 
     .section-title {
-      margin: 2px 0 0;
-      font-size: clamp(1.55rem, 2.8vw, 2.25rem);
-      letter-spacing: -0.03em;
-      line-height: 1.05;
+      margin: 0 0 18px;
+      font-size: clamp(1.2rem, 1.9vw, 1.6rem);
+      letter-spacing: -.02em;
+      color: var(--accent-3);
     }
 
-    .section-note {
-      margin: 0;
-      color: var(--muted-2);
-      font-size: 0.92rem;
-      line-height: 1.45;
-      max-width: 56ch;
+    .floating {
+      position: absolute;
+      inset: auto -90px -60px auto;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(140, 255, 176, 0.18), transparent 64%);
+      filter: blur(8px);
+      pointer-events: none;
+      animation: float 12s ease-in-out infinite;
     }
 
-    .about-section {
-      font-size: 1.2rem;
+    .about {
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(8, 20, 13, 0.92), rgba(6, 15, 10, 0.94)),
+        radial-gradient(circle at 50% 20%, rgba(140, 255, 176, 0.08), transparent 34%);
     }
 
-    .about-section .section-title {
-      font-family: var(--script);
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: 0.01em;
-      color: #dff8e9;
+    .about .name {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      letter-spacing: -.05em;
+      line-height: 1;
+      color: var(--accent-3);
     }
 
-    .about-section .content p,
-    .about-section .content blockquote {
-      font-size: 1.08em;
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .content p {
-      margin: 0 0 16px;
-      color: var(--text);
+    .about-copy {
+      font-family: "Segoe Script", "Brush Script MT", "Snell Roundhand", cursive;
+      font-size: clamp(1.28rem, 1.45vw + 1rem, 1.72rem);
       line-height: 1.9;
-      max-width: 76ch;
+      margin: 0 auto;
+      max-width: 940px;
+      text-align: center;
+      color: rgba(237, 252, 241, 0.95);
+      text-wrap: pretty;
+      font-weight: 500;
+      letter-spacing: .01em;
     }
 
-    .content strong { color: #f3fff8; }
+    .about-copy p {
+      margin: 0 0 1rem;
+    }
 
-    .content em { color: #c8f7dd; }
-
-    blockquote {
-      margin: 20px 0 0;
-      padding: 18px 20px;
-      border-left: 3px solid var(--accent);
-      border-radius: 0 16px 16px 0;
-      background: rgba(126, 240, 168, 0.05);
-      color: #dff8e9;
+    .quote {
+      margin: 22px auto 0;
+      width: fit-content;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(140, 255, 176, 0.08);
+      color: var(--accent-3);
+      border: 1px solid rgba(140, 255, 176, 0.10);
+      font-size: .98rem;
       font-style: italic;
-      font-family: var(--script);
-      font-size: 1.15rem;
-      line-height: 1.65;
-      max-width: 58ch;
     }
 
-    .pillars {
+    .work {
+      padding-top: 6px;
+      background: linear-gradient(180deg, rgba(8, 16, 11, 0.92), rgba(6, 13, 9, 0.96));
+    }
+
+    .work-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(12, 1fr);
       gap: 14px;
-      margin-top: 18px;
     }
 
     .pillar {
-      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 18px;
-      padding: 16px 15px 15px;
-      min-height: 100%;
-      transition: transform .35s ease, border-color .35s ease, background .35s ease;
+      grid-column: span 6;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, rgba(16, 34, 24, 0.9), rgba(9, 21, 14, 0.96));
+      border: 1px solid rgba(140, 255, 176, 0.08);
+      padding: 18px 18px 16px;
+      position: relative;
+      overflow: hidden;
+      min-height: 160px;
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
     }
 
     .pillar:hover {
-      transform: translateY(-5px);
-      border-color: rgba(126, 240, 168, 0.24);
-      background: linear-gradient(180deg, rgba(126,240,168,0.06), rgba(255,255,255,0.02));
+      transform: translateY(-4px);
+      border-color: rgba(140, 255, 176, 0.22);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
     }
 
-    .pillar .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 11px;
-      background: rgba(126, 240, 168, 0.11);
-      color: var(--accent);
-      font-weight: 800;
-      margin-bottom: 12px;
+    .pillar::after {
+      content: "";
+      position: absolute;
+      inset: auto -20px -20px auto;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(140, 255, 176, 0.13), transparent 62%);
+      filter: blur(6px);
+      pointer-events: none;
     }
 
     .pillar h3 {
       margin: 0 0 10px;
-      font-size: 1rem;
-      line-height: 1.2;
+      font-size: 1.08rem;
+      color: var(--accent-3);
+      letter-spacing: -.01em;
     }
 
     .pillar p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.75;
+      line-height: 1.78;
+      font-size: .98rem;
     }
 
-    .discreet {
-      font-size: 0.92rem;
-      line-height: 1.65;
-      color: #cfe8d8;
+    .pillar.full {
+      grid-column: span 12;
     }
 
-    .discreet .section-title {
-      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
+    .pillar.full p strong {
+      color: var(--accent-3);
     }
 
-    .discreet .section-label {
-      color: #89c8a7;
-      font-size: 0.67rem;
-      opacity: 0.9;
+    .herbalife {
+      background: linear-gradient(180deg, rgba(9, 20, 14, 0.92), rgba(5, 13, 9, 0.96));
     }
 
-    .discreet p {
-      max-width: 80ch;
-      color: var(--muted);
+    .herbalife .content {
+      display: grid;
+      gap: 14px;
+      max-width: 980px;
     }
 
-    .subtle-link {
-      color: inherit;
+    .herbalife .tag {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 255, 176, 0.16);
+      background: rgba(140, 255, 176, 0.06);
+      color: var(--accent-3);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .herbalife h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+      letter-spacing: -.03em;
+    }
+
+    .herbalife p {
+      margin: 0;
+      color: rgba(225, 244, 230, 0.87);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .herbalife a {
+      color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid rgba(126, 240, 168, 0.18);
-      transition: border-color .25s ease, color .25s ease, opacity .25s ease;
+      border-bottom: 1px solid rgba(140, 255, 176, 0.28);
+      transition: color .25s ease, border-color .25s ease, opacity .25s ease;
       white-space: nowrap;
     }
 
-    .subtle-link:hover {
-      color: var(--text);
-      border-bottom-color: rgba(126, 240, 168, 0.46);
-      opacity: 1;
+    .herbalife a:hover {
+      color: #d7ffe5;
+      border-bottom-color: rgba(215, 255, 229, 0.8);
     }
 
-    .subtle-link:focus-visible {
-      outline: 2px solid rgba(126, 240, 168, 0.4);
-      outline-offset: 3px;
-      border-bottom-color: transparent;
+    .contact-wrap {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 6px;
-    }
-
-    .contact-card {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .contact-card strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 8px;
-      font-size: 0.98rem;
-    }
-
-    .contact-card a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(126,240,168,0.18);
-    }
-
-    .contact-card a:hover { border-bottom-color: rgba(126,240,168,0.5); }
-
-    footer {
-      margin-top: 18px;
-    }
-
-    .footer-shell {
+    .contact-stage {
       position: relative;
+      border-radius: 34px;
       overflow: hidden;
-      min-height: 220px;
-      border-color: rgba(126, 240, 168, 0.16);
+      border: 1px solid rgba(140, 255, 176, 0.09);
+      box-shadow: var(--shadow);
+      min-height: 340px;
       background:
-        linear-gradient(180deg, rgba(3, 8, 6, 0.18), rgba(3, 8, 6, 0.9)),
-        url("img/footer.png") center/cover no-repeat;
+        linear-gradient(180deg, rgba(4, 10, 7, 0.12), rgba(4, 10, 7, 0.62)),
+        #07110c;
     }
 
-    .footer-shell::before {
+    .contact-stage::before {
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at 18% 30%, rgba(126, 240, 168, 0.16), transparent 30%),
-        linear-gradient(180deg, rgba(7, 17, 12, 0.02), rgba(7, 17, 12, 0.78));
+      background: linear-gradient(180deg, rgba(4,12,8,0.05), rgba(4,12,8,0.60));
+      z-index: 1;
       pointer-events: none;
     }
 
-    .footer-inner {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
-      min-height: 220px;
-      padding: 22px 24px;
-      color: #bfe8cf;
+    .contact-stage img {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.95) contrast(1.04) brightness(.74);
     }
 
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .footer-brand img {
-      width: min(260px, 72vw);
-      height: auto;
-      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.34));
-    }
-
-    .footer-copy {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 18px;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 10px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: #d7f5e4;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    .footer-copy strong { color: var(--accent); }
-
-    .floating-line {
+    .contact-card {
       position: absolute;
-      inset: auto 0 0;
+      left: clamp(16px, 4vw, 40px);
+      right: clamp(16px, 4vw, 40px);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      max-width: 620px;
+      padding: clamp(20px, 3vw, 30px);
+      border-radius: 24px;
+      background: rgba(6, 18, 11, 0.74);
+      border: 1px solid rgba(140, 255, 176, 0.14);
+      backdrop-filter: blur(14px);
+    }
+
+    .contact-card h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+      letter-spacing: -.03em;
+    }
+
+    .contact-card p {
+      margin: 0 0 18px;
+      color: rgba(231, 248, 236, 0.82);
+      line-height: 1.72;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text);
+      background: linear-gradient(180deg, rgba(140, 255, 176, 0.12), rgba(140, 255, 176, 0.06));
+      border: 1px solid rgba(140, 255, 176, 0.14);
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .contact-links a:hover {
+      transform: translateY(-2px);
+      border-color: rgba(140, 255, 176, 0.28);
+      background: linear-gradient(180deg, rgba(140, 255, 176, 0.18), rgba(140, 255, 176, 0.08));
+    }
+
+    footer {
+      margin: 20px 0 8px;
+      color: rgba(205, 234, 214, 0.72);
+      text-align: center;
+      font-size: .92rem;
+      letter-spacing: .02em;
+    }
+
+    .footer-image {
+      display: block;
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 28px;
+      margin-top: 18px;
+      filter: saturate(.98) contrast(1.02) brightness(.72) hue-rotate(-6deg);
+      border: 1px solid rgba(140, 255, 176, 0.08);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(126, 240, 168, 0.32), transparent);
-      opacity: 0.8;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
-    @media (max-width: 1100px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-image { min-height: 350px; }
-      .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @keyframes float {
+      0% { transform: translate3d(0, 0, 0) scale(1); opacity: .68; }
+      50% { transform: translate3d(-8px, -18px, 0) scale(1.04); opacity: .9; }
+      100% { transform: translate3d(6px, 10px, 0) scale(.98); opacity: .72; }
     }
 
-    @media (max-width: 760px) {
-      .page { width: min(100% - 20px, 1240px); padding-top: 18px; }
-      .hero-panel,
-      .section,
-      .footer-inner { padding-left: 18px; padding-right: 18px; }
-      .hero-meta,
-      .contact-grid,
-      .pillars { grid-template-columns: 1fr; }
-      h1 { max-width: 12ch; }
-      .hero-image { min-height: 300px; }
-      .about-section { font-size: 1.13rem; }
-      .footer-copy { flex-direction: column; align-items: flex-start; }
+    @keyframes drift {
+      0% { transform: translateX(-1.5%) translateY(0); }
+      100% { transform: translateX(1.5%) translateY(-1%); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-        scroll-behavior: auto !important;
+    @media (max-width: 860px) {
+      .pillar, .pillar.full { grid-column: span 12; }
+      .hero h1 { line-height: 1.02; }
+      .contact-card {
+        top: auto;
+        bottom: 16px;
+        transform: none;
       }
+    }
+
+    @media (max-width: 620px) {
+      .page { width: min(100% - 20px, 1220px); }
+      section .inner { padding: 20px; }
+      .contact-links a { width: 100%; justify-content: center; }
+      .about-copy { font-size: 1.14rem; line-height: 1.85; }
+      .hero { min-height: 360px; }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <div class="ambient" aria-hidden="true">
-      <div class="orb one"></div>
-      <div class="orb two"></div>
-      <div class="orb three"></div>
-    </div>
-
-    <section class="hero" aria-label="Apresentação">
-      <div class="hero-panel">
-        <div class="brand">
-          <img src="img/header-largo.png" alt="Eduardo Sidegum" />
-        </div>
-
-        <div class="eyebrow">Sobre</div>
+    <header class="hero" aria-label="Banner principal">
+      <img src="img/banner.png" alt="Banner principal" />
+      <div class="hero-content">
+        <span class="eyebrow">Consultor Independente • Sistemas • Bem-estar</span>
         <h1>Eduardo Sidegum</h1>
-
-        <p class="hero-copy">
-          Minha formação em <strong>Sistemas de Informação</strong> — com toda a visão de <strong>arquitetura, fluxo e estrutura de dados</strong> que ela exige
-          — combinada à experiência como <strong>engenheiro de sistemas Microsoft</strong> em ambiente corporativo de alto volume,
-          me deu uma lente incomum para enxergar o mercado de bem-estar. Enquanto a maioria olha para produtos isolados,
-          eu olho para <strong>sistemas completos</strong>: a rotina do cliente é um processo, os hábitos são dados, os resultados são métricas.
-          E toda melhoria sustentável nasce de um <strong>diagnóstico bem feito</strong> — não de chutes. Essa abordagem, que funcionou para servidores e redes,
-          funciona também para corpos, mentes e negócios. <strong>Estrutura, fluxo, evidência e resultado mensurável</strong> — esse é o meu método,
-          aplicado onde quer que eu atue.
-        </p>
-
-        <div class="hero-meta" aria-label="Destaques">
-          <div class="meta-chip"><strong>Perfil</strong>Consultor Independente Herbalife em Novo Hamburgo/RS</div>
-          <div class="meta-chip"><strong>Foco</strong>Arquitetura da informação, estratégia digital e IA</div>
-          <div class="meta-chip"><strong>Abordagem</strong>Projeto sob medida, sem fórmula pronta</div>
-        </div>
+        <p>Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance.</p>
       </div>
+    </header>
 
-      <aside class="hero-visual" aria-label="Imagem principal">
-        <div class="hero-image">
-          <div class="hero-badge">
-            Identidade visual
-            <img src="img/vertical-staked.png" alt="Logotipo" />
-          </div>
-          <div class="hero-caption">
-            <strong>Estrutura, fluxo e resultado</strong>
-            <span>Uma apresentação mais madura, com leitura executiva, contraste contido e elementos visuais discretos.</span>
-          </div>
+    <section class="about" id="sobre">
+      <div class="inner">
+        <h2 class="name">Eduardo Sidegum</h2>
+        <div class="about-copy">
+          <p>Formação em <strong>Sistemas de Informação</strong> — com toda a visão de <strong>arquitetura, fluxo e estrutura de dados</strong> que ela exige — combinada à experiência como <strong>engenheiro de sistemas Microsoft</strong> em ambiente corporativo de alto volume, me deu uma lente incomum para enxergar o mercado de bem-estar. Enquanto a maioria olha para produtos isolados, eu olho para <strong>sistemas completos</strong>: a rotina do cliente é um processo, os hábitos são dados, os resultados são métricas. E toda melhoria sustentável nasce de um <strong>diagnóstico bem feito</strong> — não de chutes. Essa abordagem, que funcionou para servidores e redes, funciona também para corpos, mentes e negócios. <strong>Estrutura, fluxo, evidência e resultado mensurável</strong> — esse é o meu método, aplicado onde quer que eu atue.</p>
+
+          <p>Hoje, esse raciocínio se traduz em entregas concretas: integro <strong>estratégia digital</strong>, <strong>automação com inteligência artificial</strong> e um conhecimento de mercado construído na prática para desenhar soluções que respeitam o tamanho, o momento e o objetivo de cada pessoa ou negócio. Não entrego fórmula pronta — entrego <strong>projeto sob medida</strong>. Seja para o atleta que busca performance com suplementação precisa, seja para o empreendedor que quer agregar uma nova linha de receita ao negócio sem complexidade, o ponto de partida é o mesmo: <strong>entender o sistema antes de intervir</strong>. Meu papel é fazer a ponte entre o que a ciência entrega e o que o dia a dia absorve — de forma prática, automatizada onde possível, e sempre <em>orientada a resultado</em>.</p>
+
+          <p>Em busca de <strong>qualidade de vida</strong>, migrei para o interior do RS — uma decisão que alinhou propósito e rotina. Há mais de dez anos como usuário de suplementação premium, em tempo parcial atuo como consultor independente em nutrição e bem-estar, construindo minha prática sobre um princípio que carrego de tudo que aprendi em tecnologia: <strong>cada pessoa é um sistema único</strong>, e a solução certa exige <strong>análise — nunca achismo</strong>. Se posso ajudar quem busca melhorar, assim o faço.</p>
         </div>
-      </aside>
-    </section>
-
-    <section class="section about-section" aria-labelledby="sobre-title">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Sobre</div>
-          <h2 id="sobre-title" class="section-title">Visão, método e aplicação prática</h2>
-        </div>
-        <p class="section-note">A seção ganhou 20% de respiro visual e um tratamento tipográfico mais elegante, sem alterar o conteúdo.</p>
-      </div>
-
-      <div class="content">
-        <p>Hoje, esse raciocínio se traduz em entregas concretas: integro <strong>estratégia digital</strong>, <strong>automação com inteligência artificial</strong>
-e um conhecimento de mercado construído na prática para desenhar soluções que respeitam o tamanho, o momento e o objetivo
-de cada pessoa ou negócio. Não entrego fórmula pronta — entrego <strong>projeto sob medida</strong>. Seja para o atleta que busca performance
-com suplementação precisa, seja para o empreendedor que quer agregar uma nova linha de receita ao negócio sem complexidade,
-o ponto de partida é o mesmo: <strong>entender o sistema antes de intervir</strong>. Meu papel é fazer a ponte entre o que a ciência entrega
-e o que o dia a dia absorve — de forma prática, automatizada onde possível, e sempre <em>orientada a resultado</em>.</p>
-
-        <p>Em busca de <strong>qualidade de vida</strong>, migrei para o interior do RS — uma decisão que alinhou propósito e rotina.
-Há mais de dez anos como usuário de suplementação premium, em tempo parcial atuo como consultor independente
-em nutrição e bem-estar, construindo minha prática sobre um princípio que carrego de tudo que aprendi em tecnologia:
-<strong>cada pessoa é um sistema único</strong>, e a solução certa exige <strong>análise — nunca achismo</strong>. Se posso ajudar quem busca melhorar, assim o faço.</p>
-
-        <blockquote>“Não ofereço o que está na moda. Ofereço o que resiste à análise.”</blockquote>
+        <div class="quote">“Não ofereço o que está na moda. Ofereço o que resiste à análise.”</div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="work-title">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Como Trabalho</div>
-          <h2 id="work-title" class="section-title">Cinco pilares orientam cada projeto e cada atendimento</h2>
+    <section class="work" aria-label="Princípios de trabalho">
+      <div class="inner">
+        <div class="work-grid">
+          <article class="pillar">
+            <h3>Ⅰ. Arquitetura da Informação</h3>
+            <p>Antes de qualquer recomendação, eu escuto, organizo e estruturo. Seu objetivo, sua rotina, suas restrições — tudo vira dado que fundamenta a solução. <strong>Sem diagnóstico, não há direção.</strong></p>
+          </article>
+
+          <article class="pillar">
+            <h3>Ⅱ. Solução Sob Medida</h3>
+            <p>Não existe protocolo universal. O que funciona para um atleta de alta performance pode ser excessivo para um profissional liberal, e insuficiente para um empreendedor em escala. <strong>A recomendação certa é proporcional à necessidade real — nunca ao hype.</strong></p>
+          </article>
+
+          <article class="pillar">
+            <h3>Ⅲ. Tecnologia como Vantagem</h3>
+            <p>Automação com IA, análise de dados e presença digital estratégica não são modismos — são ferramentas que aplico para <strong>reduzir ruído, amplificar resultado e eliminar o improviso</strong>. Onde outros veem complexidade, eu vejo processo.</p>
+          </article>
+
+          <article class="pillar">
+            <h3>Ⅳ. Experiência do Usuário</h3>
+            <p>Cada interação — seja numa página web, numa conversa ou na entrega de um produto — é projetada para ser fluida, clara e útil. <strong>O meio importa tanto quanto a mensagem, e a confiança se constrói em cada detalhe.</strong></p>
+          </article>
+
+          <article class="pillar full">
+            <h3>Ⅴ. Análise, Código e Parceria Técnica</h3>
+            <p>Nem todo projeto se resolve sozinho — e isso não é fraqueza, é maturidade. Dentro do meu escopo de <strong>desenvolvimento assistido</strong>, atuo na análise profunda de propostas, definição de arquitetura e estruturação do projeto. Quando o caso exige especialização específica, mobilizo uma <strong>rede curada de profissionais de programação</strong> — selecionados com critério, não por conveniência. O resultado: <strong>propostas reais para resultados reais</strong> — com ética, transparência e execução de qualidade.</p>
+          </article>
         </div>
-      </div>
-
-      <div class="pillars">
-        <article class="pillar">
-          <div class="num">Ⅰ</div>
-          <h3>Arquitetura da Informação</h3>
-          <p>Antes de qualquer recomendação, eu escuto, organizo e estruturo. Seu objetivo, sua rotina, suas restrições — tudo vira dado que fundamenta a solução. <strong>Sem diagnóstico, não há direção.</strong></p>
-        </article>
-
-        <article class="pillar">
-          <div class="num">Ⅱ</div>
-          <h3>Solução Sob Medida</h3>
-          <p>Não existe protocolo universal. O que funciona para um atleta de alta performance pode ser excessivo para um profissional liberal, e insuficiente para um empreendedor em escala. <strong>A recomendação certa é proporcional à necessidade real — nunca ao hype.</strong></p>
-        </article>
-
-        <article class="pillar">
-          <div class="num">Ⅲ</div>
-          <h3>Tecnologia como Vantagem</h3>
-          <p>Automação com IA, análise de dados e presença digital estratégica não são modismos — são ferramentas que aplico para <strong>reduzir ruído, amplificar resultado e eliminar o improviso</strong>. Onde outros veem complexidade, eu vejo processo.</p>
-        </article>
-
-        <article class="pillar">
-          <div class="num">Ⅳ</div>
-          <h3>Experiência do Usuário</h3>
-          <p>Cada interação — seja numa página web, numa conversa ou na entrega de um produto — é projetada para ser fluida, clara e útil. <strong>O meio importa tanto quanto a mensagem, e a confiança se constrói em cada detalhe.</strong></p>
-        </article>
-
-        <article class="pillar">
-          <div class="num">Ⅴ</div>
-          <h3>Análise, Código e Parceria Técnica</h3>
-          <p>Nem todo projeto se resolve sozinho — e isso não é fraqueza, é maturidade. Dentro do meu escopo de <strong>desenvolvimento assistido</strong>, atuo na análise profunda de propostas, definição de arquitetura e estruturação do projeto antes de uma linha de código ser escrita. Quando o caso exige especialização específica, mobilizo uma <strong>rede curada de profissionais de programação</strong> — selecionados com critério, não por conveniência. O resultado: <strong>propostas reais para resultados reais</strong> — com ética, transparência e execução de qualidade.</p>
-        </article>
       </div>
     </section>
 
-    <section class="section discreet" aria-labelledby="herbalife-title">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Por Que Herbalife</div>
-          <h2 id="herbalife-title" class="section-title">Discreto, objetivo e sem exagero visual</h2>
+    <section class="herbalife" aria-label="Por que Herbalife">
+      <div class="inner">
+        <div class="content">
+          <span class="tag">Referência de marca</span>
+          <h2>Por Que Herbalife</h2>
+          <p>A Herbalife é a <strong>marca número 1 em nutrição e bem-estar do mundo</strong>, com mais de 40 anos de pesquisa, <strong>300+ cientistas e PhDs</strong> e presença em 95 países. Não é sobre tendência — é sobre <strong>lastro científico</strong>.</p>
+          <p>Atuando como Distribuidor Independente Herbalife, posso levar <strong>planos acessíveis e realistas</strong> para quem busca performance, controle de peso ou simplesmente mais energia no dia a dia, através do <a href="https://catalogoherbalife.com.br/edusidegum" target="_blank" rel="noopener noreferrer">Catálogo de Produtos Herbalife Nutrition</a>.</p>
+          <p><strong>100% digital</strong>, com entrega em todo o Brasil, com a qualidade e garantia 'direto de fábrica'. Cada pessoa recebe acompanhamento personalizado, individualizado, e suporte Herbalife, através do programa <a href="https://edusidegum.github.io/cadastro/cadastro.html" target="_blank" rel="noopener noreferrer">Cliente Premium</a>, com descontos progressivos de até 32%.</p>
         </div>
-      </div>
-
-      <div class="content">
-        <p>A Herbalife é a <strong>marca número 1 em nutrição e bem-estar do mundo</strong>,
-com mais de 40 anos de pesquisa, <strong>300+ cientistas e PhDs</strong> e presença
-em 95 países. Não é sobre tendência — é sobre <strong>lastro científico</strong>.</p>
-
-        <p>Como Consultor Independente Herbalife, levo <strong>planos</strong>
-<strong>acessíveis e realistas</strong> para quem busca performance, controle de peso ou
-simplesmente mais energia no dia a dia, apresentando o
-<strong><a class="subtle-link" href="https://catalogoherbalife.com.br/edusidegum">Catálogo de Produtos</a></strong>.</p>
-
-        <p><strong>100% digital</strong>, com entrega em todo o Brasil.
-Cada cliente recebe acompanhamento personalizado e acesso ao programa
-<strong><a class="subtle-link" href="https://edusidegum.github.io/cadastro/cadastro.html">Cliente Premium</a></strong>,
-com descontos progressivos de até 32%.</p>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="contact-title">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Contato</div>
-          <h2 id="contact-title" class="section-title">Acesso direto para conversa e resposta rápida</h2>
-        </div>
-      </div>
-
-      <div class="contact-grid">
+    <section class="contact-wrap" id="contato" aria-label="Contato">
+      <div class="contact-stage">
+        <img src="img/footer.png" alt="Rodapé visual" />
         <div class="contact-card">
-          <strong>WhatsApp</strong>
-          <a href="https://wa.me/5551999663200">(51) 9 9966-3200</a>
-        </div>
-
-        <div class="contact-card">
-          <strong>E-mail</strong>
-          <a href="mailto:edusidegum@gmail.com">edusidegum@gmail.com</a>
+          <h2>Contato</h2>
+          <p>WhatsApp e e-mail disponíveis para conversa direta, objetiva e com resposta rápida.</p>
+          <div class="contact-links">
+            <a href="https://wa.me/5551999663200" target="_blank" rel="noopener noreferrer">WhatsApp • (51) 9 9966-3200</a>
+            <a href="mailto:edusidegum@gmail.com">E-mail • edusidegum@gmail.com</a>
+          </div>
         </div>
       </div>
     </section>
 
     <footer>
-      <div class="footer-shell" aria-label="Rodapé">
-        <div class="footer-inner">
-          <div class="footer-brand">
-            <img src="img/footer.png" alt="Rodapé institucional" />
-          </div>
-          <div class="footer-copy">
-            <span><strong>Eduardo Sidegum</strong> · visão técnica aplicada ao bem-estar.</span>
-            <span>Layout escuro, elegante e com presença visual discreta.</span>
-          </div>
-        </div>
-        <div class="floating-line" aria-hidden="true"></div>
-      </div>
+      <img class="footer-image" src="img/footer.png" alt="Rodapé" />
+      <p>Eduardo Sidegum • Consultor Independente • Novo Hamburgo/RS</p>
     </footer>
   </main>
 </body>
