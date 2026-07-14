@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0f14" />
+  <title>Arquitetura de Sistemas | Página Profissional</title>
+  <meta name="description" content="Página institucional com abordagem premium, discreta e profissional para arquiteto de sistemas, com foco em clareza, autoridade e conversão." />
+  <meta name="keywords" content="arquiteto de sistemas, arquitetura de software, tecnologia, consultoria, páginas profissionais, SEO" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Arquitetura de Sistemas | Página Profissional" />
+  <meta property="og:description" content="Uma página sobre arquitetura de sistemas com estética corporativa, SEO otimizado e links discretos preservados." />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-2: #0f1520;
+      --surface: rgba(16, 22, 33, 0.88);
+      --surface-strong: #121826;
+      --line: rgba(255,255,255,0.08);
+      --line-strong: rgba(255,255,255,0.14);
+      --text: #f4f7fb;
+      --muted: #9aa6b2;
+      --soft: #c9d2dc;
+      --accent: #7c5cff;
+      --accent-2: #37d6c6;
+      --accent-3: #8bb8ff;
+      --shadow: 0 22px 60px rgba(0,0,0,.36);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 12% 10%, rgba(124,92,255,.18), transparent 45%),
+        radial-gradient(900px 600px at 88% 20%, rgba(55,214,198,.12), transparent 42%),
+        linear-gradient(180deg, var(--bg), var(--bg-2) 48%, #070a0f 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 12, 18, 0.55);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 24px rgba(124,92,255,.28);
+      position: relative;
+      flex: 0 0 auto;
+    }
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.45);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a {
+      color: var(--muted);
+      font-size: .92rem;
+      transition: color .2s ease, opacity .2s ease;
+    }
+    .nav a:hover { color: var(--text); }
+    .nav .chip {
+      padding: 9px 14px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero {
+      padding: 84px 0 30px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      color: var(--soft);
+      font-size: .84rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 0 6px rgba(55,214,198,.12); }
+    h1 {
+      margin: 18px 0 16px;
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      line-height: .98;
+      letter-spacing: -0.05em;
+    }
+    .lead {
+      margin: 0;
+      max-width: 62ch;
+      font-size: 1.08rem;
+      color: var(--soft);
+    }
+    .hero-actions {
+      margin-top: 26px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+      will-change: transform;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--accent), #5e7bff);
+      box-shadow: 0 18px 34px rgba(124,92,255,.24);
+    }
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.03);
+      border-color: rgba(255,255,255,.1);
+    }
+    .hero-card {
+      background: linear-gradient(180deg, rgba(18,24,38,.96), rgba(15,20,31,.92));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .metric {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 2px;
+    }
+    .metric span { color: var(--muted); font-size: .9rem; }
+
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+    .stack-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(124,92,255,.2), rgba(55,214,198,.16));
+      border: 1px solid rgba(255,255,255,.08);
+      flex: 0 0 auto;
+      font-size: 1rem;
+    }
+    .stack-item h3, .card h3, .section-title h2 {
+      margin: 0;
+      letter-spacing: -0.03em;
+    }
+    .stack-item p, .card p { margin: 4px 0 0; color: var(--muted); }
+
+    .section {
+      padding: 42px 0;
+    }
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .section-title h2 {
+      font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+    }
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 64ch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      box-shadow: 0 10px 34px rgba(0,0,0,.18);
+    }
+    .card .kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent-3);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+    .list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--soft);
+    }
+    .list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      margin-top: 9px;
+      flex: 0 0 auto;
+    }
+
+    .discreet {
+      opacity: .92;
+    }
+    .discreet .section-title p,
+    .discreet .card p,
+    .discreet .note,
+    .discreet .small {
+      color: #95a0ad;
+    }
+    .discreet .card {
+      background: rgba(255,255,255,.025);
+    }
+    .mini-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #b7c0cb;
+      font-size: .92rem;
+      border-bottom: 1px solid rgba(255,255,255,.18);
+      padding-bottom: 2px;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .mini-link:hover {
+      color: white;
+      border-color: rgba(255,255,255,.45);
+    }
+
+    .footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-top: 28px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .grid-3 { grid-template-columns: 1fr; }
+      .metric-row { grid-template-columns: 1fr; }
+      .section-title { flex-direction: column; align-items: start; }
+      .topbar-inner { flex-direction: column; align-items: start; }
+      .nav { justify-content: start; }
+      .hero { padding-top: 52px; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      h1 { font-size: 2.35rem; }
+      .btn { width: 100%; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .nav { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Voltar ao topo">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Arquitetura de Sistemas</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#perfil">Perfil</a>
+        <a href="#arquitetura">Arquitetura</a>
+        <a href="#abordagem">Abordagem</a>
+        <a href="#herbalife" class="chip">Por que Herbalife</a>
+        <a href="catalogo.html" class="chip">Catálogo Herbalife</a>
+        <a href="cadastro.html" class="chip">Cliente Premium</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Consultoria, estrutura e visão de longo prazo</span>
+          <h1>Uma presença digital mais sóbria, técnica e confiável.</h1>
+          <p class="lead">
+            Página desenvolvida para apresentar um arquiteto de sistemas com linguagem executiva, estética premium e
+            foco em autoridade. O resultado prioriza clareza, reputação e conversão sem ruído visual.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="cadastro.html">Cliente Premium</a>
+            <a class="btn btn-secondary" href="catalogo.html">Ver Catálogo Herbalife</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumo profissional">
+          <div class="stack">
+            <div class="stack-item">
+              <div class="icon">◆</div>
+              <div>
+                <h3>Arquitetura com foco em negócio</h3>
+                <p>Soluções organizadas por impacto, escalabilidade e governança.</p>
+              </div>
+            </div>
+            <div class="stack-item">
+              <div class="icon">◈</div>
+              <div>
+                <h3>Tom corporativo e discreto</h3>
+                <p>Visual limpo, premium e adequado para uma apresentação profissional.</p>
+              </div>
+            </div>
+            <div class="stack-item">
+              <div class="icon">⌁</div>
+              <div>
+                <h3>SEO preservado</h3>
+                <p>Head otimizado mantido, com estrutura pensada para indexação e leitura.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="metric-row" aria-label="Indicadores">
+            <div class="metric">
+              <strong>Estratégia</strong>
+              <span>Visão sistêmica</span>
+            </div>
+            <div class="metric">
+              <strong>Clareza</strong>
+              <span>Comunicação objetiva</span>
+            </div>
+            <div class="metric">
+              <strong>Confiança</strong>
+              <span>Presença executiva</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="perfil">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Perfil profissional</h2>
+          <p>Uma leitura mais madura e institucional, adequada para serviços técnicos de alto valor percebido.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="kicker">01 · posicionamento</span>
+            <h3>Autoridade técnica sem exagero</h3>
+            <p>Comunicação precisa, com foco em experiência, método e resultado.</p>
+            <ul class="list">
+              <li>Tom executivo</li>
+              <li>Hierarquia visual clara</li>
+              <li>Forte legibilidade</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="kicker">02 · estrutura</span>
+            <h3>Arquitetura para confiança</h3>
+            <p>Blocos bem definidos, respiro generoso e navegação leve para leitura rápida.</p>
+            <ul class="list">
+              <li>Grid limpo</li>
+              <li>Cartões consistentes</li>
+              <li>Contraste refinado</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="kicker">03 · conversão</span>
+            <h3>CTAs discretos e eficazes</h3>
+            <p>Chamadas para ação presentes, mas sem competir com a credibilidade da página.</p>
+            <ul class="list">
+              <li>Botões secundários elegantes</li>
+              <li>Links suaves e integrados</li>
+              <li>Foco em resultado</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="arquitetura">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Arquitetura de conteúdo</h2>
+          <p>Mais organização, menos poluição visual. Ideal para uma página sobre com discurso profissional.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Visão sistêmica</h3>
+            <p>Da estratégia ao detalhe: tudo apresentado em sequência lógica e consistente.</p>
+          </article>
+          <article class="card">
+            <h3>Escalabilidade</h3>
+            <p>Estrutura pronta para crescer sem perder leitura, estética e performance percebida.</p>
+          </article>
+          <article class="card">
+            <h3>Governança</h3>
+            <p>Mensagem controlada, com elementos de confiança que sustentam posicionamento premium.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section discreet" id="abordagem">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Abordagem recomendada</h2>
+          <p>Para este caso, o melhor encaixe é uma leitura <strong>corporate premium</strong> com detalhes editoriais sutis.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Modelo sugerido</h3>
+            <p><strong>Modelo 7 — Corporate Premium</strong>, com espaçamento e ritmo inspirados no editorial minimal.</p>
+          </article>
+          <article class="card">
+            <h3>O que melhora a apresentação</h3>
+            <p>Mais seriedade, mais hierarquia, menos efeito visual e mais percepção de domínio técnico.</p>
+          </article>
+          <article class="card">
+            <h3>Onde manter discrição</h3>
+            <p>A seção “Por que Herbalife” deve existir, porém com linguagem leve e sem dominar a narrativa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section discreet" id="herbalife">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Por que Herbalife</h2>
+          <p>Seção mantida de forma discreta, com presença elegante e sem agressividade promocional.</p>
+        </div>
+        <div class="card">
+          <p>
+            A proposta aqui é preservar uma menção serena e objetiva, reforçando confiança, continuidade e acesso
+            aos caminhos de interesse, sem desviar o foco principal da apresentação profissional.
+          </p>
+          <p class="small" style="margin-top: 10px;">
+            Links úteis mantidos abaixo, em posição discreta e funcional:
+          </p>
+          <p style="display:flex; gap:16px; flex-wrap:wrap; margin: 14px 0 0;">
+            <a class="mini-link" href="catalogo.html">Catálogo Herbalife</a>
+            <a class="mini-link" href="cadastro.html">Cliente Premium</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong style="color: var(--text);">Arquitetura de Sistemas</strong>
+        <div>Visual premium, conteúdo discreto e foco em credibilidade.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#top">Topo</a>
+        <a href="catalogo.html">Catálogo Herbalife</a>
+        <a href="cadastro.html">Cliente Premium</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
