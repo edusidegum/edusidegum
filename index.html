@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Eduardo Sidegum | Consultor Independente | Estratégia digital, arquitetura da informação e bem-estar com inteligência aplicada." />
+  <title>Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação</title>
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-2: #0f1622;
+      --surface: rgba(17, 24, 39, 0.72);
+      --surface-2: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.10);
+      --border-strong: rgba(124, 92, 255, 0.35);
+      --text: #f4f7fb;
+      --muted: #a0adbb;
+      --muted-2: #7c8a99;
+      --accent: #7c5cff;
+      --accent-2: #37d6c6;
+      --accent-3: #ffca5c;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124, 92, 255, 0.22), transparent 32%),
+        radial-gradient(circle at top right, rgba(55, 214, 198, 0.16), transparent 28%),
+        linear-gradient(180deg, #070a0f 0%, var(--bg) 40%, #090d12 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .page {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .page::before,
+    .page::after {
+      content: "";
+      position: fixed;
+      inset: auto;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.14;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .page::before {
+      left: -180px;
+      top: 140px;
+      background: rgba(124, 92, 255, 0.8);
+    }
+
+    .page::after {
+      right: -180px;
+      top: 620px;
+      background: rgba(55, 214, 198, 0.72);
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 10, 15, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background:
+        linear-gradient(145deg, rgba(124, 92, 255, 1), rgba(55, 214, 198, 1));
+      box-shadow: 0 18px 36px rgba(124, 92, 255, 0.26);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: white;
+      letter-spacing: 0.02em;
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text strong,
+    .brand-text span {
+      display: block;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-text strong {
+      font-size: 0.98rem;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-text span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 0.92rem;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all .25s ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero {
+      padding: 76px 0 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .card,
+    .section-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    .hero-copy {
+      border-radius: var(--radius-xl);
+      padding: 44px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      inset: auto -100px -120px auto;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(124, 92, 255, 0.24), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.03);
+      color: #d7ddf0;
+      font-size: 0.86rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 6px rgba(55, 214, 198, 0.12);
+      display: inline-block;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      margin-top: 18px;
+      max-width: 12ch;
+    }
+
+    .hero-copy .lead {
+      margin-top: 20px;
+      max-width: 62ch;
+      color: #d0d7e0;
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+      will-change: transform;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #9b7dff);
+      color: white;
+      box-shadow: 0 18px 40px rgba(124, 92, 255, 0.32);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.10);
+    }
+
+    .hero-meta {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-panel {
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .panel-top,
+    .panel-bottom {
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .panel-top {
+      flex: 1;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel-top::before {
+      content: "";
+      position: absolute;
+      inset: 18px 18px auto auto;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(55,214,198,0.20), transparent 70%);
+      pointer-events: none;
+    }
+
+    .profile-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+
+    .profile-chip b { color: #fff; }
+
+    .panel-title {
+      font-size: 1.65rem;
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+      max-width: 14ch;
+    }
+
+    .panel-copy {
+      margin-top: 14px;
+      color: #d2d9e2;
+      max-width: 36ch;
+    }
+
+    .panel-list {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .panel-list div {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .panel-list .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      margin-top: 7px;
+      flex: 0 0 auto;
+    }
+
+    .panel-bottom {
+      padding: 18px 20px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .panel-bottom small { color: var(--muted); }
+
+    .section {
+      padding: 24px 0;
+    }
+
+    .section-box {
+      border-radius: var(--radius-xl);
+      padding: 34px 34px 30px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 56ch;
+      font-size: 0.98rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .content-block {
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .content-block p + p { margin-top: 14px; }
+
+    .quote {
+      padding: 24px;
+      border-radius: 20px;
+      background:
+        linear-gradient(180deg, rgba(124, 92, 255, 0.13), rgba(55, 214, 198, 0.06)),
+        rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(124, 92, 255, 0.24);
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .quote strong {
+      font-size: 1.2rem;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .quote p {
+      color: #d6deea;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .pillar {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 100%;
+    }
+
+    .pillar .num {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(124, 92, 255, 0.16);
+      border: 1px solid rgba(124, 92, 255, 0.24);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .pillar h3 {
+      font-size: 1.02rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .pillar p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .feature-card {
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .feature-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 10px;
+      color: #d5ddea;
+      align-items: flex-start;
+    }
+
+    .feature-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      flex: 0 0 auto;
+    }
+
+    .cta {
+      margin: 24px 0 44px;
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(55, 214, 198, 0.10)),
+        rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.35rem, 2vw, 2rem);
+      letter-spacing: -0.04em;
+      max-width: 18ch;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 56ch;
+      margin-top: 8px;
+    }
+
+    .footer {
+      padding: 0 0 40px;
+      color: var(--muted-2);
+    }
+
+    .footer-inner {
+      padding: 18px 0 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .footer small { display: block; }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about-grid,
+      .two-col,
+      .pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 34px;
+      }
+
+      h1 {
+        max-width: 14ch;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .topbar-inner { flex-direction: column; align-items: flex-start; }
+      .nav { justify-content: flex-start; }
+      .hero { padding-top: 34px; }
+      .hero-copy, .hero-panel, .section-box, .cta { border-radius: 22px; }
+      .hero-copy, .section-box, .cta { padding: 24px; }
+      .hero-meta { grid-template-columns: 1fr; }
+      .section { padding: 16px 0; }
+      .footer { padding-bottom: 24px; }
+    }
+
+    /* Smooth accessibility focus */
+    :focus-visible {
+      outline: 3px solid rgba(55, 214, 198, 0.75);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="#top" aria-label="Eduardo Sidegum - início">
+          <div class="brand-mark">ES</div>
+          <div class="brand-text">
+            <strong>Eduardo Sidegum</strong>
+            <span>Consultor • Sistemas • Bem-estar</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Navegação principal">
+          <a href="#sobre">Sobre</a>
+          <a href="#como-trabalho">Como trabalho</a>
+          <a href="#herbalife">Por que Herbalife</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <article class="hero-copy">
+            <div class="eyebrow"><i></i> Consultoria independente • arquitetura • estratégia digital</div>
+            <h1>Estratégia, estrutura e resultado mensurável.</h1>
+            <p class="lead">
+              Consultoria com base em Sistemas de Informação, inteligência aplicada e visão de negócio para
+              bem-estar, performance e presença digital com clareza.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contato">Falar no WhatsApp</a>
+              <a class="btn btn-secondary" href="#sobre">Conhecer a proposta</a>
+            </div>
+
+            <div class="hero-meta" aria-label="Resumo rápido">
+              <div class="stat">
+                <strong>+10 anos</strong>
+                <span>de experiência prática com suplementação premium</span>
+              </div>
+              <div class="stat">
+                <strong>100% digital</strong>
+                <span>atendimento e orientação com estrutura simples</span>
+              </div>
+              <div class="stat">
+                <strong>Projeto sob medida</strong>
+                <span>solução construída após diagnóstico real</span>
+              </div>
+            </div>
+          </article>
+
+          <aside class="hero-panel" aria-label="Destaques">
+            <div class="panel-top">
+              <div class="profile-chip">Perfil: <b>Consultor Independente</b></div>
+              <h2 class="panel-title">Bem-estar com método, não com achismo.</h2>
+              <p class="panel-copy">
+                Cada pessoa é tratada como um sistema único. A solução parte da análise e se traduz em ações práticas.
+              </p>
+
+              <div class="panel-list">
+                <div><span class="dot"></span><span>Arquitetura da informação aplicada ao atendimento.</span></div>
+                <div><span class="dot"></span><span>Estratégia digital com foco em clareza e conversão.</span></div>
+                <div><span class="dot"></span><span>Uso de IA e automação para reduzir ruído e aumentar eficiência.</span></div>
+              </div>
+            </div>
+
+            <div class="panel-bottom">
+              <small>Atendimento orientado por análise, rotina e objetivo.</small>
+              <strong>Eduardo Sidegum • Novo Hamburgo/RS</strong>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="sobre" class="section">
+        <div class="container section-box">
+          <div class="section-head">
+            <div>
+              <h2>Sobre</h2>
+              <p>Uma apresentação mais clara, premium e focada em confiança, sem perder o conteúdo original.</p>
+            </div>
+          </div>
+
+          <div class="about-grid">
+            <div class="content-block">
+              <p>
+                Minha formação em <strong>Sistemas de Informação</strong> — com toda a visão de arquitetura, fluxo e estrutura de dados que ela exige — combinada à experiência como <strong>engenheiro de sistemas Microsoft</strong> em ambiente corporativo de alto volume, me deu uma lente incomum para enxergar o mercado de bem-estar.
+              </p>
+              <p>
+                Enquanto a maioria olha para produtos isolados, eu olho para <strong>sistemas completos</strong>: a rotina do cliente é um processo, os hábitos são dados, os resultados são métricas. E toda melhoria sustentável nasce de um diagnóstico bem feito — não de chutes.
+              </p>
+              <p>
+                Essa abordagem, que funcionou para servidores e redes, funciona também para corpos, mentes e negócios. Estrutura, fluxo, evidência e resultado mensurável — esse é o meu método, aplicado onde quer que eu atue.
+              </p>
+            </div>
+
+            <div class="quote">
+              <strong>“Não ofereço o que está na moda. Ofereço o que resiste à análise.”</strong>
+              <p>
+                Hoje, esse raciocínio se traduz em entregas concretas: integro estratégia digital, automação com inteligência artificial e conhecimento de mercado para desenhar soluções sob medida.
+              </p>
+              <p>
+                Seja para o atleta que busca performance com suplementação precisa, seja para o empreendedor que quer agregar uma nova linha de receita ao negócio sem complexidade, o ponto de partida é o mesmo: entender o sistema antes de intervir.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="como-trabalho" class="section">
+        <div class="container section-box">
+          <div class="section-head">
+            <div>
+              <h2>Como trabalho</h2>
+              <p>Cinco pilares orientam cada projeto e cada atendimento.</p>
+            </div>
+          </div>
+
+          <div class="pillars">
+            <article class="pillar">
+              <div class="num">Ⅰ</div>
+              <h3>Arquitetura da Informação</h3>
+              <p>Escuta, organização e estrutura. O objetivo, a rotina e as restrições viram dado que fundamenta a solução.</p>
+            </article>
+
+            <article class="pillar">
+              <div class="num">Ⅱ</div>
+              <h3>Solução Sob Medida</h3>
+              <p>Não existe protocolo universal. A recomendação certa é proporcional à necessidade real — nunca ao hype.</p>
+            </article>
+
+            <article class="pillar">
+              <div class="num">Ⅲ</div>
+              <h3>Tecnologia como Vantagem</h3>
+              <p>Automação com IA, análise de dados e presença digital estratégica para reduzir ruído e amplificar resultado.</p>
+            </article>
+
+            <article class="pillar">
+              <div class="num">Ⅳ</div>
+              <h3>Experiência do Usuário</h3>
+              <p>Cada interação é projetada para ser fluida, clara e útil. O meio importa tanto quanto a mensagem.</p>
+            </article>
+
+            <article class="pillar">
+              <div class="num">Ⅴ</div>
+              <h3>Análise, Código e Parceria Técnica</h3>
+              <p>Atuação em desenvolvimento assistido, arquitetura e estruturação do projeto antes de escrever uma linha de código.</p>
+            </article>
+          </div>
+
+          <div class="two-col">
+            <div class="feature-card">
+              <h3>Minha leitura do problema</h3>
+              <p>Projetos bons começam com diagnóstico. O objetivo é separar o que é ruído do que é realmente útil para a pessoa ou negócio.</p>
+              <ul class="feature-list">
+                <li>Mapeamento da rotina e dos objetivos</li>
+                <li>Estratégia aplicável à realidade do cliente</li>
+                <li>Entrega simples, clara e escalável</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <h3>Quando o projeto pede apoio técnico</h3>
+              <p>Nem todo projeto se resolve sozinho. Quando necessário, mobilizo uma rede curada de profissionais de programação para execução com critério e qualidade.</p>
+              <ul class="feature-list">
+                <li>Arquitetura antes da implementação</li>
+                <li>Propostas reais para resultados reais</li>
+                <li>Ética, transparência e execução de qualidade</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="herbalife" class="section">
+        <div class="container section-box">
+          <div class="section-head">
+            <div>
+              <h2>Por que Herbalife</h2>
+              <p>A proposta pode ser apresentada com estética premium sem perder a clareza sobre o posicionamento da marca.</p>
+            </div>
+          </div>
+
+          <div class="two-col">
+            <div class="feature-card">
+              <h3>Base da proposta</h3>
+              <p>
+                A Herbalife é a marca número 1 em nutrição e bem-estar do mundo, com mais de 40 anos de pesquisa, 300+ cientistas e PhDs e presença em 95 países.
+              </p>
+              <ul class="feature-list">
+                <li>Lastro científico e histórico de mercado</li>
+                <li>Aplicação prática para performance e rotina</li>
+                <li>Foco em resultado com acompanhamento</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <h3>Como isso vira serviço</h3>
+              <p>
+                Como Distribuidor Independente Herbalife, posso levar planos acessíveis e realistas para quem busca performance, controle de peso ou mais energia no dia a dia.
+              </p>
+              <ul class="feature-list">
+                <li>Catálogo de produtos com entrega em todo o Brasil</li>
+                <li>Atendimento individualizado e suporte</li>
+                <li>Programa Cliente Premium com descontos progressivos</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cta">
+            <div>
+              <h2>Qualidade de vida, método e orientação prática.</h2>
+              <p>
+                Em busca de qualidade de vida, a proposta combina tecnologia, atendimento humano e um processo que respeita o tamanho e o momento de cada pessoa.
+              </p>
+            </div>
+            <a class="btn btn-primary" href="https://wa.me/5551999663200" target="_blank" rel="noopener noreferrer">Iniciar conversa</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="section">
+        <div class="container section-box">
+          <div class="section-head">
+            <div>
+              <h2>Contato</h2>
+              <p>Direcione o usuário para os canais mais importantes com destaque visual forte e elegante.</p>
+            </div>
+          </div>
+
+          <div class="two-col">
+            <div class="feature-card">
+              <h3>WhatsApp</h3>
+              <p>Atendimento direto e rápido para quem quer tirar dúvidas, pedir orientação ou iniciar um acompanhamento.</p>
+              <p style="margin-top: 14px;"><a class="btn btn-primary" href="https://wa.me/5551999663200" target="_blank" rel="noopener noreferrer">(51) 9 9966-3200</a></p>
+            </div>
+
+            <div class="feature-card">
+              <h3>E-mail</h3>
+              <p>Canal ideal para propostas, alinhamentos e conversas mais detalhadas sobre estratégia e colaboração.</p>
+              <p style="margin-top: 14px;"><a class="btn btn-secondary" href="mailto:edusidegum@gmail.com">edusidegum@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <small>© 2026 Eduardo Sidegum. Todos os direitos reservados.</small>
+        <div class="footer-links">
+          <a href="#top">Topo</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
