@@ -1,45 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0d1117" />
-  <meta name="description" content="Página institucional com estética editorial animada, voltada para arquitetura de sistemas, com visual premium e conteúdo preservado em blocos de leitura clara." />
-  <meta name="keywords" content="arquitetura de sistemas, página institucional, css animado, editorial premium, herbalife" />
-  <meta name="author" content="EduSideGum" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação</title>
+  <meta name="description" content="Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance." />
+  <meta name="keywords" content="Eduardo Sidegum, consultor Herbalife, sistemas de informação, arquitetura da informação, estratégia digital, inteligência artificial, bem-estar, nutrição, Novo Hamburgo" />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b1220" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="Arquitetura de Sistemas | Página Institucional" />
-  <meta property="og:description" content="Uma página sobre com visual editorial premium, motion discreto e narrativa mais executiva." />
-  <meta property="og:image" content="img/og-image-e.png" />
-  <meta property="og:image:alt" content="Imagem social institucional" />
+  <meta property="og:title" content="Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação" />
+  <meta property="og:description" content="Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance." />
+  <meta property="og:image" content="og-image-e.png" />
+  <meta property="og:url" content="https://edusidegum.github.io/edusidegum/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Arquitetura de Sistemas | Página Institucional" />
-  <meta name="twitter:description" content="Uma página sobre com visual editorial premium, motion discreto e narrativa mais executiva." />
-  <meta name="twitter:image" content="img/og-image-e.png" />
-  <title>Arquitetura de Sistemas | Página Institucional</title>
-  <link rel="icon" type="image/png" href="img/favicon.png" />
-  <link rel="apple-touch-icon" href="img/favicon.png" />
-  <link rel="stylesheet" href="assets/css/animado1.css" />
+  <meta name="twitter:title" content="Sobre — Eduardo Sidegum | Consultor | Bacharel em Sistemas de Informação" />
+  <meta name="twitter:description" content="Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance." />
+  <meta name="twitter:image" content="og-image-e.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <style>
     :root {
-      --bg: #0b0f14;
-      --bg-alt: #101621;
-      --surface: rgba(255, 255, 255, 0.06);
-      --surface-strong: rgba(255, 255, 255, 0.1);
-      --text: #f5f7fb;
-      --muted: rgba(245, 247, 251, 0.72);
-      --muted-strong: rgba(245, 247, 251, 0.88);
-      --line: rgba(255, 255, 255, 0.12);
-      --accent: #8ea8ff;
-      --accent-2: #66d7c9;
-      --accent-3: #f0c36f;
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
-      --max: 1180px;
+      --bg: #08111c;
+      --bg-2: #0b1726;
+      --surface: rgba(10, 18, 30, 0.72);
+      --surface-2: rgba(255, 255, 255, 0.03);
+      --text: #f3f7fb;
+      --muted: rgba(243, 247, 251, 0.72);
+      --line: rgba(255,255,255,0.12);
+      --accent: #7db7ff;
+      --accent-2: #6ef3d6;
+      --shadow: 0 24px 80px rgba(0,0,0,.35);
+      --radius: 24px;
+      --radius-lg: 32px;
+      --container: 1120px;
     }
 
     * { box-sizing: border-box; }
@@ -47,791 +41,352 @@
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(125,183,255,.14), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(110,243,214,.12), transparent 30%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(142, 168, 255, 0.16), transparent 28%),
-        radial-gradient(circle at 80% 10%, rgba(102, 215, 201, 0.10), transparent 24%),
-        linear-gradient(180deg, #090d13 0%, #0b0f14 35%, #101621 100%);
-      min-height: 100vh;
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
       overflow-x: hidden;
-      line-height: 1.55;
-      letter-spacing: 0.01em;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 100% 72px, 72px 100%;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,.75), transparent 92%);
-      opacity: 0.18;
-      z-index: 0;
-    }
-
-    a { color: inherit; text-decoration: none; }
+    a { color: inherit; }
     img { max-width: 100%; display: block; }
-    .page {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-    }
 
-    .shell {
-      width: min(var(--max), calc(100% - 32px));
+    .wrap {
+      width: min(var(--container), calc(100% - 32px));
       margin: 0 auto;
     }
 
-    .skip {
-      position: absolute;
-      left: -9999px;
-      top: auto;
-    }
-
-    .skip:focus {
-      left: 16px;
-      top: 16px;
-      z-index: 9999;
-      padding: 12px 16px;
-      background: #fff;
-      color: #111;
-      border-radius: 999px;
-    }
-
     .hero {
-      padding: 32px 0 48px;
+      position: relative;
+      padding: 28px 0 34px;
     }
 
-    .masthead {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 0 26px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .brand strong {
-      font-size: 0.95rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .brand span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
+    .hero-card {
+      position: relative;
+      overflow: hidden;
       border: 1px solid var(--line);
-      color: var(--muted-strong);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-      font-size: 0.92rem;
-      white-space: nowrap;
+      border-radius: clamp(24px, 4vw, 40px);
+      background: linear-gradient(180deg, rgba(12,20,34,.78), rgba(8,15,24,.92));
+      box-shadow: var(--shadow);
+      isolation: isolate;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: center;
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(125,183,255,.24), transparent 40%),
+        linear-gradient(315deg, rgba(110,243,214,.14), transparent 35%);
+      opacity: .75;
+      pointer-events: none;
     }
 
-    .hero-copy,
-    .hero-visual,
-    .section,
-    .card,
-    .panel {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .8s ease, transform .8s ease, box-shadow .3s ease, border-color .3s ease;
-    }
-
-    .is-visible {
-      opacity: 1;
-      transform: translateY(0);
+    .hero-media {
+      position: relative;
+      min-height: clamp(240px, 34vw, 430px);
+      background:
+        linear-gradient(180deg, rgba(8,17,28,.08), rgba(8,17,28,.72)),
+        url('banner.png') center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(24px, 5vw, 56px);
     }
 
     .hero-copy {
-      padding: 24px 0;
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 18px;
-      color: var(--muted-strong);
-      font-size: 0.9rem;
-      letter-spacing: 0.18em;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: .86rem;
+      letter-spacing: .08em;
       text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 48px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--accent), transparent);
+      backdrop-filter: blur(10px);
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(2.6rem, 6vw, 5.2rem);
-      line-height: 0.98;
+      margin: 18px 0 12px;
+      font-size: clamp(2.1rem, 5vw, 4.8rem);
+      line-height: 1.02;
       letter-spacing: -0.05em;
-      max-width: 10ch;
+      text-wrap: balance;
+      max-width: 12ch;
     }
 
-    .lead {
-      margin: 22px 0 0;
-      max-width: 58ch;
-      font-size: clamp(1.02rem, 1.5vw, 1.18rem);
-      color: var(--muted);
+    .hero p {
+      margin: 0;
+      font-size: clamp(1rem, 1.45vw, 1.15rem);
+      max-width: 72ch;
+      color: rgba(255,255,255,.86);
     }
 
-    .hero-points {
+    .main {
+      padding: 28px 0 34px;
+    }
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 28px;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
     }
 
-    .mini-card {
-      padding: 16px 16px 18px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      min-height: 120px;
-    }
-
-    .mini-card strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1rem;
-    }
-
-    .mini-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 620px;
-      border-radius: 34px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
-      background:
-        linear-gradient(180deg, rgba(10, 14, 20, 0.04), rgba(10, 14, 20, 0.72)),
-        url("img/banner.png") center/cover no-repeat;
-      box-shadow: var(--shadow);
-      isolation: isolate;
-    }
-
-    .hero-visual::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 18%, rgba(142, 168, 255, 0.28), transparent 20%),
-        radial-gradient(circle at 78% 32%, rgba(102, 215, 201, 0.20), transparent 18%),
-        linear-gradient(180deg, rgba(7, 10, 15, 0.10), rgba(7, 10, 15, 0.52));
-      mix-blend-mode: screen;
-      z-index: 0;
-    }
-
-    .hero-panel {
-      position: absolute;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      padding: 20px 20px 18px;
-      border-radius: 24px;
-      background: rgba(10, 14, 20, 0.66);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,0.12);
-      z-index: 1;
-    }
-
-    .hero-panel .label {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      color: rgba(255,255,255,0.78);
-      font-size: 0.88rem;
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      margin-bottom: 12px;
-    }
-
-    .hero-panel .label::before {
-      content: "";
-      width: 26px;
-      height: 1px;
-      background: var(--accent-2);
-    }
-
-    .hero-panel h2 {
-      margin: 0;
-      font-size: 1.5rem;
-      line-height: 1.12;
-      max-width: 18ch;
-    }
-
-    .hero-panel p {
-      margin: 10px 0 0;
-      color: rgba(255,255,255,0.72);
-      max-width: 42ch;
-      font-size: 0.95rem;
-    }
-
-    .section {
-      padding: 12px 0 28px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 18px;
-      padding-top: 8px;
-    }
-
-    .section-header h3 {
-      margin: 0;
-      font-size: clamp(1.5rem, 2vw, 2.1rem);
-      letter-spacing: -0.03em;
-    }
-
-    .section-header p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 52ch;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .card,
     .panel {
       position: relative;
       overflow: hidden;
-      padding: 22px 20px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
       border: 1px solid var(--line);
-      box-shadow: 0 10px 36px rgba(0,0,0,0.18);
-      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
     }
 
-    .card::after,
-    .panel::after {
-      content: "";
-      position: absolute;
-      inset: auto -20% -46% -20%;
-      height: 180px;
-      background: radial-gradient(circle, rgba(142,168,255,0.16), transparent 66%);
-      pointer-events: none;
-      opacity: .75;
+    .panel .inner {
+      padding: clamp(22px, 3vw, 34px);
     }
 
-    .card:hover,
-    .panel:hover,
-    .mini-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,255,255,0.18);
-      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+    .panel h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.3rem, 2vw, 2rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
     }
 
-    .card h4,
-    .panel h4 {
-      margin: 0 0 8px;
-      font-size: 1.05rem;
+    .panel h3 {
+      margin: 24px 0 10px;
+      font-size: 1.02rem;
+      line-height: 1.2;
       letter-spacing: -0.02em;
+      color: #fff;
     }
 
-    .card p,
-    .panel p {
-      margin: 0;
+    .panel p, .panel li {
       color: var(--muted);
-      font-size: 0.98rem;
+      margin: 0 0 14px;
     }
 
-    .stat {
+    .panel strong { color: #fff; }
+
+    .quote {
+      margin: 18px 0 0;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent-2);
+      border-radius: 16px;
+      background: rgba(110,243,214,.06);
+      color: rgba(255,255,255,.9);
+      font-style: italic;
+    }
+
+    .pillars {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pillar {
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      transform: translateY(0);
+      transition: transform .35s ease, border-color .35s ease, background .35s ease;
+      animation: rise .8s ease both;
+    }
+
+    .pillar:hover {
+      transform: translateY(-3px);
+      border-color: rgba(125,183,255,.26);
+      background: rgba(255,255,255,.055);
+    }
+
+    .pillar b {
+      display: block;
+      font-size: 1.02rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .subtle {
+      opacity: .82;
+      font-size: .98rem;
+    }
+
+    .contact {
       display: grid;
       gap: 12px;
-      align-content: start;
-      min-height: 170px;
+      margin-top: 20px;
     }
 
-    .stat strong {
-      font-size: 2rem;
-      letter-spacing: -0.04em;
-      line-height: 1;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .deep-section {
-      padding: 6px 0 32px;
-    }
-
-    .story {
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 16px;
-    }
-
-    .story .panel {
-      min-height: 100%;
-    }
-
-    .quiet {
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
-      border-color: rgba(255,255,255,0.09);
-    }
-
-    .quiet h4 {
-      font-size: 1.02rem;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .quiet p {
-      color: rgba(255,255,255,0.72);
-      font-size: 0.95rem;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .chip {
+    .contact a {
       display: inline-flex;
+      width: fit-content;
+      gap: 10px;
       align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      color: rgba(255,255,255,0.84);
-      font-size: 0.9rem;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      transition: transform .25s ease, background .25s ease, border-color .25s ease;
     }
 
-    .chip::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent-2);
-      box-shadow: 0 0 0 5px rgba(102, 215, 201, 0.12);
+    .contact a:hover {
+      transform: translateY(-2px);
+      background: rgba(125,183,255,.1);
+      border-color: rgba(125,183,255,.22);
     }
 
-    .subtle-section {
-      padding: 8px 0 38px;
-    }
-
-    .subtle-box {
-      padding: 20px 20px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: rgba(255,255,255,0.84);
-    }
-
-    .subtle-box h4 {
-      margin: 0 0 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .subtle-box p {
-      margin: 0;
-      color: rgba(255,255,255,0.68);
-      font-size: 0.95rem;
-    }
-
-    .foot-wrap {
-      margin-top: 18px;
-      padding-bottom: 28px;
-    }
-
-    footer {
+    .footer {
       position: relative;
-      overflow: hidden;
-      border-radius: 30px;
-      min-height: 260px;
-      display: flex;
-      align-items: end;
+      margin-top: 20px;
+      min-height: clamp(180px, 24vw, 320px);
+      border-top: 1px solid var(--line);
       background:
-        linear-gradient(180deg, rgba(9, 13, 19, 0.08), rgba(9, 13, 19, 0.88)),
-        url("img/footer.png") center/cover no-repeat;
-      border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: var(--shadow);
-    }
-
-    footer .footer-inner {
-      width: 100%;
-      padding: 24px 24px 22px;
-      color: #ece4d4;
+        linear-gradient(180deg, rgba(8,17,28,.18), rgba(8,17,28,.86)),
+        url('footer.png') center/cover no-repeat;
       display: flex;
-      justify-content: space-between;
-      gap: 18px;
       align-items: end;
-      flex-wrap: wrap;
     }
 
-    footer strong {
-      display: block;
-      font-size: 1.06rem;
-      margin-bottom: 6px;
-      letter-spacing: .04em;
+    .footer .wrap {
+      padding: 28px 0 30px;
     }
 
-    footer p {
+    .footer p {
       margin: 0;
-      color: rgba(236, 228, 212, 0.78);
-      max-width: 62ch;
-      font-size: 0.95rem;
-    }
-
-    .copyright {
-      color: rgba(236, 228, 212, 0.68);
-      font-size: 0.9rem;
+      color: var(--text);
+      max-width: 70ch;
+      text-shadow: 0 1px 18px rgba(0,0,0,.45);
     }
 
     .reveal {
-      will-change: transform, opacity;
+      animation: reveal .9s ease both;
+    }
+    .delay-1 { animation-delay: .08s; }
+    .delay-2 { animation-delay: .16s; }
+    .delay-3 { animation-delay: .24s; }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(18px); filter: blur(10px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
     }
 
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .story {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-visual {
-        min-height: 520px;
-      }
-
-      .grid-4 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .grid-3,
-      .hero-points {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 720px) {
-      .shell {
-        width: min(var(--max), calc(100% - 22px));
-      }
-
-      .masthead,
-      .section-header,
-      footer .footer-inner {
-        flex-direction: column;
-        align-items: start;
-      }
-
-      .hero {
-        padding-top: 20px;
-      }
-
-      .hero-visual {
-        min-height: 420px;
-        border-radius: 26px;
-      }
-
-      h1 {
-        font-size: clamp(2.3rem, 12vw, 4rem);
-      }
-
-      .grid-4,
-      .grid-3,
-      .hero-points {
-        grid-template-columns: 1fr;
-      }
-
-      .mini-card {
-        min-height: auto;
-      }
-
-      .hero-panel {
-        left: 14px;
-        right: 14px;
-        bottom: 14px;
-        padding: 16px;
-      }
-
-      footer {
-        min-height: 220px;
-      }
+    @media (max-width: 920px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { max-width: 14ch; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-      .hero-copy,
-      .hero-visual,
-      .section,
-      .card,
-      .panel {
-        opacity: 1;
-        transform: none;
-      }
+    @media (max-width: 640px) {
+      .hero { padding-top: 12px; }
+      .hero-media { min-height: 300px; padding: 20px; }
+      .panel .inner { padding: 20px; }
+      .footer .wrap { padding: 20px 0 24px; }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-
-  <div class="page">
-    <header class="hero">
-      <div class="shell">
-        <div class="masthead reveal">
-          <div class="brand" aria-label="Identidade da página">
-            <strong>EduSideGum</strong>
-            <span>Arquitetura de sistemas, visão editorial e refinamento visual</span>
-          </div>
-          <div class="badge" aria-label="Sinalização da página">
-            Página sobre • Visual animado discreto • Sem menu
+  <main>
+    <section class="hero wrap reveal">
+      <article class="hero-card">
+        <div class="hero-media">
+          <div class="hero-copy">
+            <span class="eyebrow">Sobre</span>
+            <h1>Eduardo Sidegum</h1>
+            <p>Consultor Independente Herbalife em Novo Hamburgo/RS. Arquitetura da informação, estratégia digital e soluções com inteligência artificial aplicadas ao bem-estar e nutrição de alta performance.</p>
           </div>
         </div>
+      </article>
+    </section>
 
-        <div class="hero-grid" id="conteudo">
-          <section class="hero-copy reveal" aria-labelledby="hero-title">
-            <div class="eyebrow">Página institucional refinada</div>
-            <h1 id="hero-title">Sofisticação técnica com leitura limpa e presença executiva.</h1>
-            <p class="lead">
-              Uma abordagem mais madura para apresentação profissional, com foco em clareza, autoridade e ritmo visual. O conteúdo permanece em blocos bem definidos, enquanto a animação atua apenas como reforço de percepção e acabamento.
-            </p>
+    <section class="main wrap">
+      <div class="grid">
+        <article class="panel reveal delay-1">
+          <div class="inner">
+            <h2>Sobre</h2>
+            <p>Minha formação em <strong>Sistemas de Informação</strong> — com toda a visão de <strong>arquitetura, fluxo e estrutura de dados</strong> que ela exige — combinada à experiência como <strong>engenheiro de sistemas Microsoft</strong> em ambiente corporativo de alto volume, me deu uma lente incomum para enxergar o mercado de bem-estar. Enquanto a maioria olha para produtos isolados, eu olho para <strong>sistemas completos</strong>: a rotina do cliente é um processo, os hábitos são dados, os resultados são métricas. E toda melhoria sustentável nasce de um <strong>diagnóstico bem feito</strong> — não de chutes. Essa abordagem, que funcionou para servidores e redes, funciona também para corpos, mentes e negócios. <strong>Estrutura, fluxo, evidência e resultado mensurável</strong> — esse é o meu método, aplicado onde quer que eu atue.</p>
 
-            <div class="hero-points" aria-label="Destaques da proposta">
-              <article class="mini-card reveal">
-                <strong>Estrutura editorial</strong>
-                <p>Hierarquia forte, respiro generoso e boxes que conduzem a leitura sem ruído.</p>
-              </article>
-              <article class="mini-card reveal">
-                <strong>Motion contido</strong>
-                <p>Animação suave e elegante, sem exagero, para transmitir maturidade visual.</p>
-              </article>
-              <article class="mini-card reveal">
-                <strong>Perfil executivo</strong>
-                <p>Tom sóbrio e profissional, pensado para um arquiteto de sistemas.</p>
-              </article>
-            </div>
-          </section>
+            <p>Hoje, esse raciocínio se traduz em entregas concretas: integro <strong>estratégia digital</strong>, <strong>automação com inteligência artificial</strong> e um conhecimento de mercado construído na prática para desenhar soluções que respeitam o tamanho, o momento e o objetivo de cada pessoa ou negócio. Não entrego fórmula pronta — entrego <strong>projeto sob medida</strong>. Seja para o atleta que busca performance com suplementação precisa, seja para o empreendedor que quer agregar uma nova linha de receita ao negócio sem complexidade, o ponto de partida é o mesmo: <strong>entender o sistema antes de intervir</strong>. Meu papel é fazer a ponte entre o que a ciência entrega e o que o dia a dia absorve — de forma prática, automatizada onde possível, e sempre <em>orientada a resultado</em>.</p>
 
-          <aside class="hero-visual reveal" aria-label="Imagem principal da página">
-            <div class="hero-panel">
-              <div class="label">Imagem principal</div>
-              <h2>banner.png como peça de destaque e âncora visual da página.</h2>
-              <p>
-                O hero assume o papel principal de composição e já estabelece o padrão premium para as demais seções.
-              </p>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </header>
+            <p>Em busca de <strong>qualidade de vida</strong>, migrei para o interior do RS — uma decisão que alinhou propósito e rotina. Há mais de dez anos como usuário de suplementação premium, em tempo parcial atuo como consultor independente em nutrição e bem-estar, construindo minha prática sobre um princípio que carrego de tudo que aprendi em tecnologia: <strong>cada pessoa é um sistema único</strong>, e a solução certa exige <strong>análise — nunca achismo</strong>. Se posso ajudar quem busca melhorar, assim o faço.</p>
 
-    <main>
-      <section class="section reveal">
-        <div class="shell">
-          <div class="section-header">
-            <div>
-              <h3>Visão geral</h3>
-              <p>Uma superfície mais limpa, com boxes fortes e leitura direta para reforçar confiança e experiência.</p>
-            </div>
+            <p class="quote">"Não ofereço o que está na moda. Ofereço o que resiste à análise."</p>
           </div>
+        </article>
 
-          <div class="grid-4">
-            <article class="card stat reveal">
-              <strong>01</strong>
-              <h4>Arquitetura</h4>
-              <span>Blocos bem segmentados, com escopo visual claro e transições discretas.</span>
-            </article>
-            <article class="card stat reveal">
-              <strong>02</strong>
-              <h4>Governança</h4>
-              <span>Tom analítico e visual limpo, com ênfase em organização e confiabilidade.</span>
-            </article>
-            <article class="card stat reveal">
-              <strong>03</strong>
-              <h4>Escalabilidade</h4>
-              <span>Composição preparada para crescer sem perder consistência ou legibilidade.</span>
-            </article>
-            <article class="card stat reveal">
-              <strong>04</strong>
-              <h4>Acabamento</h4>
-              <span>Detalhes refinados, sombras suaves e contraste equilibrado para um resultado superior.</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section deep-section reveal">
-        <div class="shell">
-          <div class="section-header">
-            <div>
-              <h3>Competências e narrativa</h3>
-              <p>O conteúdo é distribuído em painéis que lembram um portfólio executivo, sem aparência de template genérico.</p>
-            </div>
-          </div>
-
-          <div class="grid-3">
-            <article class="panel reveal">
-              <h4>Estratégia técnica</h4>
-              <p>
-                Definição de padrões, coerência entre camadas e alinhamento entre visão de negócio e decisão arquitetural.
-              </p>
-            </article>
-            <article class="panel reveal">
-              <h4>Integração e fluxo</h4>
-              <p>
-                Organização visual favorecendo leitura contínua, com foco em processos, interfaces e pontos de conexão.
-              </p>
-            </article>
-            <article class="panel reveal">
-              <h4>Experiência percebida</h4>
-              <p>
-                A sensação final é de página madura, confiável e bem construída, com motion apenas como acabamento.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section reveal">
-        <div class="shell">
-          <div class="section-header">
-            <div>
-              <h3>Direção visual recomendada</h3>
-              <p>O conjunto abaixo consolida a linguagem animada mais adequada para a proposta, sem exageros e sem menu.</p>
-            </div>
-          </div>
-
-          <div class="story">
-            <article class="panel reveal">
-              <h4>Base visual</h4>
-              <p>
-                Fundo escuro refinado, contraste elegante, bordas sutis e cards com profundidade controlada. A composição evita ruído e valoriza a estrutura do conteúdo original.
-              </p>
-              <div class="chips" aria-label="Características da base visual">
-                <span class="chip">Editorial premium</span>
-                <span class="chip">Motion suave</span>
-                <span class="chip">Boxes limpos</span>
-                <span class="chip">Sem menu</span>
+        <aside class="panel reveal delay-2">
+          <div class="inner">
+            <h2>Como Trabalho</h2>
+            <p class="subtle">Cinco pilares orientam cada projeto e cada atendimento:</p>
+            <div class="pillars">
+              <div class="pillar">
+                <b>Ⅰ. Arquitetura da Informação</b>
+                <p>Antes de qualquer recomendação, eu escuto, organizo e estruturo. Seu objetivo, sua rotina, suas restrições — tudo vira dado que fundamenta a solução. <strong>Sem diagnóstico, não há direção.</strong></p>
               </div>
-            </article>
-            <article class="panel quiet reveal">
-              <h4>Por que  Herbalife</h4>
-              <p>
-                A seção permanece discreta, com ênfase baixa e leitura suave, para não competir com o restante da apresentação.
-              </p>
-              <p>
-                O objetivo é integrar a informação sem transformar esse trecho em bloco protagonista.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section subtle-section reveal">
-        <div class="shell">
-          <div class="subtle-box">
-            <h4>Observação de refinamento</h4>
-            <p>
-              Este layout privilegia a impressão de uma peça institucional madura, mantendo o texto original como conteúdo principal, enquanto o CSS animado assume o papel de elevar percepção, ritmo e autoridade visual.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <div class="foot-wrap">
-      <div class="shell">
-        <footer class="reveal" aria-label="Rodapé institucional">
-          <div class="footer-inner">
-            <div>
-              <strong>EduSideGum</strong>
-              <p>
-                Rodapé integrado com footer.png, mantendo a mesma faixa cromática do texto para uma finalização mais coesa e sofisticada.
-              </p>
+              <div class="pillar">
+                <b>Ⅱ. Solução Sob Medida</b>
+                <p>Não existe protocolo universal. O que funciona para um atleta de alta performance pode ser excessivo para um profissional liberal, e insuficiente para um empreendedor em escala. <strong>A recomendação certa é proporcional à necessidade real — nunca ao hype.</strong></p>
+              </div>
+              <div class="pillar">
+                <b>Ⅲ. Tecnologia como Vantagem</b>
+                <p>Automação com IA, análise de dados e presença digital estratégica não são modismos — são ferramentas que aplico para <strong>reduzir ruído, amplificar resultado e eliminar o improviso</strong>. Onde outros veem complexidade, eu vejo processo.</p>
+              </div>
+              <div class="pillar">
+                <b>Ⅳ. Experiência do Usuário</b>
+                <p>Cada interação — seja numa página web, numa conversa ou na entrega de um produto — é projetada para ser fluida, clara e útil. <strong>O meio importa tanto quanto a mensagem, e a confiança se constrói em cada detalhe.</strong></p>
+              </div>
+              <div class="pillar">
+                <b>Ⅴ. Análise, Código e Parceria Técnica</b>
+                <p>Nem todo projeto se resolve sozinho — e isso não é fraqueza, é maturidade. Dentro do meu escopo de <strong>desenvolvimento assistido</strong>, atuo na análise profunda de propostas, definição de arquitetura e estruturação do projeto antes de uma linha de código ser escrita. Quando o caso exige especialização específica, mobilizo uma <strong>rede curada de profissionais de programação</strong> — selecionados com critério, não por conveniência. O resultado: <strong>propostas reais para resultados reais</strong> — com ética, transparência e execução de qualidade.</p>
+              </div>
             </div>
-            <div class="copyright">Visual animado premium • Página sobre • Arquitetura de sistemas</div>
           </div>
-        </footer>
+        </aside>
       </div>
-    </div>
-  </div>
 
-  <script>
-    (function () {
-      const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const items = document.querySelectorAll('.reveal');
+      <div class="grid" style="margin-top:22px; grid-template-columns: .9fr 1.1fr;">
+        <article class="panel reveal delay-3">
+          <div class="inner">
+            <h2>Por Que Herbalife</h2>
+            <p>A Herbalife é a <strong>marca número 1 em nutrição e bem-estar do mundo</strong>, com mais de 40 anos de pesquisa, <strong>300+ cientistas e PhDs</strong> e presença em 95 países. Não é sobre tendência — é sobre <strong>lastro científico</strong>.</p>
+            <p>Como Consultor Independente Herbalife, levo <strong>planos</strong> <strong>acessíveis e realistas</strong> para quem busca performance, controle de peso ou simplesmente mais energia no dia a dia, apresentando o <strong>[Catálogo de Produtos](https://catalogoherbalife.com.br/edusidegum)</strong>.</p>
+            <p><strong>100% digital</strong>, com entrega em todo o Brasil. Cada cliente recebe acompanhamento personalizado e acesso ao programa <strong>[Cliente Premium](https://edusidegum.github.io/cadastro/cadastro.html)</strong>, com descontos progressivos de até 32%.</p>
+          </div>
+        </article>
 
-      if (reduced || !('IntersectionObserver' in window)) {
-        items.forEach(el => el.classList.add('is-visible'));
-        return;
-      }
+        <article class="panel reveal delay-3">
+          <div class="inner">
+            <h2>Contato</h2>
+            <p>Se fizer sentido para você, o contato pode começar por aqui:</p>
+            <div class="contact">
+              <a href="https://wa.me/5551999663200" target="_blank" rel="noopener noreferrer">WhatsApp: (51) 9 9966-3200</a>
+              <a href="mailto:edusidegum@gmail.com">E-mail: edusidegum@gmail.com</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
-
-      items.forEach((el, index) => {
-        el.style.transitionDelay = `${Math.min(index * 70, 420)}ms`;
-        observer.observe(el);
-      });
-    })();
-  </script>
+    <footer class="footer">
+      <div class="wrap">
+        <p>Eduardo Sidegum — consultoria, estratégia digital e bem-estar com estrutura, fluxo e resultado mensurável.</p>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
