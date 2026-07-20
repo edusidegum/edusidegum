@@ -405,7 +405,7 @@
 
     /* Contato: aplicar footer.png como background responsivo ao tamanho do section */
     section#contato, #contato.section, section[data-section="contato"] {
-      background-image: url('footer.png');
+      background-image: url('/edusidegum/img/footer.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -413,12 +413,15 @@
       position: relative;
       isolation: isolate;
     }
-    section#contato::before {
+    section#contato::before,
+    #contato.section::before,
+    section[data-section="contato"]::before {
       content: "";
       position: absolute;
       inset: 0;
       background: radial-gradient(1200px 600px at 50% 100%, rgba(0,0,0,0.55), rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.95));
       z-index: -1; /* fica atrás do conteúdo mas acima do BG */
+    }
     }
   </style>
 
