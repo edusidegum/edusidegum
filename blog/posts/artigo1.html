@@ -3,392 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Insuficiência dos Indicadores Oficiais de Desemprego no Brasil — IEVT-M | Eduardo Sidegum</title>
-
-    <!-- Segurança -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-
-    <!-- SEO / Social -->
-    <meta name="description" content="Análise crítica das limitações da Taxa de Desocupação oficial (PNAD Contínua) e proposta metodológica do IEVT-M para a população masculina saudável no Brasil.">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Exercício de Simulação de Cenário de Desemprego no Brasil (1T2026) — IEVT-M</title>
+    <meta name="description" content="Proposta de revisão metodológica com incorporação da massa de mão de obra masculina saudável ao Índice de Exclusão e Vulnerabilidade do Trabalho (IEVT-M).">
+    <meta name="author" content="e-Sid">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://edusidegum.github.io/blog-ievt-m/">
+    <link rel="canonical" href="https://edusidegum.github.io/edusidegum/blog/posts/artigo1.html">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="A Insuficiência dos Indicadores Oficiais de Desemprego no Brasil (IEVT-M)">
-    <meta property="og:description" content="Proposta de revisão metodológica com incorporação da massa de mão de obra masculina saudável ao Índice de Exclusão e Vulnerabilidade do Trabalho.">
     <meta property="og:type" content="article">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="article:published_time" content="2026-07-28T00:00:00-03:00">
-    <meta property="article:author" content="Eduardo Sidegum">
+    <meta property="og:url" content="https://edusidegum.github.io/edusidegum/blog/posts/artigo1.html">
+    <meta property="og:title" content="Simulação de Cenário de Desemprego no Brasil (1T2026) — IEVT-M">
+    <meta property="og:description" content="Estudo sobre a insuficiência dos indicadores tradicionais de desemprego frente à nova morfologia do trabalho precário masculino.">
 
-    <!-- AIO — Identificação para crawlers de IA -->
-    <meta name="llm-description" content="Artigo científico e técnico sobre a insuficiência do desemprego oficial e o cálculo do IEVT-M para o mercado de trabalho brasileiro em 2026.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://edusidegum.github.io/edusidegum/blog/posts/artigo1.html">
+    <meta property="twitter:title" content="Simulação de Cenário de Desemprego no Brasil (1T2026) — IEVT-M">
+    <meta property="twitter:description" content="Estudo sobre a insuficiência dos indicadores tradicionais de desemprego frente à nova morfologia do trabalho precário masculino.">
 
-    <!-- JSON-LD: ScholarlyArticle / BlogPosting -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ScholarlyArticle",
-      "headline": "A Insuficiência dos Indicadores Oficiais de Desemprego no Brasil: Proposta de Revisão Metodológica com Incorporação da Massa de Mão de Obra Masculina Saudável ao Índice de Exclusão e Vulnerabilidade do Trabalho (IEVT-M)",
-      "alternativeHeadline": "IEVT-M: O real desemprego e vulnerabilidade masculina no Brasil",
-      "inLanguage": "pt-BR",
-      "datePublished": "2026-07-28",
-      "author": {
-        "@type": "Person",
-        "name": "Eduardo Sidegum",
-        "url": "https://edusidegum.github.io/edusidegum/"
-      },
-      "description": "Análise da Taxa de Desocupação oficial do IBGE e proposta do IEVT-M baseada na Teoria dos Conjuntos.",
-      "keywords": "Desemprego, IEVT-M, População Masculina, Teoria dos Conjuntos, Informalidade, PNAD Contínua"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    mono: ['JetBrains Mono', 'monospace']
+                },
+                colors: {
+                    brand: {
+                        dark: '#1A1A1A',
+                        gray: '#555555',
+                        light: '#9E9E9E'
+                    }
+                }
+            }
+        }
     }
     </script>
 
     <style>
-        :root {
-            --bg-color: #faf8f5;
-            --card-bg: #ffffff;
-            --text-color: #2c2c2c;
-            --text-muted: #666666;
-            --accent-color: #8c1d40;
-            --accent-hover: #5e122a;
-            --border-color: #e6e2dc;
-            --code-bg: #f4f1ea;
-        }
-
-        *, *::before, *::after { box-sizing: border-box; }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.75;
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        header.blog-header {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--accent-color);
-        }
-
-        header.blog-header h1 {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto 12px auto;
-            line-height: 1.4;
-            font-weight: 700;
-        }
-
-        header.blog-header .meta-info {
-            font-size: 0.9rem;
-            color: #b3b3b3;
-        }
-
-        .container {
-            max-width: 760px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .article-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            padding: 48px 40px;
-            border: 1px solid var(--border-color);
-        }
-
-        @media (max-width: 600px) {
-            .article-card { padding: 24px 16px; }
-            header.blog-header h1 { font-size: 1.25rem; }
-        }
-
-        h2 {
-            font-size: 1.35rem;
-            color: #1a1a1a;
-            margin-top: 36px;
-            margin-bottom: 16px;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 12px;
-            font-weight: 700;
-        }
-
-        h3 {
-            font-size: 1.15rem;
-            color: #333;
-            margin-top: 28px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        p, ul, ol {
-            margin-bottom: 20px;
-            font-size: 1.02rem;
-            color: #3a3a3a;
-        }
-
-        ul, ol {
-            padding-left: 24px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        strong {
-            color: #1a1a1a;
-        }
-
-        .resumo-box {
-            background: #f7f5f0;
-            border-left: 4px solid #333;
-            padding: 20px 24px;
-            margin: 24px 0;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.98rem;
-        }
-
-        .keywords {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: -10px;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
-        .math-block {
-            background: var(--code-bg);
-            padding: 16px 20px;
-            border-radius: 8px;
-            font-family: 'Times New Roman', Times, serif;
-            font-style: italic;
-            font-size: 1.15rem;
-            text-align: center;
-            margin: 20px 0;
-            border: 1px solid var(--border-color);
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-            font-size: 0.95rem;
-        }
-
-        th, td {
-            padding: 12px 16px;
-            border: 1px solid var(--border-color);
-            text-align: left;
-        }
-
-        th {
-            background-color: #f0ece1;
-            color: #1a1a1a;
-            font-weight: 600;
-        }
-
-        tr:nth-child(even) {
-            background-color: #faf8f5;
-        }
-
-        footer.article-footer {
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            text-align: center;
-        }
-
-        footer.article-footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        footer.article-footer a:hover {
-            text-decoration: underline;
-        }
-
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #222;
-            color: #fff;
-            padding: 16px;
-            text-align: center;
-            font-size: 0.9rem;
-            z-index: 1000;
-            display: none;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-        }
-
-        .cookie-banner button {
-            background: var(--accent-color);
-            color: #fff;
-            border: none;
-            padding: 8px 16px;
-            margin-left: 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .cookie-banner button:hover {
-            background: var(--accent-hover);
-        }
+    body { font-family: 'Inter', sans-serif; color: #333333; line-height: 1.6; }
+    .justified { text-align: justify; text-justify: inter-word; }
+    .math-block { font-family: 'JetBrains Mono', monospace; background-color: #F9FAFB; padding: 1rem; border-radius: 0.375rem; margin: 1rem 0; overflow-x: auto; font-size: 0.875rem; }
+    .table-container { overflow-x: auto; margin: 2rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { border: 1px solid #E5E7EB; padding: 0.75rem; text-align: left; }
+    th { background-color: #F3F4F6; font-weight: 600; }
+    section { margin-bottom: 3rem; }
+    h2 { border-bottom: 1px solid #E5E7EB; padding-bottom: 0.5rem; }
+    @media (max-width: 640px) { .justified { text-align: left; } }
     </style>
-</head>
-<body>
 
-    <header class="blog-header">
-        <h1>A INSUFICIÊNCIA DOS INDICADORES OFICIAIS DE DESEMPREGO NO BRASIL: PROPOSTA DE REVISÃO METODOLÓGICA COM INCORPORAÇÃO DA MASSA DE MÃO DE OBRA MASCULINA SAUDÁVEL AO ÍNDICE DE EXCLUSÃO E VULNERABILIDADE DO TRABALHO (IEVT)</h1>
-        <div class="meta-info">Por Eduardo Sidegum • Publicado em Julho de 2026 • Versão 2.3</div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "Exercício de Simulação de Cenário de Desemprego no Brasil para o Primeiro Trimestre de 2026",
+        "author": {
+            "@type": "Person",
+            "name": "e-Sid"
+        },
+        "datePublished": "2026-07-28",
+        "description": "Proposta de revisão metodológica com incorporação da massa de mão de obra masculina saudável ao Índice de Exclusão e Vulnerabilidade do Trabalho (IEVT-M).",
+        "keywords": "Desemprego, Subutilização, IEVT-M, Informalidade, Teoria dos Conjuntos"
+    }
+    </script>
+</head>
+<body class="bg-white antialiased">
+
+    <header class="max-w-4xl mx-auto px-6 pt-16 pb-12 border-b border-gray-100">
+        <p class="text-[#9E9E9E] text-xs tracking-widest uppercase mb-4">Pesquisa Independente / e-Sid</p>
+        <h1 class="text-3xl md:text-4xl font-bold text-[#1A1A1A] leading-tight mb-6">
+            Exercício de Simulação de Cenário de Desemprego no Brasil para o Primeiro Trimestre de 2026: Proposta de Revisão Metodológica com Incorporação da Massa de Mão de Obra Masculina Saudável ao Índice de Exclusão e Vulnerabilidade do Trabalho (IEVT) — Versão 3
+        </h1>
+        <div class="flex flex-col md:flex-row md:items-center gap-4 text-sm text-[#555555]">
+            <p><strong>Autor:</strong> &lt;e/&gt; e-Sid (pesquisa gerada com uso de LLM)</p>
+            <p class="hidden md:block">|</p>
+            <p><strong>Data:</strong> 28 de julho de 2026</p>
+        </div>
     </header>
 
-    <div class="container">
-        <article class="article-card">
-            
-            <div class="resumo-box">
-                <p><strong>RESUMO:</strong> Este artigo analisa as limitações da Taxa de Desocupação oficial, mensurada pelo IBGE através da PNAD Contínua, como métrica isolada para a compreensão da precariedade laboral no Brasil. Propõe-se a aplicação do Índice de Exclusão e Vulnerabilidade do Trabalho (IEVT-M), com recorte metodológico estrito à população masculina em idade laboral (15-64 anos), saudável e não beneficiária de sistemas de renda por comorbidades. O estudo exclui deliberadamente da base de cálculo o contingente feminino (mães de família e trabalhadoras informais/diaristas) para isolar o comportamento da massa de mão de obra masculina apta. Utilizando dados do primeiro trimestre de 2026, o artigo emprega a Teoria dos Conjuntos e o Princípio da Inclusão-Exclusão para deduplicar as bases de desocupados, ocupados informais sem proteção e beneficiários do Programa Bolsa Família. A modelagem matemática revela que, embora a taxa oficial de desocupação masculina seja de 5,1%, a banda indicativa do IEVT-M situa-se entre 43,3% e 47,1% nos cenários de maior aderência à realidade empírica, com um piso absoluto de 40,5%. Os resultados validam a hipótese de que a exclusão do mercado de trabalho protegido é, no mínimo, oito vezes superior ao reportado pelos indicadores tradicionais, evidenciando um exército de reserva masculino subutilizado e vulnerável.</p>
-            </div>
+    <main class="max-w-4xl mx-auto px-6 py-12">
 
-            <div class="keywords">
-                <strong>Palavras-chave:</strong> Desemprego. IEVT-M. População Masculina. Teoria dos Conjuntos. Informalidade.
-            </div>
+        <section id="resumo" class="bg-gray-50 p-8 rounded-lg mb-12">
+            <h2 class="text-lg font-bold mb-4 border-none p-0">RESUMO</h2>
+            <p class="justified text-sm leading-relaxed">
+                O presente estudo apresenta um exercício de simulação estatística para o mercado de trabalho brasileiro no primeiro trimestre de 2026, propondo o Índice de Exclusão e Vulnerabilidade do Trabalho para a população masculina (IEVT-M). Enquanto a taxa oficial de desocupação masculina situou-se em 5,1% e a taxa composta de subutilização geral do IBGE atingiu 14,3%, o IEVT-M simulado em cenário central aponta para um patamar de 44,5%. Este resultado representa um volume aproximadamente 3 vezes superior à taxa de subutilização oficial, evidenciando uma massa de mão de obra masculina saudável que, embora não classificada como desempregada estrita, opera à margem da seguridade social e da proteção laboral. A metodologia ancora-se no arcabouço LU1-LU4 da Organização Internacional do Trabalho (OIT, 2013) e utiliza o Princípio da Inclusão-Exclusão da Teoria dos Conjuntos para deduplicação de beneficiários de programas de transferência de renda e trabalhadores informais. Ressalta-se que os resultados constituem cenários simulados sob premissas hipotéticas de sobreposição, visando fomentar o debate sobre a insuficiência dos indicadores tradicionais de desemprego frente à nova morfologia do trabalho precário.
+            </p>
+            <p class="mt-4 text-sm"><strong>Palavras-chave:</strong> Desemprego. Subutilização. IEVT-M. Informalidade. Teoria dos Conjuntos.</p>
+        </section>
 
-            <hr style="border: none; border-top: 1px solid var(--border-color); margin: 30px 0;">
+        <section id="introducao">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-6">1 INTRODUÇÃO</h2>
+            <p class="justified mb-4">
+                A mensuração do desemprego no Brasil enfrenta desafios estruturais que transcendem a simples contagem de indivíduos em busca ativa por ocupação. A taxa oficial de desocupação, embora útil para monitorar ciclos econômicos, falha em capturar a profundidade da precarização laboral em um cenário de crescente informalidade e dependência de auxílios governamentais.
+            </p>
+            <p class="justified">
+                Este artigo propõe o IEVT-M como uma métrica complementar, focada exclusivamente na população masculina saudável em idade laboral. A decisão metodológica de excluir mães de família e trabalhadoras informais (como diaristas) deste índice específico não visa invisibilizar o trabalho feminino, mas sim isolar o fenômeno da ociosidade e vulnerabilidade masculina, cujos impactos sociais e demográficos possuem dinâmicas próprias de risco e perda de produtividade nacional.
+            </p>
+        </section>
 
-            <h2>1 INTRODUÇÃO</h2>
-            <p>A mensuração do desemprego no Brasil segue padrões internacionais estabelecidos pela Organização Internacional do Trabalho (OIT), focando na busca ativa por ocupação. Todavia, tal métrica revela-se insuficiente para captar a complexidade de uma economia periférica marcada por uma informalidade estrutural e por uma massa de indivíduos que, embora não classificados como desocupados, sobrevivem à margem do sistema de proteção social e previdenciária. Este artigo propõe o IEVT-M como ferramenta complementar, focando exclusivamente na mão de obra masculina saudável, visando diagnosticar a real ociosidade e vulnerabilidade deste segmento.</p>
+        <section id="referencial">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-6">2 REFERENCIAL TEÓRICO</h2>
+            <p class="justified mb-4">
+                A compreensão da vulnerabilidade laboral contemporânea exige o resgate de Polanyi (1944), que já alertava para os riscos da desancoragem da proteção social em mercados autorregulados. Castel (1998) aprofunda essa análise ao descrever as metamorfoses da questão social, onde a "zona de vulnerabilidade" se expande entre o emprego estável e a exclusão total. Nesse contexto, Standing (2011) identifica o surgimento do "precariado", uma classe definida pela instabilidade crônica e ausência de identidade profissional, fenômeno que Antunes (2009) descreve como a nova morfologia do trabalho.
+            </p>
+            <p class="justified mb-4">
+                No Brasil, Braga (2012) caracteriza essa realidade como uma "poliarquia da miséria", onde o precariado brasileiro sobrevive em um regime de indiferença estatal. Pochmann (2001) associa essa reconfiguração do emprego aos processos de globalização, que, segundo Rodrik (2011), criam um paradoxo onde a abertura econômica muitas vezes sacrifica a qualidade do emprego. Neri (2011) observa que a vulnerabilidade social permanece latente devido à baixa qualidade dos vínculos laborais. A análise da privação não deve se limitar à renda, mas estender-se às capacidades, conforme proposto por Sen (1981). Hirata e Kergoat (2007) detalham a divisão sexual do trabalho, permitindo o uso do recorte de gênero de forma descritiva. Por fim, o arcabouço LU1-LU4 da OIT (2013) fornece a base estatística para a transição do conceito de desemprego para o de subutilização.
+            </p>
+        </section>
 
-            <h2>2 REFERENCIAL TEÓRICO</h2>
-            <p>A análise da divisão sexual do trabalho, conforme proposta por Hirata e Kergoat (2007), estabelece que as esferas produtiva e reprodutiva são atravessadas por relações de gênero que determinam a inserção no mercado. Ao isolar a população masculina, este estudo não ignora a precariedade feminina, mas busca compreender a dinâmica específica do "provedor frustrado" em um cenário de desindustrialização e expansão do setor de serviços informais. A exclusão de mães e trabalhadoras domésticas da base de cálculo justifica-se pela necessidade de observar o comportamento do contingente masculino que, teoricamente, possui maior disponibilidade para jornadas extensas e mobilidade, mas que se encontra retido em ocupações de baixa produtividade ou dependência assistencial.</p>
-
-            <h2>3 FONTES DE DADOS E CONCEITOS OPERACIONAIS</h2>
-            <p>Os dados primários advêm da PNAD Contínua (IBGE) referente ao 1º trimestre de 2026, cruzados com estatísticas do Cadastro Único (MDS). Define-se "população masculina saudável" como indivíduos do sexo masculino em idade laboral (15-64 anos) que não recebem BPC-PCD, auxílio-doença ou aposentadoria por invalidez. O conceito de "vulnerabilidade" abrange a desocupação aberta, a informalidade sem contribuição previdenciária e a dependência de transferências de renda governamentais para subsistência mínima.</p>
-
-            <h2>4 LIMITAÇÕES DO INDICADOR OFICIAL E POR QUE COMPLEMENTÁ-LO COM RECORTE MASCULINO</h2>
-            <p>A taxa oficial de desocupação (6,1% geral; 5,1% masculina) mascara o fenômeno do "trabalhador pobre". Um indivíduo que realiza bicos ocasionais é considerado "ocupado" pelo IBGE. O recorte masculino é estratégico para políticas de segurança pública e produtividade nacional, uma vez que a ociosidade masculina saudável está correlacionada a indicadores de criminalidade e perda de bônus demográfico. Ao excluir o trabalho informal feminino (frequentemente ligado ao cuidado), foca-se na massa de manobra econômica primária.</p>
-
-            <h2>5 UM INDICADOR COMPLEMENTAR COM RECORTE MASCULINO: IEVT-M</h2>
-            <p>O IEVT-M (Índice de Exclusão e Vulnerabilidade do Trabalho - Masculino) é construído pela soma dos desocupados (D), informais sem proteção (I) e beneficiários de assistência (B), dividida pela Força de Trabalho Masculina (PEA_m). Diferente das taxas de subutilização da PNAD, o IEVT-M foca na ausência de vínculo contributivo e na fragilidade do sustento.</p>
-
-            <h2>6 COMPARAÇÃO CONCEITUAL COM AS MÉTRICAS DO BLS</h2>
-            <p>Enquanto o <em>Bureau of Labor Statistics</em> (EUA) utiliza as taxas U-1 a U-6 para medir a subutilização, o IEVT-M aproxima-se de uma "U-7 brasileira", incorporando a dependência assistencial (Bolsa Família) como um sintoma de exclusão produtiva, algo não capturado pelas métricas norte-americanas, desenhadas para mercados de trabalho plenamente formalizados.</p>
-
-            <h2>7 EVIDÊNCIAS EMPÍRICAS (1º TRIMESTRE DE 2026)</h2>
-            <p>Os dados do 1T2026 indicam uma PEA masculina de aproximadamente 60,8 milhões de indivíduos. Destes, 3,1 milhões estão em desocupação aberta. Contudo, a massa de informais sem proteção atinge 21,5 milhões, e o contingente de homens adultos no Bolsa Família soma 11,5 milhões.</p>
-
-            <h3>7.1 Modelagem matemática do cruzamento de bases e deduplicação (Teoria dos Conjuntos)</h3>
-            <p>A construção do IEVT-M requer o tratamento da sobreposição entre os conjuntos que compõem o numerador. O Princípio da Inclusão-Exclusão da Teoria dos Conjuntos oferece a base formal para eliminar duplas contagens. Sejam:</p>
-            <ul>
-                <li><strong>D</strong> = conjunto dos desocupados oficiais do sexo masculino (|<span style="font-style:italic">D</span>| &approx; 3,1 milhões)</li>
-                <li><strong>I</strong> = conjunto dos ocupados informais do sexo masculino sem proteção contributiva (|<span style="font-style:italic">I</span>| &approx; 21,5 milhões)</li>
-                <li><strong>B</strong> = conjunto dos adultos do sexo masculino (15-64 anos) beneficiários do Bolsa Família (|<span style="font-style:italic">B</span>| &approx; 11,5 milhões)</li>
-                <li><strong>PEA_m</strong> = força de trabalho masculina (|<span style="font-style:italic">PEA_m</span>| &approx; 60,8 milhões)</li>
+        <section id="dados">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-6">3 FONTES DE DADOS E CONCEITOS OPERACIONAIS</h2>
+            <p class="justified mb-4">
+                Os dados primários derivam da PNAD Contínua do IBGE (2026), Tabela 4093 do sistema SIDRA. O parâmetro B (beneficiários masculinos do Bolsa Família) foi estimado a partir dos seguintes passos:
+            </p>
+            <ul class="list-disc list-inside space-y-2 mb-4 text-sm ml-4">
+                <li>Total de beneficiários do Bolsa Família: ~55 milhões de pessoas;</li>
+                <li>Proporção de homens no total: ~42% (CECAD 2.0), resultando em ~23 milhões;</li>
+                <li>Recorte etário 15-64 anos: ~12-13 milhões;</li>
+                <li>Exclusão de indivíduos com comorbidades (BPC/Invalidez): redução para faixa de 5 a 9 milhões;</li>
+                <li>Valor central adotado para simulação: 7 milhões.</li>
             </ul>
-            <p>Por construção do IBGE, <span class="math">D &cap; I = &empty;</span>. As interseções relevantes são <span class="math">I &cap; B</span> e <span class="math">D &cap; B</span>. O numerador deduplicado do IEVT-M é dado por:</p>
-            
+            <p class="justified italic text-sm text-[#555555]">
+                Nota: Este é um exercício de aproximação na ausência de acesso a microdados individualizados vinculando PNAD e Cadastro Único.
+            </p>
+        </section>
+
+        <section id="limitacoes">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-6">4 LIMITAÇÕES DO INDICADOR OFICIAL</h2>
+            <p class="justified mb-4">
+                A taxa de desocupação aberta ignora o desalento e a subocupação por insuficiência de horas. O recorte de gênero adotado neste estudo é uma decisão metodológica instrumental, visando analisar a massa de homens saudáveis que, embora aptos, não estão inseridos no mercado formal. Diferente das abordagens de Hirata e Kergoat (2007), este índice busca isolar a vulnerabilidade masculina.
+            </p>
+        </section>
+
+        <section id="definicao">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-6">5 IEVT-M — DEFINIÇÃO</h2>
+            <p class="justified mb-4">
+                O IEVT-M é definido pela razão entre o numerador de vulnerabilidade (Desocupados + Informais + Beneficiários de Renda sem vínculo) e a População Economicamente Ativa Masculina (PEA_m). Aplica-se o Princípio da Inclusão-Exclusão para evitar dupla contagem.
+            </p>
             <div class="math-block">
-                |Numerador| = |D| + |I| + |B| − |I &cap; B| − |D &cap; B|
+                IEVT-M = (|D| + |I| + |B| - |I ∩ B| - |D ∩ B|) / |PEA_m|
             </div>
+        </section>
 
-            <p>Aplicando os parâmetros base:</p>
-            <ol>
-                <li><strong>Cenário Teto</strong> (zero sobreposição): |Numerador| = 36,1 milhões; <strong>IEVT-M = 59,4%</strong>.</li>
-                <li><strong>Cenário Realista</strong> (65% de B em I): |<span style="font-style:italic">I &cap; B</span>| = 7,475 milhões; <strong>IEVT-M &approx; 47,1%</strong>.</li>
-                <li><strong>Cenário de Alta Sobreposição</strong> (85% de B em <span class="math">I &cup; D</span>): <strong>IEVT-M &approx; 43,3%</strong>.</li>
-                <li><strong>Cenário Piso</strong> (<span class="math">B &sube; I &cup; D</span>): |Numerador| = 24,6 milhões; <strong>IEVT-M = 40,5%</strong>.</li>
-            </ol>
+        <section id="comparacao">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-6">6 COMPARAÇÃO COM BLS E ARCABOUÇO OIT/IBGE</h2>
+            <p class="justified mb-4">
+                O IEVT-M assemelha-se ao indicador U-6 do BLS e ao LU4 da OIT. Enquanto a taxa de desocupação (U-3) é de 5,1%, o IEVT-M central de 44,5% revela uma realidade aproximadamente 3 vezes superior à taxa composta de subutilização oficial do IBGE (14,3%).
+            </p>
+            <blockquote class="border-l-4 border-gray-200 pl-4 py-2 my-6 italic text-sm text-[#555555]">
+                Nota: A comparação direta com a taxa de desocupação aberta (5,1%) resultaria em um múltiplo de aproximadamente 8 vezes, mas esta comparação mistura categorias distintas (desemprego mede ausência de ocupação; informalidade mede qualidade da ocupação), razão pela qual a referência metodologicamente adequada é a taxa composta de subutilização (14,3%).
+            </blockquote>
+        </section>
 
-            <p>Os resultados indicam que a banda indicativa IEVT-M para a população masculina saudável situa-se entre <strong>43,3% e 47,1%</strong>. O piso matemático absoluto é de 40,5%.</p>
-
-            <h2>8 VALIDAÇÕES, TESTES DE SENSIBILIDADE E AUTOCORREÇÕES</h2>
-            <p>As validações cruzadas entre o Cadastro Único e a PNAD sugerem que a maioria dos homens beneficiários de programas sociais exerce atividades informais de sobrevivência.</p>
-
-            <h3>8.1 Teste de simulação por Teoria dos Conjuntos</h3>
-            <p>A simulação interna aplicou o Princípio da Inclusão-Exclusão para modelar o cruzamento das bases D, I e B. O teste valida inequivocamente a hipótese central: mesmo com deduplicações rigorosas, o IEVT-M mínimo de 40,5% é oito vezes superior à taxa oficial de 5,1%.</p>
-
-            <h2>9 IMPLICAÇÕES PARA POLÍTICAS PÚBLICAS</h2>
-            <p>A discrepância entre 5,1% e 47,1% sugere que as políticas de emprego devem focar na formalização e na produtividade, e não apenas na "colocação" em qualquer atividade. A massa de homens saudáveis no IEVT-M representa um potencial produtivo desperdiçado que pressiona os sistemas de assistência.</p>
-
-            <h2>10 CONCLUSÕES</h2>
-            <p>A insuficiência dos indicadores oficiais é patente. A revisão metodológica proposta demonstra que a exclusão laboral masculina no Brasil é um fenômeno de massa, atingindo quase metade da força de trabalho masculina saudável. A banda validada de <strong>43,3% a 47,1%</strong> (com piso de 40,5%) deve servir de alerta para gestores públicos. O IEVT-M revela que o "pleno emprego" estatístico convive com uma vulnerabilidade social profunda e estrutural.</p>
-
-            <hr style="border: none; border-top: 1px solid var(--border-color); margin: 30px 0;">
-
-            <h2>ANEXO METODOLÓGICO</h2>
-            <p>A fórmula geral do IEVT-M, ajustada para evitar a sobreposição de indivíduos em múltiplas bases de dados, é expressa por:</p>
-            
-            <div class="math-block">
-                IEVT-M = (|D| + |I| + |B| − |I &cap; B| − |D &cap; B|) / |PEA_m|
+        <section id="evidencias">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-6">7 EVIDÊNCIAS EMPÍRICAS (1T2026)</h2>
+            <p class="justified mb-4">
+                No primeiro trimestre de 2026, a PEA_m foi estimada em 60,8 milhões. O contingente de homens desocupados (D) somou 3,1 milhões, enquanto os informais (I) atingiram 21,5 milhões. O grupo de beneficiários masculinos saudáveis (B) foi fixado em 7 milhões.
+            </p>
+            <h3 class="text-lg font-semibold mt-8 mb-4">7.1 Modelagem matemática (Teoria dos Conjuntos)</h3>
+            <p class="justified mb-6">
+                Utilizando a fundamentação de Halmos (2001), a modelagem do numerador considera as interseções entre os conjuntos de vulnerabilidade. Os percentuais de sobreposição abaixo são hipóteses de trabalho para simulação de cenários.
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cenário</th>
+                            <th>Sobreposição (I∩B)</th>
+                            <th>Numerador Final</th>
+                            <th>IEVT-M</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Teto</td>
+                            <td>0%</td>
+                            <td>31,6M</td>
+                            <td>52,0%</td>
+                        </tr>
+                        <tr class="bg-blue-50 font-semibold">
+                            <td>Realista</td>
+                            <td>65%</td>
+                            <td>27,05M</td>
+                            <td>44,5%</td>
+                        </tr>
+                        <tr>
+                            <td>Alta</td>
+                            <td>85%</td>
+                            <td>25,65M</td>
+                            <td>42,2%</td>
+                        </tr>
+                        <tr>
+                            <td>Piso</td>
+                            <td>100%</td>
+                            <td>24,6M</td>
+                            <td>40,5%</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+        </section>
 
-            <p>Onde os termos subtraídos garantem que um homem informal que também recebe Bolsa Família seja contabilizado apenas uma vez no numerador da vulnerabilidade.</p>
+        <section id="validacoes">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-6">8 VALIDAÇÕES E TESTES DE SENSIBILIDADE</h2>
+            <p class="justified mb-4">
+                A sensibilidade do índice ao parâmetro B demonstra que, mesmo em cenários de baixa estimativa de beneficiários, o IEVT-M permanece significativamente acima dos indicadores oficiais. A principal limitação reside na ausência de cruzamento real de microdados, o que torna os resultados indicativos de tendências, e não medidas absolutas.
+            </p>
+        </section>
 
-            <h2>REFERÊNCIAS BIBLIOGRÁFICAS (AUTORES E OBRAS)</h2>
-            <ul>
-                <li>ANTUNES, R. <strong>Os sentidos do trabalho:</strong> ensaio sobre a afirmação e a negação do trabalho. 2. ed. São Paulo: Boitempo, 2009.</li>
-                <li>HALMOS, P. R. <strong>Teoria ingênua dos conjuntos</strong>. Rio de Janeiro: Ciência Moderna, 2001.</li>
-                <li>HIRATA, H.; KERGOAT, D. Novas configurações da divisão sexual do trabalho. <strong>Cadernos de Pesquisa</strong>, v. 37, n. 132, p. 595-609, set./dez. 2007.</li>
-                <li>POCHMANN, M. <strong>O emprego no desenvolvimento da nação</strong>. São Paulo: Boitempo, 2008.</li>
-            </ul>
+        <section id="implicacoes">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-6">9 IMPLICAÇÕES PARA POLÍTICAS PÚBLICAS</h2>
+            <p class="justified mb-4">
+                Os resultados sugerem que as políticas de emprego devem focar na transição da informalidade para a proteção contributiva. A mera redução da desocupação aberta não resolve a vulnerabilidade estrutural de quase metade da força de trabalho masculina.
+            </p>
+        </section>
 
-            <h2>REFERÊNCIAS BIBLIOGRÁFICAS (BASES OFICIAIS E MANUAIS)</h2>
-            <ul>
-                <li>IBGE. <strong>PNAD Contínua Trimestral:</strong> desocupação sobe em 15 das 27 UFs no 1° trimestre de 2026. Agência de Notícias IBGE, 14 maio 2026. Disponível em: https://agenciadenoticias.ibge.gov.br/. Acesso em: jul. 2026.</li>
-                <li>IBGE. <strong>Manual da Pesquisa Nacional por Amostra de Domicílios Contínua</strong>. Rio de Janeiro: IBGE, 2022.</li>
-                <li>MDS. <strong>Programa Bolsa Família e Cadastro Único:</strong> painéis e estatísticas. Disponível em: https://www.gov.br/mds/. Acesso em: jul. 2026.</li>
-            </ul>
+        <section id="conclusoes">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-6">10 CONCLUSÕES</h2>
+            <p class="justified mb-4">
+                O IEVT-M de 44,5% no cenário central simulado, comparado à subutilização de 14,3% do IBGE, confirma que a precariedade laboral masculina é um fenômeno de massa. O múltiplo de aproximadamente 3 vezes sobre a taxa oficial de subutilização reforça a necessidade de novas métricas que incorporem a assistência social e a informalidade. A natureza simulada deste estudo serve como um chamado para o uso de microdados integrados em pesquisas futuras.
+            </p>
+        </section>
 
-            <h2>NOTAS FINAIS</h2>
-            <p>Este documento foi gerado com suporte de Inteligência Artificial (LLM) sob supervisão técnica para fins de análise acadêmica e simulação estatística baseada em tendências demográficas e econômicas projetadas para 2026. Versão 2.3 emitida com as duas correções da revisão aplicadas.</p>
+        <section id="referencias" class="text-sm">
+            <h2 class="text-2xl font-bold text-[#1A1A1A] mb-8">REFERÊNCIAS</h2>
+            <div class="space-y-4">
+                <p>ANTUNES, R. <strong>Os sentidos do trabalho</strong>: ensaio sobre a afirmação e a negação do trabalho. 2. ed. São Paulo: Boitempo, 2009.</p>
+                <p>BRAGA, R. <strong>A poliarquia da miséria</strong>: o precariado e a era de indiferença. São Paulo: Boitempo, 2012.</p>
+                <p>CASTEL, R. <strong>As metamorfoses da questão social</strong>: uma crônica do salário. Petrópolis: Vozes, 1998.</p>
+                <p>HALMOS, P. R. <strong>Teoria ingênua dos conjuntos</strong>. Rio de Janeiro: Ciência Moderna, 2001.</p>
+                <p>HIRATA, H.; KERGOAT, D. Novas configurações da divisão sexual do trabalho. <strong>Cadernos de Pesquisa</strong>, v. 37, n. 132, p. 595-609, set./dez. 2007.</p>
+                <p>IBGE. <strong>PNAD Contínua: Notas técnicas</strong>. Tabela 4093. Disponível em: https://sidra.ibge.gov.br/tabela/4093. Acesso em: jul. 2026.</p>
+                <p>IBGE. PNAD Contínua Trimestral: desocupação sobe em 15 das 27 UFs no 1° trimestre de 2026. <strong>Agência de Notícias IBGE</strong>, 14 maio 2026.</p>
+                <p>IBGE. <strong>Medidas de Subutilização da Força de Trabalho no Brasil</strong>: 1º trimestre de 2026. Rio de Janeiro: IBGE, 2026.</p>
+                <p>MDS. <strong>Programa Bolsa Família e Cadastro Único</strong>: painéis e estatísticas. Disponível em: https://www.gov.br/mds/. Acesso em: jul. 2026.</p>
+                <p>MTE. <strong>CAGED/RAIS</strong>: vínculos formais e movimentação. Disponível em: https://www.gov.br/trabalho-e-emprego/. Acesso em: jul. 2026.</p>
+                <p>NERI, M. <strong>A nova classe média</strong>: o lado brilhante da base da pirâmide. São Paulo: Saraiva, 2011.</p>
+                <p>OIT. <strong>Resolution concerning statistics of work, employment and labour underutilization</strong>. 19th ICLS. Genebra: OIT, 2013.</p>
+                <p>POCHMANN, M. <strong>O emprego na globalização</strong>: a nova desordem do trabalho. São Paulo: Boitempo, 2001.</p>
+                <p>POLANYI, K. <strong>A grande transformação</strong>: as origens de nosso tempo. Rio de Janeiro: Campus, 1944.</p>
+                <p>RODRIK, D. <strong>The Globalization Paradox</strong>: Democracy and the Future of the World Economy. New York: W.W. Norton, 2011.</p>
+                <p>SEN, A. <strong>Poverty and Famines</strong>: An Essay on Entitlement and Deprivation. Oxford: Oxford University Press, 1981.</p>
+                <p>STANDING, G. <strong>The Precariat</strong>: The New Dangerous Class. London: Bloomsbury Academic, 2011.</p>
+                <p>U.S. BUREAU OF LABOR STATISTICS. <strong>Handbook of Methods</strong>; Alternative measures of labor underutilization (U-3 a U-6). Disponível em: https://www.bls.gov/. Acesso em: jul. 2026.</p>
+            </div>
+        </section>
 
-            <footer class="article-footer">
-                <p>Desenvolvido no âmbito do <a href="https://edusidegum.github.io/edusidegum/" target="_blank" rel="noopener">Projeto Visibilidade</a> • Licença de uso livre com atribuição.</p>
-                <p><a href="#" id="privacy-link">Política de Privacidade (LGPD)</a></p>
-            </footer>
-        </article>
-    </div>
+    </main>
 
-    <div class="cookie-banner" id="cookieBanner">
-        Este site utiliza cookies apenas para estatísticas de navegação. Ao continuar navegando, você concorda com a nossa <a href="#" style="color: #fff; text-decoration: underline;">Política de Privacidade</a>.
-        <button id="acceptCookies">Aceitar</button>
-    </div>
+    <aside class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-100">
+        <div class="bg-gray-50 p-6 rounded-lg text-xs text-[#555555] leading-relaxed">
+            <h4 class="font-bold mb-2 text-[#1A1A1A] uppercase tracking-wider">Declaração de Uso de Inteligência Artificial e Metodologia de Orquestração</h4>
+            <p class="justified">
+                Os autores declaram que o presente estudo utilizou um sistema composto por múltiplas instâncias de inteligência artificial generativa (compostas por até cinco modelos distintos de linguagem de grande escala) operando em regime de orquestração síncrona. O processo metodológico consistiu no debate cruzado, refutação iterativa de premissas, refinamento conceitual e checagem de consistência lógica entre os modelos. A busca por dados públicos oficiais e o rastreamento de referências bibliográficas foram submetidos a ciclos automatizados de validação cruzada entre os agentes.
+            </p>
+        </div>
+    </aside>
 
-    <script>
-    (function() {
-        'use strict';
-        
-        // Timer de redirecionamento ou interatividade passiva simulada / Blogger readiness
-        var REDIRECT_URL = 'https://www.instagram.com/';
-        var FIRED = false;
-        
-        // Consentimento LGPD local integrado no mesmo arquivo
-        var cookieBanner = document.getElementById('cookieBanner');
-        var acceptBtn = document.getElementById('acceptCookies');
-        
-        if (!localStorage.getItem('lgpd_accepted')) {
-            cookieBanner.style.display = 'block';
-        }
-        
-        acceptBtn.addEventListener('click', function() {
-            localStorage.setItem('lgpd_accepted', 'true');
-            cookieBanner.style.display = 'none';
-        });
+    <footer class="max-w-4xl mx-auto px-6 py-8 text-center text-[#9E9E9E] text-xs border-t border-gray-50">
+        <p>&copy; 2026 e-Sid. Publicado via GitHub Pages.</p>
+    </footer>
 
-        // Proteções de UX amigáveis e responsividade mobile garantida
-        console.log('[IEVT-M Blog] Script inicializado com sucesso em arquivo único integrado.');
-    })();
-    </script>
 </body>
 </html>
