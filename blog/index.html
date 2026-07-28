@@ -198,31 +198,156 @@
     var listEl = document.getElementById('post-list');
     if (!listEl) return;
 
-    fetch('posts/posts.json')
+    var CACHE_KEY = 'blog-posts-cache-v2';
+    var CACHE_TTL = 30 * 60 * 1000; // 30 min
+    var REPO = 'edusidegum/edusidegum';
+    var POSTS_DIR = 'blog/posts';
+    var BRANCH = 'main';
+
+    // Tenta cache primeiro
+    try {
+        var cached = JSON.parse(localStorage.getItem(CACHE_KEY));
+        if (cached && Date.now() - cached.ts < CACHE_TTL) {
+            renderPosts(cached.posts);
+            return;
+        }
+    } catch(e) {}
+
+    listEl.innerHTML = '<li class="loading">📂 Listando artigos...</li>';
+
+    // Passo 1: lista arquivos via GitHub API
+    fetch('https://api.github.com/repos/' + REPO + '/contents/' + POSTS_DIR)
         .then(function(r) {
-            if (!r.ok) throw new Error('HTTP ' + r.status);
+            if (!r.ok) throw new Error('Falha ao listar (HTTP ' + r.status + ')');
             return r.json();
         })
-        .then(function(posts) {
-            if (!posts || posts.length === 0) {
-                listEl.innerHTML = '<li class="error-msg">Nenhum artigo publicado ainda.</li>';
+        .then(function(files) {
+            var htmls = files.filter(function(f) {
+                return f.name.endsWith('.html') && f.name !== 'index.html';
+            });
+            if (htmls.length === 0) {
+                listEl.innerHTML = '<li class="error-msg">Nenhum artigo encontrado.</li>';
                 return;
             }
-            var html = '';
-            posts.forEach(function(p) {
-                html += '<li>' +
-                    '<div class="post-date">' + p.date + '</div>' +
-                    '<div class="post-title"><a href="posts/' + p.file + '">' + p.title + '</a></div>' +
-                    '<div class="post-summary">' + p.summary + '</div>' +
-                    '</li>';
+
+            listEl.innerHTML = '<li class="loading">📖 Carregando artigos...</li>';
+
+            // Passo 2: busca cada HTML e extrai metadados
+            var promises = htmls.map(function(f) {
+                return fetch('https://raw.githubusercontent.com/' + REPO + '/' + BRANCH + '/' + POSTS_DIR + '/' + f.name)
+                    .then(function(res) { return res.ok ? res.text() : null; })
+                    .then(function(html) { return html ? parsePost(f.name, html) : null; });
             });
-            listEl.innerHTML = html;
+
+            return Promise.all(promises);
+        })
+        .then(function(posts) {
+            posts = posts.filter(function(p) { return p; });
+            if (posts.length === 0) {
+                listEl.innerHTML = '<li class="error-msg">Nenhum artigo pôde ser carregado.</li>';
+                return;
+            }
+
+            // Ordena: art*.html no topo (pinned), depois por data decrescente
+            posts.sort(function(a, b) {
+                var aPinned = a.file.indexOf('art') === 0;
+                var bPinned = b.file.indexOf('art') === 0;
+                if (aPinned && !bPinned) return -1;
+                if (!aPinned && bPinned) return 1;
+                return new Date(b.date) - new Date(a.date);
+            });
+
+            // Cache
+            try {
+                localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), posts: posts }));
+            } catch(e) {}
+
+            renderPosts(posts);
         })
         .catch(function(err) {
-            listEl.innerHTML = '<li class="error-msg">Erro ao carregar artigos: ' + err.message + '</li>';
+            // Fallback: tenta posts.json como alternativa
+            fetch('posts/posts.json')
+                .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+                .then(function(json) {
+                    if (json && json.length) {
+                        json.sort(function(a,b) { return new Date(b.date) - new Date(a.date); });
+                        renderPosts(json.map(function(p) {
+                            return { file: p.file, title: p.title, date: p.date, summary: p.summary };
+                        }));
+                    } else throw new Error('vazio');
+                })
+                .catch(function() {
+                    listEl.innerHTML = '<li class="error-msg">Erro ao carregar artigos: ' + err.message + '</li>';
+                });
         });
+
+    // --- helpers ---
+
+    function parsePost(filename, html) {
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+
+        // Título
+        var title = (doc.querySelector('title') || {}).textContent || filename.replace('.html','');
+
+        // Data: <time itemprop="datePublished"> ou meta article:published_time
+        var date = '';
+        var timeEl = doc.querySelector('time[itemprop="datePublished"]');
+        if (timeEl && timeEl.getAttribute('datetime')) date = timeEl.getAttribute('datetime');
+        if (!date) {
+            var meta = doc.querySelector('meta[property="article:published_time"]');
+            if (meta) date = meta.getAttribute('content');
+        }
+        if (!date) {
+            var anyTime = doc.querySelector('time[datetime]');
+            if (anyTime) date = anyTime.getAttribute('datetime');
+        }
+        // Fallback: data do arquivo não disponível — usa data atual
+        if (!date) {
+            var d = new Date();
+            date = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+        }
+
+        // Primeiras 50 palavras do corpo
+        var body = doc.querySelector('[itemprop="articleBody"]') ||
+                   doc.querySelector('.post-content') ||
+                   doc.querySelector('main') ||
+                   doc.querySelector('body');
+        var text = '';
+        if (body) text = body.textContent.replace(/\s+/g, ' ').trim();
+        var words = text.split(' ').filter(function(w) { return w; });
+        var summary = words.slice(0, 50).join(' ');
+        if (words.length > 50) summary += '…';
+
+        return { file: filename, title: title, date: date, summary: summary };
+    }
+
+    function renderPosts(posts) {
+        var html = '';
+        posts.forEach(function(p) {
+            var pinned = p.file.indexOf('art') === 0;
+            html += '<li>' +
+                (pinned ? '<div class="post-featured">📌 Em destaque</div>' : '') +
+                '<div class="post-date">' + fmtDate(p.date) + '</div>' +
+                '<div class="post-title"><a href="posts/' + p.file + '">' + escHtml(p.title) + '</a></div>' +
+                '<div class="post-summary">' + escHtml(p.summary) + '</div>' +
+                '</li>';
+        });
+        listEl.innerHTML = html;
+    }
+
+    function fmtDate(str) {
+        var d = new Date(str);
+        if (isNaN(d.getTime())) return str;
+        var meses = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+        return d.getDate() + ' ' + meses[d.getMonth()] + ' ' + d.getFullYear();
+    }
+
+    function escHtml(s) {
+        var d = document.createElement('div');
+        d.textContent = s;
+        return d.innerHTML;
+    }
 })();
 </script>
-
 </body>
 </html>
