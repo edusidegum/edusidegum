@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — e-Sid | Arquitetura de Soluções Digitais</title>
+<meta name="description" content="Blog técnico sobre arquitetura de sistemas, SEO local, automação com IA e desenvolvimento web para pequenos negócios. Por Edu Sidegum.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://edusidegum.github.io/edusidegum/blog/">
+<link rel="alternate" hreflang="pt-BR" href="https://edusidegum.github.io/edusidegum/blog/">
+<link rel="alternate" hreflang="x-default" href="https://edusidegum.github.io/edusidegum/blog/">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Blog — e-Sid | Arquitetura de Soluções Digitais">
+<meta property="og:description" content="Blog técnico sobre arquitetura de sistemas, SEO local, automação com IA e desenvolvimento web para pequenos negócios. Por Edu Sidegum.">
+<meta property="og:url" content="https://edusidegum.github.io/edusidegum/blog/">
+<meta property="og:image" content="https://edusidegum.github.io/edusidegum/img/og-image-e.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="e-Sid">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — e-Sid | Arquitetura de Soluções Digitais">
+<meta name="twitter:description" content="Blog técnico sobre arquitetura de sistemas, SEO local, automação com IA e desenvolvimento web para pequenos negócios. Por Edu Sidegum.">
+<meta name="twitter:image" content="https://edusidegum.github.io/edusidegum/img/og-image-e.png">
+<meta name="author" content="Edu Sidegum">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="../img/favicon.png" type="image/png">
+<link rel="preload" href="../img/og-image-e.png" as="image" fetchpriority="high">
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: #0a0a0a;
+        color: #e0e0e0;
+        line-height: 1.7;
+        font-size: 1.0625rem;
+        -webkit-font-smoothing: antialiased;
+    }
+    .skip-link {
+        position: absolute; top: -100%; left: 1rem;
+        background: #00e5ff; color: #0a0a0a;
+        padding: 0.5rem 1rem; border-radius: 0 0 4px 4px;
+        z-index: 1000; font-weight: 600; text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+    .topbar {
+        text-align: center; padding: 0.5rem 1rem;
+        font-size: 0.8125rem; color: #00e5ff;
+        letter-spacing: 0.05em; text-transform: uppercase;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    nav {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 1.25rem 2rem; max-width: 1200px; margin: 0 auto; position: relative;
+    }
+    .site-title a {
+        color: #ffffff; text-decoration: none; font-weight: 700;
+        font-size: 1.15rem; letter-spacing: -0.02em;
+    }
+    .site-title a:hover { color: #00e5ff; }
+    .nav-links {
+        display: flex; gap: 2rem; list-style: none; align-items: center;
+    }
+    .nav-links a {
+        color: #b0b0b0; text-decoration: none; font-size: 0.9375rem;
+        transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #ffffff; }
+    .nav-links a[aria-current="page"] { color: #00e5ff; }
+    .nav-contact a {
+        display: inline-block; padding: 0.4rem 1.2rem;
+        border: 1px solid #00e5ff; border-radius: 4px;
+        color: #00e5ff !important; font-weight: 600;
+        font-size: 0.85rem; transition: background 0.2s;
+    }
+    .nav-contact a:hover { background: rgba(0, 229, 255, 0.1); }
+    .menu-toggle {
+        display: none; background: none; border: none;
+        color: #e0e0e0; font-size: 1.5rem; cursor: pointer; padding: 0.25rem;
+    }
+    main { max-width: 820px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .page-hero { margin-bottom: 3rem; }
+    .page-hero .badge {
+        display: inline-block; font-size: 0.75rem;
+        text-transform: uppercase; letter-spacing: 0.15em;
+        color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3);
+        padding: 0.3rem 0.8rem; border-radius: 3px; margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+        font-size: 2.2rem; font-weight: 800; line-height: 1.15;
+        color: #ffffff; margin-bottom: 0.75rem; letter-spacing: -0.03em;
+    }
+    .page-hero .subtitle {
+        font-size: 1.05rem; color: #b0b0b0; max-width: 640px;
+    }
+    #post-list { list-style: none; padding: 0; }
+    #post-list li {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 8px; padding: 1.5rem; margin-bottom: 1.25rem;
+        transition: border-color 0.2s;
+    }
+    #post-list li:hover { border-color: rgba(0, 229, 255, 0.3); }
+    #post-list .post-date {
+        font-size: 0.8rem; color: #808080; margin-bottom: 0.35rem;
+    }
+    #post-list .post-title {
+        font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;
+    }
+    #post-list .post-title a {
+        color: #ffffff; text-decoration: none;
+    }
+    #post-list .post-title a:hover { color: #00e5ff; }
+    #post-list .post-summary {
+        font-size: 0.9rem; color: #b0b0b0; line-height: 1.6;
+    }
+    .loading {
+        text-align: center; padding: 3rem 0; color: #808080;
+    }
+    .error-msg {
+        text-align: center; padding: 2rem; color: #ff6b6b;
+    }
+    footer {
+        text-align: center; padding: 2.5rem 2rem;
+        border-top: 1px solid rgba(255,255,255,0.06);
+        font-size: 0.85rem; color: #808080;
+    }
+    footer a { color: #b0b0b0; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: #00e5ff; }
+    @media (max-width: 768px) {
+        nav { padding: 1rem 1.25rem; }
+        .menu-toggle { display: block; }
+        .nav-links {
+            display: none; flex-direction: column;
+            position: absolute; top: 100%; left: 0; right: 0;
+            background: #0f0f0f; padding: 1.5rem 2rem; gap: 1.25rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 100;
+        }
+        .nav-links.open { display: flex; }
+        .page-hero h1 { font-size: 1.6rem; }
+        main { padding: 2rem 1.25rem 3rem; }
+    }
+</style>
+</head>
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<div class="topbar">e-Sid — Arquitetura de Soluções Digitais</div>
+
+<nav role="navigation" aria-label="Navegação principal">
+    <div class="site-title">
+        <a href="https://edusidegum.github.io/edusidegum/">&lt;e/&gt; e-Sid</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="https://edusidegum.github.io/edusidegum/">Início</a></li>
+        <li><a href="https://edusidegum.github.io/edusidegum/sobre.html">Sobre</a></li>
+        <li><a href="https://edusidegum.github.io/edusidegum/blog/" aria-current="page">Blog</a></li>
+        <li class="nav-contact"><a href="https://wa.me/5551">Falar no WhatsApp</a></li>
+    </ul>
+</nav>
+
+<main id="conteudo" role="main">
+    <section class="page-hero">
+        <div class="badge">Blog</div>
+        <h1>Arquitetura, Sistemas &amp; Tecnologia</h1>
+        <p class="subtitle">Análises técnicas, padrões de projeto e estratégias de SEO para pequenos negócios — por Edu Sidegum.</p>
+    </section>
+
+    <section aria-label="Lista de artigos">
+        <ul id="post-list">
+            <li class="loading">Carregando artigos...</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>edu.sidegum — <a href="https://edusidegum.github.io/edusidegum/">Arquitetura de Soluções Digitais</a></p>
+</footer>
+
+<script>
+(function() {
+    var toggle = document.getElementById('menuToggle');
+    var nav = document.getElementById('navLinks');
+    if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+            var open = nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
+        });
+    }
+})();
+
+(function() {
+    var listEl = document.getElementById('post-list');
+    if (!listEl) return;
+
+    fetch('posts/posts.json')
+        .then(function(r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+        })
+        .then(function(posts) {
+            if (!posts || posts.length === 0) {
+                listEl.innerHTML = '<li class="error-msg">Nenhum artigo publicado ainda.</li>';
+                return;
+            }
+            var html = '';
+            posts.forEach(function(p) {
+                html += '<li>' +
+                    '<div class="post-date">' + p.date + '</div>' +
+                    '<div class="post-title"><a href="posts/' + p.file + '">' + p.title + '</a></div>' +
+                    '<div class="post-summary">' + p.summary + '</div>' +
+                    '</li>';
+            });
+            listEl.innerHTML = html;
+        })
+        .catch(function(err) {
+            listEl.innerHTML = '<li class="error-msg">Erro ao carregar artigos: ' + err.message + '</li>';
+        });
+})();
+</script>
+
+</body>
+</html>
