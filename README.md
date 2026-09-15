@@ -1,6 +1,6 @@
 # edusidegum — Apresentação de Serviços e Oportunidades de Negócios
 
-Site institucional publicado em https://edusidegum.github.io/edusidegum/
+Sobre https://edusidegum.github.io/
 
 ## Conteúdo
 - index.html — página inicial
