@@ -42,7 +42,7 @@
   <!-- Basecoat CSS & Fixed Shell -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.0.2/dist/basecoat.cdn.min.css">
 
-  <!-- Autoridade: Schema.org Article + Person (E-E-A-T) -->
+  <!-- Authoridade: Schema.org Article + Person (E-E-A-T) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -110,7 +110,7 @@ h2.sec{font-size:clamp(1.15rem,2.4vw,1.55rem);color:var(--brand2);margin-bottom:
 h2.sec b{color:var(--muted);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;display:block}
 .lead{color:var(--muted);font-size:.9rem;margin:4px 0 14px}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:14px 0}
-.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px}
 .kpi .v{font-size:1.65rem;font-weight:800;color:var(--brand2)}
 .kpi .l{font-size:.8rem;color:var(--muted);margin-top:3px}
 .kpi .d{font-size:.78rem;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);color:#3a4150}
@@ -125,12 +125,12 @@ tbody tr:hover td{background:#f2f6fb}
 .note-flag{font-size:.78rem;background:#fdf6e3;border:1px solid #eadfbb;border-radius:6px;padding:6px 10px;margin:6px 0;color:#5a4a12}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:15px 17px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:15px 17px}
 .card .badge{display:inline-block;background:#e8eef6;color:var(--brand);font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:999px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px}
 .card h3{font-size:.98rem;color:var(--brand2);margin-bottom:6px}
 .card ul{margin:4px 0 4px 16px;font-size:.84rem;color:#2a2f3a}
 .card li{margin:3px 0}
-.chartcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;margin:12px 0;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.chartcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;margin:12px 0}
 .chartcard h3{font-size:.95rem;color:var(--brand2)}
 .chartcard .cap{font-size:.74rem;color:var(--muted);margin-top:2px}
 svg.chart{width:100%;height:auto;display:block;margin-top:8px;background:#fff}
@@ -140,36 +140,12 @@ svg.chart{width:100%;height:auto;display:block;margin-top:8px;background:#fff}
 .l-dbgg::before{background:#123a5f} .l-prim::before{background:#1e7d4c}
 .l-sm::before{background:#0f2c49} .l-cam::before{background:#b8860b}
 .l-des::before{background:#7a4f9c} .l-gin::before{background:#2a6f97} .l-idh::before{background:#b3382c} .l-pob::before{background:#8a6d1a}
-
-/* ===== Efeito FOCUS: cards do Resumo, gráficos e cards da Análise ===== */
-.kpi:hover,.kpi:focus-within,
-.chartcard:hover,.chartcard:focus-within,
-.card:hover,.card:focus-within{
-  transform:translateY(-4px);
-  box-shadow:0 10px 26px rgba(16,24,40,.18);
-  border-color:var(--brand);
-}
-.kpi:focus-within .v,.card:focus-within h3,.chartcard:focus-within h3{color:var(--brand)}
-
-/* ===== Tons de cinza crescentes por seção (até ~50%) no fundo dos quadros ===== */
-.sec-t1 .kpi,.sec-t1 .card,.sec-t1 .chartcard,.sec-t1 table{background:#ffffff}
-.sec-t2 .kpi,.sec-t2 .card,.sec-t2 .chartcard,.sec-t2 table{background:#f5f5f5}
-.sec-t3 .kpi,.sec-t3 .card,.sec-t3 .chartcard,.sec-t3 table{background:#ededed}
-.sec-t4 .kpi,.sec-t4 .card,.sec-t4 .chartcard,.sec-t4 table{background:#e5e5e5}
-.sec-t5 .kpi,.sec-t5 .card,.sec-t5 .chartcard,.sec-t5 table{background:#dddddd}
-.sec-t6 .kpi,.sec-t6 .card,.sec-t6 .chartcard,.sec-t6 table{background:#d5d5d5}
-.sec-t7 .kpi,.sec-t7 .card,.sec-t7 .chartcard,.sec-t7 table{background:#cdcdcd}
-.sec-t8 .kpi,.sec-t8 .card,.sec-t8 .chartcard,.sec-t8 table{background:#c5c5c5}
-.sec-t5 table th,.sec-t6 table th,.sec-t7 table th,.sec-t8 table th{background:#e0e0e0}
-.sec-t5 tr:nth-child(even) td,.sec-t6 tr:nth-child(even) td,.sec-t7 tr:nth-child(even) td,.sec-t8 tr:nth-child(even) td{background:rgba(255,255,255,.35)}
-
 @media print{
   body{background:#fff;font-size:11pt}
   header.site,nav,.printbtn,.no-print{display:none!important}
   .box,.card,.chartcard,.kpi{box-shadow:none!important;break-inside:avoid}
   section.block{break-inside:auto}
   a{color:inherit;text-decoration:none}
-  .kpi,.card,.chartcard{transform:none!important}
 }
 .accordion details{border:1px solid var(--line);border-radius:8px;background:var(--surface);margin:7px 0;overflow:hidden}
 .accordion summary{cursor:pointer;padding:10px 14px;font-weight:600;font-size:.88rem;background:#f2f5fa;list-style:none}
@@ -183,17 +159,8 @@ footer.site .wrap{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-bet
 footer.site b{color:#fff}
 footer.site a{color:#9fc3e8;text-decoration:none}
 footer.site a:hover{text-decoration:underline}
-@media (max-width:760px){
-  .grid-2{grid-template-columns:1fr}
-  .header-inner{gap:8px}
-  nav.nav{width:100%;order:3}
-  .chartcard{overflow-x:auto}
-  svg.chart{min-width:0}
-  .kpis{grid-template-columns:1fr}
-  .hero{padding:26px 0 22px}
-  h2.sec{font-size:1.15rem}
-}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.kpi,.card,.chartcard{transform:none!important}}
+@media (max-width:760px){.grid-2{grid-template-columns:1fr}.header-inner{gap:8px}nav.nav{width:100%;order:3}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -202,11 +169,11 @@ footer.site a:hover{text-decoration:underline}
     <div class="brand">SÉRIE REVISADA BR<small>Brasil 2002–2026 · Painel técnico de dados</small></div>
     <nav class="nav" aria-label="Navegação por seção">
       <button data-goto="s1">Resumo</button>
-      <button data-goto="s4">Gráficos</button>
-      <button data-goto="s6">Cenários</button>
-      <button data-goto="s5">Regimes</button>
       <button data-goto="s2">Série</button>
       <button data-goto="s3">Estatísticas</button>
+      <button data-goto="s4">Gráficos</button>
+      <button data-goto="s5">Regimes</button>
+      <button data-goto="s6">Cenários</button>
       <button data-goto="s7">FAQ</button>
       <button data-goto="s8">Fontes</button>
     </nav>
@@ -231,10 +198,10 @@ footer.site a:hover{text-decoration:underline}
   <div class="boxhead">Declaração de Neutralidade Analítica e Não Recomendação</div>
   <div class="boxbody">Revisão técnica de dados. Não constitui recomendação de investimento. Inferências causais foram moderadas ou removidas quando sem evidência; projeções não datadas foram excluídas ou sinalizadas como condicionais.</div>
 </div>
-<div class="box note-info">
+<div class="box note-info" hidden>
   <div class="boxhead">Sobre o Autor</div>
   <div class="boxbody">
-    <p><b>Edu Sidegum</b> — Bacharel em Sistemas de Informação, engenheiro de sistemas e empreendedor. Autor e responsável pela compilação, revisão cruzada e validação dos dados deste estudo. <a href="https://edusidegum.com.br/sobre.html">Página do autor</a> · <a href="https://edusidegum.github.io/">GitHub Pages</a> · <a href="https://x.com/edusidegum" rel="me">X (Twitter)</a></p>
+    <p><b>Edu Sidegum</b> — Bacharel em Sistemas de Informação e empreendedor. Autor da compilação, revisão cruzada e validação dos dados deste estudo. </a></p>
     <p style="font-size:.8rem;color:var(--muted)">Método: diagnóstico precede intervenção; evidência de fontes primárias; assertividade sinalizada por indicador. Este estudo é análise de dados, não recomendação de investimento.</p>
   </div>
 </div>
@@ -253,125 +220,18 @@ footer.site a:hover{text-decoration:underline}
     </ul>
   </div>
 </div>
-
-<!-- ============ SEÇÃO 1 · RESUMO EXECUTIVO ============ -->
-<section class="block sec-t1" id="s1">
+<section class="block" id="s1">
   <h2 class="sec"><b>Seção 1</b>Resumo Executivo</h2>
   <div class="kpis">
-    <div class="kpi" tabindex="0"><div class="v">2,3%</div><div class="l">Crescimento médio do PIB, 2002–2025 (média anual; média dos marcos: 3,3%)</div><div class="d"><b>N=24 anos;</b> extremos −3,5% (2015/16) a +7,5% (2010)</div></div>
-    <div class="kpi" tabindex="0"><div class="v">R$ 1.621</div><div class="l">Salário mínimo 2026 (valor legal, desde jan/2026; +6,8% vs. 2025)</div><div class="d">Nominal 2002→2026: <b>+710,5%</b> (CAGR ≈ 9,1% a.a.). Real condicional (preços 2026): +131,6% — série INPC mês a mês a documentar</div></div>
-    <div class="kpi" tabindex="0"><div class="v">82,9%</div><div class="l">DBGG (% PIB) — agosto/2026 (BCB), observado</div><div class="d">+27,4 p.p. vs. 2002 (55,5%). 2002–2005 em metodologia anterior; mediana Focus 2026 ≈ 84%; projeção BCB: 100% em 2033</div></div>
-    <div class="kpi" tabindex="0"><div class="v">5,6%</div><div class="l">Desemprego — média anual de 2025 (menor da PNAD Contínua); 2T26: 5,4%</div><div class="d">Pico da PNADC: 13,8% (2020) e 13,2% (2021); média 2012–2025: 9,6%</div></div>
+    <div class="kpi"><div class="v">2,3%</div><div class="l">Crescimento médio do PIB, 2002–2025 (média anual; média dos marcos: 3,3%)</div><div class="d"><b>N=24 anos;</b> extremos −3,5% (2015/16) a +7,5% (2010)</div></div>
+    <div class="kpi"><div class="v">R$ 1.621</div><div class="l">Salário mínimo 2026 (valor legal, desde jan/2026; +6,8% vs. 2025)</div><div class="d">Nominal 2002→2026: <b>+710,5%</b> (CAGR ≈ 9,1% a.a.). Real condicional (preços 2026): +131,6% — série INPC mês a mês a documentar</div></div>
+    <div class="kpi"><div class="v">82,9%</div><div class="l">DBGG (% PIB) — agosto/2026 (BCB), observado</div><div class="d">+27,4 p.p. vs. 2002 (55,5%). 2002–2005 em metodologia anterior; mediana Focus 2026 ≈ 84%; projeção BCB: 100% em 2033</div></div>
+    <div class="kpi"><div class="v">5,6%</div><div class="l">Desemprego — média anual de 2025 (menor da PNAD Contínua); 2T26: 5,4%</div><div class="d">Pico da PNADC: 13,8% (2020) e 13,2% (2021); média 2012–2025: 9,6%</div></div>
   </div>
 </section>
-
-<!-- ============ SEÇÃO 2 · GRÁFICOS ============ -->
-<section class="block sec-t2" id="s4">
-  <h2 class="sec"><b>Seção 2</b>Gráficos — Séries Anuais 2002–2025 (+ 2026 parcial)</h2>
-  <p class="lead">Todos os gráficos usam séries anuais completas das fontes oficiais. 2026 aparece apenas como ponto parcial (tracejado) quando observado; nunca como projeção não datada.</p>
-  <div class="chartcard" tabindex="0">
-    <h3>Gráfico 1 · PIB real, IPCA e Selic-meta (dez) — 2002–2026*</h3>
-    <div class="cap">Fontes: IBGE/SCN (PIB, base 2010), IBGE (IPCA), BCB/Copom (Selic, último dia útil de cada ano). 2026: IPCA jan–ago (3,11); Selic set/26 (13,75); PIB não observado.</div>
-    <div id="svg1"></div>
-    <div class="chart-legend"><span class="l-pib">PIB real (% a.a.)</span><span class="l-ipca">IPCA (%)</span><span class="l-selic">Selic-meta (%)</span></div>
-    <p class="cap" style="margin-top:6px">Escala à esquerda em %; Selic em escala própria à direita. Série anual estabiliza a leitura: média 2002–2025 de PIB 2,3%, IPCA 6,1%.</p>
-  </div>
-  <div class="chartcard" tabindex="0">
-    <h3>Gráfico 2 · Dívida Bruta (DBGG) vs. Resultado Primário — 2002–2026*</h3>
-    <div class="cap">Fontes: BCB/Estatísticas Fiscais e SGS; PIB corrente IBGE. DBGG: 2002–2005 em metodologia anterior (†, zona destacada); 2006+ metodologia vigente; 2026* = posição de agosto (82,9%). Primário: 2025 não confirmado (lacuna); 2026* = 12m até ago (−0,62%).</div>
-    <div id="svg2"></div>
-    <div class="chart-legend"><span class="l-dbgg">DBGG (% PIB, dez)</span><span class="l-prim">Primário setor público consolidado (% PIB)</span></div>
-    <p class="cap" style="margin-top:6px">Quebras: 2007/08 (metodologia DBGG) e 2020 (choque fiscal). Sinalizar que a dívida sobe de 51–56% (2011–2014) para 78,7% (2025) e 82,9% (ago/26) não é "colapso": é trajetória com dois choques (2015–16 e 2020) e reversão parcial 2021–22.</p>
-  </div>
-  <div class="chartcard" tabindex="0">
-    <h3>Gráfico 3 · Dispersão Desemprego × IPCA — PNAD Contínua (2012–2025)</h3>
-    <div class="cap">Fonte: IBGE/PNAD Contínua (médias anuais) e IBGE/IPCA. 14 pontos da série homogênea. NÃO é "Curva de Phillips" estimada — é dispersão descritiva para inspeção visual.</div>
-    <div id="svg3"></div>
-    <div class="chart-legend"><span class="l-des">Pontos 2012–2025 (rótulos em anos-chave)</span></div>
-    <p class="cap" style="margin-top:6px">Leia como nuvem, não como curva: a pandemia cria o par (13,8; 4,5) de 2020; (13,2; 10,1) de 2021 combina desemprego alto e inflação alta — o "trade-off" clássico não se sustenta sem modelagem.</p>
-  </div>
-  <div class="chartcard" tabindex="0">
-    <h3>Gráfico 4 · Dinâmica social — Gini (PNADC 2012–2025), IDH e Pobreza (pontos disponíveis)</h3>
-    <div class="cap">Fontes: IBGE/SIS (Gini; quebra PNAD/PNADC impede pré-2012), PNUD/HDR (IDH, freq. irregular — pontos isolados), IBGE/SIS (pobreza US$ 6,85 PPC-2017; quebra de linha pendente PPC-2021). Só pontos observados; sem emendar vintages.</div>
-    <div id="svg4"></div>
-    <div class="chart-legend"><span class="l-gin">Gini (esq.)</span><span class="l-idh">IDH (dir.)</span><span class="l-pob">Pobreza % (dir., pontos)</span></div>
-    <p class="cap" style="margin-top:6px">Gini: queda 2012–2015, reversão 2016–2018, novo recuo 2022–2025 (0,518→0,509). IDH: estagnação relativa após 2014. Pobreza: U invertido — mín. 2014, pico 2022 (31,6%), recuo a 23,1% (2024), ainda acima de 2014.</p>
-  </div>
-  <div class="chartcard" tabindex="0">
-    <h3>Gráfico 5 · Salário mínimo nominal e Câmbio médio (PTAX) — 2002–2025 (+2026* nominal)</h3>
-    <div class="cap">Fontes: legislação federal (salário mínimo, valor nominal de cada ano) e BCB/PTAX (média anual; 2025 ≈ 5,70; 2026* parcial ≈ 5,10 — fechamento 08/10/2026: 5,01).</div>
-    <div id="svg5"></div>
-    <div class="chart-legend"><span class="l-sm">Salário mínimo (R$)</span><span class="l-cam">Câmbio médio anual (R$/US$)</span></div>
-    <p class="cap" style="margin-top:6px">Salário mínimo nominal é série legal (sem quebra). Câmbio nominal: depreciação 2011→2020 (+40% em R$/US$), mas o câmbio efetivo real (serie do BCB) apreciou no período — não usar variação nominal como medida de competitividade.</p>
-  </div>
-</section>
-
-<!-- ============ SEÇÃO 3 · CENÁRIOS ============ -->
-<section class="block sec-t3" id="s6">
-  <h2 class="sec"><b>Seção 3</b>Cenários Ilustrativos Condicionais (2026–2031)</h2>
-  <p class="lead">Renomeado: não é análise estocástica nem "método de Blanchard" operacionalizado. Faixas indicativas, condicionais a parâmetros não calibrados (r, g, d), multiplicadores, composição do ajuste e calendário. Sem probabilidades implícitas nem linguagem de inevitabilidade.</p>
-  <div style="overflow-x:auto">
-  <table>
-    <thead><tr><th>Dimensão</th><th>A · Manutenção da política atual</th><th>B · Austeridade fiscal</th></tr></thead>
-    <tbody>
-      <tr><td>Crescimento do PIB</td><td>1,5–2,2% a.a.</td><td>2,2–3,0% a.a. (condicional a multiplicadores e calendário)</td></tr>
-      <tr><td>Inflação IPCA</td><td>4,2–5,5%</td><td>3,0–3,8%</td></tr>
-      <tr><td>Trajetória DBGG (% PIB)</td><td>82 → 92%</td><td>70–75% (exige trajetória anual: superávit, juros, crescimento)</td></tr>
-      <tr><td>Resultado primário</td><td>Déficit persistente</td><td>Superávit 2,1–3,6% (faixa Blanchard: s* = (r−g)/(1+g)·d, condicional)</td></tr>
-      <tr><td>Desemprego</td><td>5,5–7,0%</td><td>5,0–6,0%</td></tr>
-      <tr><td>Juros reais</td><td>6,0–7,5%</td><td>3,5–4,8%</td></tr>
-      <tr><td>Câmbio</td><td>Depreciado (nominal e efetivo real)</td><td>Apreciação gradual condicional</td></tr>
-      <tr><td>Sustentabilidade fiscal</td><td>Frágil — risco de dominância fiscal se r−g persistir (interpretação analítica)</td><td>Restaurada (condicional)</td></tr>
-      <tr><td>Impacto social</td><td>Pobreza persistente (~24–28% na linha atual)</td><td>Melhora no médio prazo, com custo no curto (composição do ajuste)</td></tr>
-      <tr><td>Credibilidade e expectativas</td><td>Sob pressão</td><td>Recuperação condicional</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <div class="note-flag">Advertência: faixas indicativas, não resultados de modelo reproduzível. A condição de estabilização s* = (r−g)/(1+g)·d exige r, g, d anuais; com d ≈ 0,80 e r−g ≈ 4 p.p. nominais, s* ≈ 3,0% do PIB (faixa 2,1–3,6%).</div>
-</section>
-
-<!-- ============ SEÇÃO 4 · REGIMES ============ -->
-<section class="block sec-t4" id="s5">
-  <h2 class="sec"><b>Seção 4</b>Análise por Regimes Econômicos</h2>
-  <p class="lead">Recortes descritivos com linguagem moderada; causalidade só onde há mecanismo identificado.</p>
-  <div class="grid-3">
-    <div class="card" tabindex="0">
-      <span class="badge">2002–2010 · Crescimento alto, superávits</span>
-      <h3>Expansão com consolidação primária e queda da desigualdade</h3>
-      <ul>
-        <li>PIB real médio 2002–2010: ~4,0% a.a. (marcos: 3,1→7,5%); primário médio ≈ 3,1% do PIB (2002–2008).</li>
-        <li>Gini cai (PNAD anual: ~0,581 em 2002 → ~0,530 em 2014 — quebra com PNADC em 2012).</li>
-        <li>Desemprego em mínimos da época (aprox. 9% no período PME); inflação sob controle (IPCA 2006: 3,14%).</li>
-      </ul>
-      <p style="font-size:.75rem;color:var(--muted);margin-top:6px">Nota: atribuição a "superciclo de commodities" é hipótese — exige decomposição dos termos de troca, não demonstrada aqui.</p>
-    </div>
-    <div class="card" tabindex="0">
-      <span class="badge">2014–2018 · Crise fiscal e recessão</span>
-      <h3>Recessão, estagflação e alta da dívida (56,3% → 75,3% do PIB)</h3>
-      <ul>
-        <li>Recessão 2015–2016: PIB −3,5% e −3,3% (−6,7% acumulado); IPCA 2015: 10,67%.</li>
-        <li>Aumento do desemprego: 6,8% (2014) → 12,3% (2018) na PNADC.</li>
-        <li>Gini volta a subir (2016–2018: 0,537→0,545). EC 95/2016 (teto de gastos) aprovada em 2016.</li>
-      </ul>
-      <p style="font-size:.75rem;color:var(--muted);margin-top:6px">Nota: causalidade déficits→dívida exige decomposição (juros, crescimento nominal, ajustes estoque-fluxo) — não demonstrada.</p>
-    </div>
-    <div class="card" tabindex="0">
-      <span class="badge">2022–2026 · Recuperação e desafio fiscal</span>
-      <h3>Emprego em mínimos históricos com dívida em trajetória ascendente</h3>
-      <ul>
-        <li>Desemprego 9,3% (2022) → 5,6% (2025) → 5,4% (2T26): menor nível da PNADC.</li>
-        <li>Pobreza 31,6% (2022) → 23,1% (2024); Gini 0,518 → 0,509.</li>
-        <li>DBGG 71,7% (2022) → 78,7% (2025) → 82,9% (ago/26); BCB/Focus: 100% em 2033 (RPM set/26).</li>
-        <li>Transição demográfica (Censo 2022): envelhecimento acelerado — razão de dependência em alta é hipótese fundamentada, não conclusão.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SEÇÃO 5 · SÉRIE ============ -->
-<section class="block sec-t5" id="s2">
-  <h2 class="sec"><b>Seção 5</b>Série Revisada — Marcos Quadrienais</h2>
-  <p class="lead">Tabela-resumo dos marcos. As séries anuais completas (2002–2025) estão nos gráficos da Seção 2.</p>
+<section class="block" id="s2">
+  <h2 class="sec"><b>Seção 2</b>Série Revisada — Marcos Quadrienais</h2>
+  <p class="lead">Tabela-resumo dos marcos. As séries anuais completas (2002–2025) estão nos gráficos da Seção 4.</p>
   <div style="overflow-x:auto">
   <table>
     <thead><tr>
@@ -396,10 +256,8 @@ footer.site a:hover{text-decoration:underline}
   </div>
   <p class="legend">"*" = parcial (observado em parte do ano) ou não observado; "†" = valor de referência — conferir série oficial (vintage/metodologia podem diferir); "—" = não comparável ou não observado.</p>
 </section>
-
-<!-- ============ SEÇÃO 6 · ESTATÍSTICAS ============ -->
-<section class="block sec-t6" id="s3">
-  <h2 class="sec"><b>Seção 6</b>Estatísticas Descritivas — Séries Anuais Completas</h2>
+<section class="block" id="s3">
+  <h2 class="sec"><b>Seção 3</b>Estatísticas Descritivas — Séries Anuais Completas</h2>
   <p class="lead">Média (μ), mediana (Md) e desvio padrão (s, n−1) calculados sobre a série anual homogênea indicada. Marcos deliberados deixaram de ser usados como "amostra".</p>
   <div style="overflow-x:auto">
   <table>
@@ -423,9 +281,318 @@ footer.site a:hover{text-decoration:underline}
   </div>
   <div class="note-flag">Correção de interpretação: com n pequeno e marcos deliberados, média/mediana eram dispersão descritiva, não estimativa estatística. Com a série anual completa (n até 24), média e mediana passam a descrever o comportamento efetivo do período — mas continuam NÃO sendo "amostra não enviesada" no sentido inferencial (população inteira observada, não amostrada).</div>
 </section>
-
-<!-- ============ SEÇÃO 7 · FAQ ============ -->
-<section class="block sec-t7" id="s7">
+<section class="block" id="s4">
+  <h2 class="sec"><b>Seção 4</b>Gráficos — Séries Anuais 2002–2025 (+ 2026 parcial)</h2>
+  <p class="lead">Todos os gráficos usam séries anuais completas das fontes oficiais. 2026 aparece apenas como ponto parcial (tracejado) quando observado; nunca como projeção não datada.</p>
+  <div class="chartcard">
+    <h3>Gráfico 1 · PIB real, IPCA e Selic-meta (dez) — 2002–2026*</h3>
+    <div class="cap">Fontes: IBGE/SCN (PIB, base 2010), IBGE (IPCA), BCB/Copom (Selic, último dia útil de cada ano). 2026: IPCA jan–ago (3,11); Selic set/26 (13,75); PIB não observado.</div>
+    <div id="svg1"></div>
+    <div class="chart-legend"><span class="l-pib">PIB real (% a.a.)</span><span class="l-ipca">IPCA (%)</span><span class="l-selic">Selic-meta (%)</span></div>
+    <p class="cap" style="margin-top:6px">Escala à esquerda em %; Selic em escala própria à direita. Série anual estabiliza a leitura: média 2002–2025 de PIB 2,3%, IPCA 6,1%.</p>
+  </div>
+  <div class="chartcard">
+    <h3>Gráfico 2 · Dívida Bruta (DBGG) vs. Resultado Primário — 2002–2026*</h3>
+    <div class="cap">Fontes: BCB/Estatísticas Fiscais e SGS; PIB corrente IBGE. DBGG: 2002–2005 em metodologia anterior (†, zona destacada); 2006+ metodologia vigente; 2026* = posição de agosto (82,9%). Primário: 2025 não confirmado (lacuna); 2026* = 12m até ago (−0,62%).</div>
+    <div id="svg2"></div>
+    <div class="chart-legend"><span class="l-dbgg">DBGG (% PIB, dez)</span><span class="l-prim">Primário setor público consolidado (% PIB)</span></div>
+    <p class="cap" style="margin-top:6px">Quebras: 2007/08 (metodologia DBGG) e 2020 (choque fiscal). Sinalizar que a dívida sobe de 51–56% (2011–2014) para 78,7% (2025) e 82,9% (ago/26) não é "colapso": é trajetória com dois choques (2015–16 e 2020) e reversão parcial 2021–22.</p>
+  </div>
+  <div class="chartcard">
+    <h3>Gráfico 3 · Dispersão Desemprego × IPCA — PNAD Contínua (2012–2025)</h3>
+    <div class="cap">Fonte: IBGE/PNAD Contínua (médias anuais) e IBGE/IPCA. 14 pontos da série homogênea. NÃO é "Curva de Phillips" estimada — é dispersão descritiva para inspeção visual.</div>
+    <div id="svg3"></div>
+    <div class="chart-legend"><span class="l-des">Pontos 2012–2025 (rótulos em anos-chave)</span></div>
+    <p class="cap" style="margin-top:6px">Leia como nuvem, não como curva: a pandemia cria o par (13,8; 4,5) de 2020; (13,2; 10,1) de 2021 combina desemprego alto e inflação alta — o "trade-off" clássico não se sustenta sem modelagem.</p>
+  </div>
+  <div class="chartcard">
+    <h3>Gráfico 4 · Dinâmica social — Gini (PNADC 2012–2025), IDH e Pobreza (pontos disponíveis)</h3>
+    <div class="cap">Fontes: IBGE/SIS (Gini; quebra PNAD/PNADC impede pré-2012), PNUD/HDR (IDH, freq. irregular — pontos isolados), IBGE/SIS (pobreza US$ 6,85 PPC-2017; quebra de linha pendente PPC-2021). Só pontos observados; sem emendar vintages.</div>
+    <div id="svg4"></div>
+    <div class="chart-legend"><span class="l-gin">Gini (esq.)</span><span class="l-idh">IDH (dir.)</span><span class="l-pob">Pobreza % (dir., pontos)</span></div>
+    <p class="cap" style="margin-top:6px">Gini: queda 2012–2015, reversão 2016–2018, novo recuo 2022–2025 (0,518→0,509). IDH: estagnação relativa após 2014. Pobreza: U invertido — mín. 2014, pico 2022 (31,6%), recuo a 23,1% (2024), ainda acima de 2014.</p>
+  </div>
+  <div class="chartcard">
+    <h3>Gráfico 5 · Salário mínimo nominal e Câmbio médio (PTAX) — 2002–2025 (+2026* nominal)</h3>
+    <div class="cap">Fontes: legislação federal (salário mínimo, valor nominal de cada ano) e BCB/PTAX (média anual; 2025 ≈ 5,70; 2026* parcial ≈ 5,10 — fechamento 08/10/2026: 5,01).</div>
+    <div id="svg5"></div>
+    <div class="chart-legend"><span class="l-sm">Salário mínimo (R$)</span><span class="l-cam">Câmbio médio anual (R$/US$)</span></div>
+    <p class="cap" style="margin-top:6px">Salário mínimo nominal é série legal (sem quebra). Câmbio nominal: depreciação 2011→2020 (+40% em R$/US$), mas o câmbio efetivo real (serie do BCB) apreciou no período — não usar variação nominal como medida de competitividade.</p>
+  </div>
+</section>
+<section class="block" id="s5">
+  <h2 class="sec"><b>Seção 5</b>Análise por Regimes Econômicos</h2>
+  <p class="lead">Recortes descritivos com linguagem moderada; causalidade só onde há mecanismo identificado.</p>
+  <div class="grid-3">
+    <div class="card">
+      <span class="badge">2002–2010 · Crescimento alto, superávits</span>
+      <h3>Expansão com consolidação primária e queda da desigualdade</h3>
+      <ul>
+        <li>PIB real médio 2002–2010: ~4,0% a.a. (marcos: 3,1→7,5%); primário médio ≈ 3,1% do PIB (2002–2008).</li>
+        <li>Gini cai (PNAD anual: ~0,581 em 2002 → ~0,530 em 2014 — quebra com PNADC em 2012).</li>
+        <li>Desemprego em mínimos da época (aprox. 9% no período PME); inflação sob controle (IPCA 2006: 3,14%).</li>
+      </ul>
+      <p style="font-size:.75rem;color:var(--muted);margin-top:6px">Nota: atribuição a "superciclo de commodities" é hipótese — exige decomposição dos termos de troca, não demonstrada aqui.</p>
+    </div>
+    <div class="card">
+      <span class="badge">2014–2018 · Crise fiscal e recessão</span>
+      <h3>Recessão, estagflação e alta da dívida (56,3% → 75,3% do PIB)</h3>
+      <ul>
+        <li>Recessão 2015–2016: PIB −3,5% e −3,3% (−6,7% acumulado); IPCA 2015: 10,67%.</li>
+        <li>Aumento do desemprego: 6,8% (2014) → 12,3% (2018) na PNADC.</li>
+        <li>Gini volta a subir (2016–2018: 0,537→0,545). EC 95/2016 (teto de gastos) aprovada em 2016.</li>
+      </ul>
+      <p style="font-size:.75rem;color:var(--muted);margin-top:6px">Nota: causalidade déficits→dívida exige decomposição (juros, crescimento nominal, ajustes estoque-fluxo) — não demonstrada.</p>
+    </div>
+    <div class="card">
+      <span class="badge">2022–2026 · Recuperação e desafio fiscal</span>
+      <h3>Emprego em mínimos históricos com dívida em trajetória ascendente</h3>
+      <ul>
+        <li>Desemprego 9,3% (2022) → 5,6% (2025) → 5,4% (2T26): menor nível da PNADC.</li>
+        <li>Pobreza 31,6% (2022) → 23,1% (2024); Gini 0,518 → 0,509.</li>
+        <li>DBGG 71,7% (2022) → 78,7% (2025) → 82,9% (ago/26); BCB/Focus: 100% em 2033 (RPM set/26).</li>
+        <li>Transição demográfica (Censo 2022): envelhecimento acelerado — razão de dependência em alta é hipótese fundamentada, não conclusão.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="block" id="s6">
+  <h2 class="sec"><b>Seção 6</b>Cenários Ilustrativos Condicionais (2026–2031)</h2>
+  <p class="lead">Renomeado: não é análise estocástica nem "método de Blanchard" operacionalizado. Faixas indicativas, condicionais a parâmetros não calibrados (r, g, d), multiplicadores, composição do ajuste e calendário. Sem probabilidades implícitas nem linguagem de inevitabilidade.</p>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Dimensão</th><th>A · Manutenção da política atual</th><th>B · Austeridade fiscal</th></tr></thead>
+    <tbody>
+      <tr><td>Crescimento do PIB</td><td>1,5–2,2% a.a.</td><td>2,2–3,0% a.a. (condicional a multiplicadores e calendário)</td></tr>
+      <tr><td>Inflação IPCA</td><td>4,2–5,5%</td><td>3,0–3,8%</td></tr>
+      <tr><td>Trajetória DBGG (% PIB)</td><td>82 → 92%</td><td>70–75% (exige trajetória anual: superávit, juros, crescimento)</td></tr>
+      <tr><td>Resultado primário</td><td>Déficit persistente</td><td>Superávit 2,1–3,6% (faixa Blanchard: s* = (r−g)/(1+g)·d, condicional)</td></tr>
+      <tr><td>Desemprego</td><td>5,5–7,0%</td><td>5,0–6,0%</td></tr>
+      <tr><td>Juros reais</td><td>6,0–7,5%</td><td>3,5–4,8%</td></tr>
+      <tr><td>Câmbio</td><td>Depreciado (nominal e efetivo real)</td><td>Apreciação gradual condicional</td></tr>
+      <tr><td>Sustentabilidade fiscal</td><td>Frágil — risco de dominância fiscal se r−g persistir (interpretação analítica)</td><td>Restaurada (condicional)</td></tr>
+      <tr><td>Impacto social</td><td>Pobreza persistente (~24–28% na linha atual)</td><td>Melhora no médio prazo, com custo no curto (composição do ajuste)</td></tr>
+      <tr><td>Credibilidade e expectativas</td><td>Sob pressão</td><td>Recuperação condicional</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note-flag">Advertência: faixas indicativas, não resultados de modelo reproduzível. A condição de estabilização s* = (r−g)/(1+g)·d exige r, g, d anuais; com d ≈ 0,80 e r−g ≈ 4 p.p. nominais, s* ≈ 3,0% do PIB (faixa 2,1–3,6%).</div>
+</section>
+<section class="block" id="s7">
   <h2 class="sec"><b>Seção 7</b>FAQ — Notas Técnicas</h2>
   <div class="accordion">
-    <details><summary>1. PIB 2006 — por que 4,0% e não 4,7%?</summary><div class="a-body">A taxa oficial revisada (SCN, base 2010) é
+    <details><summary>1. PIB 2006 — por que 4,0% e não 4,7%?</summary><div class="a-body">A taxa oficial revisada (SCN, base 2010) é 4,0%. Valores contemporâneos ou de bases antigas (4,7%) não são comparáveis à série atual.</div></details>
+    <details><summary>2. Gini 2018 = 0,545?</summary><div class="a-body">Sim — valor oficial da PNAD Contínua (renda domiciliar per capita, a preços médios do ano), IBGE/SIS. 2016: 0,537; 2017: 0,549.</div></details>
+    <details><summary>3. IDH 2010 — 0,724 ou 0,722?</summary><div class="a-body">0,724 (edição HDR da época); 0,722 em vintage recente do PNUD. Diferença é reestimação metodológica, não erro. 0,740 era vintage antiga.</div></details>
+    <details><summary>4. População 2022 — 203,1 milhões?</summary><div class="a-body">Sim — Censo 2022 (ref. 01/08/2022). Estimativas pré-censo (até ~215 mi) foram revisadas para baixo; a "queda" de estimativa para censo é revisão estatística, não declínio demográfico.</div></details>
+    <details><summary>5. Desemprego — série homogênea?</summary><div class="a-body">Não antes de 2012. PME (2002–2019, regiões metropolitanas), PNAD anual (até 2015) e PNAD Contínua (2012+) não são empalmadas. Na PNADC: 2012: 7,4; 2013: 7,1; 2014: 6,8; 2015: 8,3; 2016: 11,5; 2017: 12,7; 2018: 12,3; 2019: 11,8; 2020: 13,8; 2021: 13,2; 2022: 9,3; 2023: 7,8; 2024: 6,6; 2025: 5,6. "Mínimo histórico" só vale na PNADC (desde 2025).</div></details>
+    <details><summary>6. Superávit estabilizante da dívida</summary><div class="a-body">s* = (r−g)/(1+g)·d. Com d ≈ 0,80 e r−g ≈ 4 p.p. nominais → ≈ 3,0% do PIB (faixa 2,1–3,6% condicional a r, g, d anuais). É condição de estabilização, não fórmula de política.</div></details>
+    <details><summary>7. "Risco de dominância fiscal" — o que significa?</summary><div class="a-body">Interpretação analítica (Sargent–Wallace): quando a dívida cresce mais que a capacidade de pagamento com juros altos, a política monetária perde margem. No Brasil, trajetória ascendente da DBGG (BCB/Focus: 100% do PIB em 2033) sustenta a leitura como risco, não como fato consumado.</div></details>
+    <details><summary>8. Por que "n=7 marcos" deixou de ser usado?</summary><div class="a-body">Marcos deliberados não constituem amostra e viesam média/mediana. Com a série anual completa (n até 24), as estatísticas passam a descrever o período efetivo — sem pretensão inferencial.</div></details>
+    <details><summary>9. DBGG 2026 — por que 82,9% e não 76%?</summary><div class="a-body">82,9% é a posição observada de agosto/2026 (BCB). A projeção de 76% não tinha fonte datada nem ponte quantitativa; mediana Focus (mar/2026) ≈ 84%; projeção do BCB (set/26): 100% do PIB em 2033.</div></details>
+    <details><summary>10. Salário mínimo — nominal vs. real</summary><div class="a-body">Nominal 2002→2026: R$ 200→R$ 1.621 = +710,5% (CAGR ≈ 9,1% a.a.). Real condicional (preços 2026): R$ 700→R$ 1.621 = +131,6% (≈ 3,6% a.a.) — série INPC mês a mês ainda a documentar para certificação.</div></details>
+    <details><summary>11. População 2018→2022 "caiu"?</summary><div class="a-body">Não. A diferença (estimativa ~208 mi vs. censo 203,1 mi) é revisão metodológica do IBGE, não declínio demográfico. Crescimento 2010→2022: 0,52% a.a.</div></details>
+    <details><summary>12. IDH 2026 existe?</summary><div class="a-body">Não — PNUD não publica projeções. Célula removida; próximo dado virá no próximo HDR.</div></details>
+    <details><summary>13. Câmbio — qual série usar?</summary><div class="a-body">PTAX média anual (padrão Ipeadata/BCB). 2025 ≈ 5,70; 2026 parcial ≈ 5,10 (fechamento 08/10/2026: 5,01). Variação nominal ≠ depreciação real: para competitividade, usar câmbio efetivo real (serie BCB).</div></details>
+  </div>
+</section>
+<section class="block" id="s8">
+  <h2 class="sec"><b>Seção 8</b>Referências e Base Teórica</h2>
+  <div class="grid-2">
+    <div class="card">
+      <span class="badge">Teoria</span>
+      <h3>Referências específicas</h3>
+      <ul>
+        <li>Blanchard, O. (2019). "Public Debt and Low Interest Rates." <i>American Economic Review</i>, 109(4), 1197–1229.</li>
+        <li>Sargent, T. J. &amp; Wallace, N. (1981). "Some Unpleasant Monetarist Arithmetic." <i>FRB Minneapolis Quarterly Review</i>, 5(3).</li>
+        <li>Blanchard, O. &amp; Leigh, D. (2013). "Growth Forecast Errors and Fiscal Multipliers." <i>AER</i>, 103(3), 117–120.</li>
+        <li>Alesina, A., Favero, C. &amp; Giavazzi, F. (2019). <i>Austerity: When It Works and When It Doesn't</i>. Princeton University Press.</li>
+        <li>Summers, L. H. (2014). "U.S. Economic Prospects: Secular Stagnation, Hysteresis, and the Zero Lower Bound." <i>Business Economics</i>, 49(2).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="badge">Dados primários</span>
+      <h3>Fontes de dados</h3>
+      <ul>
+        <li>IBGE: SCN (PIB); PNAD Contínua/SIS (desemprego, Gini, pobreza, renda); Censo 2022; IPCA (SIDRA 1737).</li>
+        <li>Banco Central do Brasil: Estatísticas Fiscais (NFSP, DBGG, DLSP); SGS (Selic, câmbio PTAX); Relatório Focus; Relatório de Política Monetária.</li>
+        <li>Tesouro Nacional/STN: resultado do Governo Central; dívida mobiliária.</li>
+        <li>IPEA (Atlas da Violência, com FBSP; Ipeadata) e Fórum Brasileiro de Segurança Pública.</li>
+        <li>PNUD — Human Development Report; Banco Mundial — linhas de pobreza (PPC 2021).</li>
+      </ul>
+      <p style="font-size:.74rem;color:var(--muted);margin-top:6px">Convenção de citação: cada série deve indicar código (SGS/SIDRA), data de referência e data de extração.</p>
+    </div>
+  </div>
+</section>
+</div>
+<footer class="site">
+  <div class="wrap">
+    <div><b>Fontes primárias:</b> IBGE · Banco Central do Brasil · STN · IPEA · PNUD · FBSP (Atlas da Violência) · Banco Mundial</div>
+    <div><b>Data de corte da revisão:</b> 9 de outubro de 2026</div>
+    <div><b>Símbolos:</b> * parcial ou não observado · † valor de referência a conferir · — não comparável</div>
+    <div><b>Autor:</b> <a href="https://edusidegum.com.br/sobre.html" rel="author">Edu Sidegum</a> · <a href="https://edusidegum.github.io/" rel="me">GitHub Pages</a></div>
+    <div><b>Feedback / Discussão (X):</b> <a href="https://x.com/edusidegum/status/2108321799310279110" rel="noopener noreferrer" target="_blank">Publicação no X — deixe seu comentário</a></div>
+    <div><b>Próxima atualização:</b> quando novas séries oficiais forem publicadas (SCN revisado, novo HDR, retropolação PPC 2021)</div>
+  </div>
+</footer>
+<script>
+// ===== Dados anuais (fontes oficiais; ver Seção 8). null / ponto ausente = não observado =================
+const YEARS=[2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026];
+const PIB=[3.1,1.1,5.8,3.2,4.0,6.1,5.1,-0.1,7.5,4.0,1.9,3.0,0.5,-3.5,-3.3,1.3,1.8,1.2,-3.3,5.0,3.0,3.2,3.4,2.3,null];       // IBGE/SCN base 2010
+const IPCA=[12.53,9.30,7.60,5.69,3.14,4.46,5.90,4.31,5.91,6.50,5.84,5.91,6.41,10.67,6.29,2.95,3.75,4.31,4.52,10.06,5.79,4.62,4.83,4.26,3.11]; // IBGE; 2026 jan–ago
+const SELIC=[25.0,16.5,17.75,18.0,13.25,11.25,13.75,8.75,10.75,11.0,7.25,10.0,11.75,14.25,13.75,7.0,6.5,4.5,2.0,9.25,13.75,11.75,12.25,15.0,13.75]; // BCB/Copom, dezembro
+const DBGG=[55.5,57.2,55.1,52.2,55.6,63.7,61.9,64.9,63.0,61.2,62.3,56.8,56.3,65.5,69.2,73.8,75.3,74.3,86.9,78.3,71.7,74.4,76.1,78.7,82.9]; // BCB; †2002–05 metodologia antiga; 2026=ago
+const PRIM=[3.9,4.3,3.9,3.5,3.6,2.7,3.4,1.9,2.8,2.9,2.2,1.8,-0.6,-1.9,-2.6,-1.7,-1.6,-0.9,-9.3,0.7,1.3,-2.3,-0.4,null,-0.62]; // BCB; 2025 não confirmado; 2026=12m ago
+const DESEMP=[7.4,7.1,6.8,8.3,11.5,12.7,12.3,11.8,13.8,13.2,9.3,7.8,6.6,5.6]; // PNADC médias anuais 2012–2025
+const GINI=[0.540,0.536,0.530,0.524,0.537,0.549,0.545,0.543,0.546,0.544,0.518,0.517,0.509,0.511]; // PNADC/SIS 2012–2025
+const IDH=[
+  {y:2002,v:0.690,ref:1},{y:2005,v:0.699,ref:1},{y:2010,v:0.724,ref:1},
+  {y:2013,v:0.744,ref:1},{y:2014,v:0.753,ref:1},{y:2015,v:0.755,ref:1},
+  {y:2016,v:0.757,ref:1},{y:2017,v:0.758,ref:1},{y:2018,v:0.761,ref:1},
+  {y:2019,v:0.762,ref:1},{y:2020,v:0.765,ref:1},{y:2021,v:0.766,ref:1},{y:2022,v:0.760,ref:1}
+]; // PNUD/HDR; freq. irregular; vintages revisam
+const POBREZA=[{y:2018,v:25.3,ref:1},{y:2022,v:31.6,ref:1},{y:2023,v:27.4,ref:1},{y:2024,v:23.1,ref:1}]; // IBGE/SIS US$6,85 PPC-2017
+const SALMIN=[200,240,260,300,350,380,415,465,510,545,622,678,724,788,880,937,954,998,1045,1100,1212,1320,1412,1518,1621]; // legislação federal
+const CAMBIO=[2.92,3.08,2.93,2.44,2.18,1.95,1.75,1.74,1.76,1.88,1.95,2.16,2.35,3.33,3.49,3.19,3.65,3.94,5.16,5.40,5.16,4.99,5.37,5.70,5.10]; // BCB/PTAX média anual; 2025≈5,70; 2026 parcial≈5,10
+// ===== Renderizador SVG mínimo (barra/linha/dupla escala; sem dependências) ==============================
+const NS="http://www.w3.org/2000/svg";
+function el(tag,attrs){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
+function buildSvg(id,spec){
+  const holder=document.getElementById(id); if(!holder) return;
+  const W=920,H=360,PL=54,PR=56,PT=16,PB=34;
+  const iw=W-PL-PR, ih=H-PT-PB;
+  const svg=el("svg",{viewBox:"0 0 "+W+" "+H,class:"chart",role:"img","aria-label":spec.aria});
+  const X=i=>PL+ (i)/( (spec.labels.length-1) )*iw;
+  const Ys=v=>PT+ih-(v-spec.min)/(spec.max-spec.min)*ih;
+  const Yd=v=>PT+ih-(v-spec.min2)/(spec.max2-spec.min2)*ih;
+  // grade e rótulos
+  for(let g=0;g<=4;g++){const yy=PT+ih/4*g;
+    svg.appendChild(el("line",{x1:PL,x2:W-PR,y1:yy,y2:yy,stroke:"#e6e9f0","stroke-width":1}));
+    const val=spec.max-(spec.max-spec.min)*g/4;
+    svg.appendChild(el("text",{x:PL-8,y:yy+4,fill:"#5b6270","font-size":11, "text-anchor":"end"})).textContent=spec.fmt?spec.fmt(val):val;
+  }
+  if(spec.min2!==undefined){for(let g=0;g<=4;g++){const yy=PT+ih/4*g;
+    const val=spec.max2-(spec.max2-spec.min2)*g/4;
+    svg.appendChild(el("text",{x:W-PR+8,y:yy+4,fill:"#8a6d1a","font-size":11})).textContent=spec.fmt2?spec.fmt2(val):val;
+  }}
+  // eixo X
+  const step=Math.max(1,Math.ceil(spec.labels.length/10));
+  spec.labels.forEach((lb,i)=>{if(i%step!==0&&i!==spec.labels.length-1)return;
+    svg.appendChild(el("text",{x:X(i),y:H-PB+16,fill:"#5b6270","font-size":11,"text-anchor":"middle"})).textContent=lb;
+  });
+  // linhas de cada série
+  spec.series.forEach(function(s){
+    let d=""; let solid="";
+    s.data.forEach((v,i)=>{ if(v===null||v===undefined)return; const x=X(i),y=(s.axis==="r"?Yd(v):Ys(v));
+      d+=(d?"L":"M")+x.toFixed(1)+" "+y.toFixed(1);
+      if(s.markers!==false){const c=el("circle",{cx:x.toFixed(1),cy:y.toFixed(1),r:2.6,fill:s.color}); svg.appendChild(c);}
+    });
+    const p=el("path",{d:d,fill:"none",stroke:s.color,"stroke-width":2.4,"stroke-linecap":"round","stroke-linejoin":"round"});
+    if(s.dash!==false)p.setAttribute("stroke-dasharray","6 4");
+    p.setAttribute("opacity",s.opacity||1);
+    svg.appendChild(p);
+  });
+  // barras (série com bar:true) desenhadas antes das linhas — reordenar: desenha barras primeiro
+  // (simplificação: barras são desenhadas como retângulos da base até o valor)
+  spec.bars&&spec.bars.forEach(b=>{
+    b.data.forEach((v,i)=>{if(v===null||v===undefined)return;const x=X(i)-iw/(spec.labels.length-1)*0.22;
+      const yTop=b.axis==="r"?Yd(v):Ys(Math.max(v,0));const base=b.axis==="r"?Yd(0):Ys(0);
+      svg.appendChild(el("rect",{x:x,y:yTop,width:iw/(spec.labels.length-1)*0.44,height:Math.max(1,base-yTop),fill:b.color,opacity:0.35,rx:1}));
+    });
+  });
+  holder.appendChild(svg);
+}
+// ===== Montagem dos 5 gráficos ==========================================================================
+buildSvg("svg1",{
+  labels:YEARS,
+  min:0,max:15,min2:0,max2:26,
+  fmt:v=>v+"%",fmt2:v=>v+"%",
+  series:[
+    {name:"PIB",data:PIB,color:"#123a5f",dash:false},
+    {name:"IPCA",data:IPCA,color:"#b3382c",dash:false},
+    {name:"Selic",data:SELIC,color:"#8a6d1a",axis:"r",dash:false}
+  ],
+  aria:"Gráfico de linhas: PIB real, IPCA e Selic meta de 2002 a 2026, em percentual ao ano."
+});
+buildSvg("svg2",{
+  labels:YEARS,
+  min:-12,max:95,
+  fmt:v=>v+"%",
+  bars:[{name:"Primário",data:PRIM,color:"#1e7d4c"}],
+  series:[
+    {name:"DBGG",data:DBGG,color:"#123a5f",dash:false},
+    {name:"Primário",data:PRIM,color:"#1e7d4c",dash:false,opacity:0.9}
+  ],
+  aria:"Gráfico: Dívida Bruta do Governo Geral e resultado primário em percentual do PIB, 2002 a 2026."
+});
+// Scatter desemprego × IPCA (2012–2025)
+(function(){
+  const holder=document.getElementById("svg3"); if(!holder)return;
+  const W=920,H=380,PL=58,PR=20,PT=18,PB=40,iw=W-PL-PR,ih=H-PT-PB;
+  const svg=el("svg",{viewBox:"0 0 "+W+" "+H,class:"chart",role:"img","aria-label":"Dispersão: desemprego versus IPCA, 2012 a 2025, PNAD Contínua."});
+  const X=v=>PL+(v-3)/(15-3)*iw; // IPCA 3–15
+  const Y=d=>PT+ih-(d-4)/(15-4)*ih; // Desemprego 4–15
+  for(let g=0;g<=6;g++){const yy=PT+ih/6*g;const val=15-(15-4)*g/6;
+    svg.appendChild(el("line",{x1:PL,x2:W-PR,y1:yy,y2:yy,stroke:"#e6e9f0"}));
+    svg.appendChild(el("text",{x:PL-6,y:yy+4,fill:"#5b6270","font-size":11,"text-anchor":"end"})).textContent=val.toFixed(1)+"%";
+  }
+  for(let g=0;g<=4;g++){const xx=PL+iw/4*g;const val=3+(15-3)*g/4;
+    svg.appendChild(el("line",{x1:xx,x2:xx,y1:PT,y2:H-PB,stroke:"#edf0f5"}));
+    svg.appendChild(el("text",{x:xx,y:H-PB+16,fill:"#5b6270","font-size":11,"text-anchor":"middle"})).textContent=val.toFixed(1)+"%";
+  }
+  svg.appendChild(el("text",{x:W/2,y:14,fill:"#5b6270","font-size":11,"text-anchor":"middle"})).textContent="Eixo X: IPCA (%) · Eixo Y: desemprego (%)";
+  DESEMP.forEach((d,i)=>{
+    const ano=2012+i; const ip=IPCA[ano-2002];
+    const cx=X(ip), cy=Y(d);
+    svg.appendChild(el("circle",{cx:cx,cy:cy,r:4,fill:"#7a4f9c"}));
+    if([2014,2016,2020,2021,2024,2025].includes(ano)){
+      svg.appendChild(el("text",{x:cx+6,y:cy-6,fill:"#3a4150","font-size":10.5})).textContent=String(ano);
+    }
+  });
+  holder.appendChild(svg);
+})();
+// Gráfico 4 — Gini (esq.) + IDH e Pobreza (dir.)
+(function(){
+  const holder=document.getElementById("svg4"); if(!holder)return;
+  const W=920,H=380,PL=54,PR=56,PT=18,PB=40,iw=W-PL-PR,ih=H-PT-PB;
+  const X=ye=>PL+(ye-2012)/(2026-2012)*iw;
+  const YG=v=>PT+ih-(v-0.45)/(0.60-0.45)*ih;
+  const Y2=v=>PT+ih-(v-0)/(1.0-0)*ih; // IDH 0–1
+  const svg=el("svg",{viewBox:"0 0 "+W+" "+H,class:"chart",role:"img","aria-label":"Gini, IDH e pobreza de 2012 a 2025, com quebras de série sinalizadas."});
+  for(let g=0;g<=4;g++){const yy=PT+ih/4*g;const val=0.60-(0.60-0.45)*g/4;
+    svg.appendChild(el("line",{x1:PL,x2:W-PR,y1:yy,y2:yy,stroke:"#e6e9f0"}));
+    svg.appendChild(el("text",{x:PL-6,y:yy+4,fill:"#2a6f97","font-size":11,"text-anchor":"end"})).textContent=val.toFixed(2);
+  }
+  for(let g=0;g<=4;g++){const yy=PT+ih-(0.60+(0.95-0.60)*g/4-0.60)/(0.60-0.45)*ih; // posição da linha de esc. IDH
+    const val=0.95-(0.95-0.60)*g/4;
+    svg.appendChild(el("text",{x:W-PR+8,y:PT+ih/4*g+4,fill:"#b3382c","font-size":11})).textContent=val.toFixed(2);
+  }
+  // eixo X anual
+  for(let y=2012;y<=2026;y+=2){svg.appendChild(el("text",{x:X(y),y:H-PB+16,fill:"#5b6270","font-size":11,"text-anchor":"middle"})).textContent=y;}
+  // Gini (linha)
+  let dG=""; GINI.forEach((v,i)=>{const x=X(2012+i),y=YG(v); dG+=(dG?"L":"M")+x.toFixed(1)+" "+y.toFixed(1); svg.appendChild(el("circle",{cx:x,cy:y,r:3,fill:"#2a6f97"}));});
+  svg.appendChild(el("path",{d:dG,fill:"none",stroke:"#2a6f97","stroke-width":2.4}));
+  // IDH (pontos)
+  IDH.forEach(p=>{const x=X(p.y),y=Y2(p.v); svg.appendChild(el("circle",{cx:x,cy:y,r:3.4,fill:"#b3382c",opacity:0.85}));});
+  // Pobreza (pontos)
+  POBREZA.forEach(p=>{const x=X(p.y),y=Y2(p.v/100); svg.appendChild(el("circle",{cx:x,cy:y,r:4,fill:"#8a6d1a"}));});
+  holder.appendChild(svg);
+})();
+// Gráfico 5 — Salário mínimo (R$, esq.) + Câmbio (R$/US$, dir.)
+buildSvg("svg5",{
+  labels:YEARS,
+  min:0,max:1700,min2:0,max2:6,
+  fmt:v=>"R$ "+v,fmt2:v=>v.toFixed(1),
+  series:[
+    {name:"Salário mínimo",data:SALMIN,color:"#0f2c49",dash:false,markers:false},
+    {name:"Câmbio",data:CAMBIO,color:"#b8860b",axis:"r",dash:false}
+  ],
+  aria:"Gráfico: salário mínimo nominal em reais e câmbio médio anual em reais por dólar, 2002 a 2026."
+});
+// Navegação por seção
+document.querySelectorAll(".nav button").forEach(b=>{
+  b.addEventListener("click",()=>{const t=document.getElementById(b.dataset.goto); if(t)t.scrollIntoView({behavior:/*reduced*/matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});});
+});
+</script>
+</body>
+</html>
