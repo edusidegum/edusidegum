@@ -265,11 +265,12 @@ footer.site a:hover{text-decoration:underline}
     <h3>Gráfico 4 · Dinâmica social — Gini (PNADC 2012–2025), IDH e Pobreza (pontos disponíveis)</h3>
     <div class="cap">Fontes: IBGE/SIS (Gini; quebra PNAD/PNADC impede pré-2012), PNUD/HDR (IDH, freq. irregular — pontos isolados), IBGE/SIS (pobreza US$ 6,85 PPC-2017; quebra de linha pendente PPC-2021). Só pontos observados; sem emendar vintages.</div>
     <div id="svg4"></div>
-    <div class="chart-legend"><span class="l-gin">Gini (esq.)</span><span class="l-idh">IDH (dir.)</span><span class="l-pob">Pobreza % (dir., pontos)</span></div>
-    <p class="cap" style="margin-top:6px">Gini: queda 2012–2015, reversão 2016–2018, novo recuo 2022–2025 (0,518→0,509). IDH: estagnação relativa após 2014. Pobreza: U invertido — mín. 2014, pico 2022 (31,6%), recuo a 23,1% (2024), ainda acima de 2014.</p>
+       <div id="svg4b"></div>
+    <div class="chart-legend"><span class="l-gin">Gini (esq.)</span><span class="l-pob">Pobreza % (dir., pontos)</span></div>
+    <p class="cap" style="margin-top:6px">Gini: queda 2012–2015, reversão 2016–2018, novo recuo 2022–2024 (0,518→0,509). IDH: estagnação relativa após 2014. Pobreza: U invertido — mín. 2014, pico 2022 (31,6%), recuo a 23,1% (2024), ainda acima de 2014.</p>
   </div>
   <div class="chartcard">
-    <h3>Gráfico 5 · Salário mínimo nominal e Câmbio médio (PTAX) — 2002–2025 (+2026* nominal)</h3>
+     <h3>Gráfico 4 · Dinâmica social — Gini (PNADC 2012–2024), Pobreza (pontos) e IDH (painel próprio)</h3>
     <div class="cap">Fontes: legislação federal (salário mínimo, valor nominal de cada ano) e BCB/PTAX (média anual; 2025 ≈ 5,70; 2026* parcial ≈ 5,10 — fechamento 08/10/2026: 5,01).</div>
     <div id="svg5"></div>
     <div class="chart-legend"><span class="l-sm">Salário mínimo (R$)</span><span class="l-cam">Câmbio médio anual (R$/US$)</span></div>
@@ -370,8 +371,8 @@ footer.site a:hover{text-decoration:underline}
     <tbody>
       <tr><td>PIB real</td><td>2002–2025</td><td class="num">24</td><td class="num">2,3%</td><td class="num">3,0%</td><td class="num">2,9 p.p.</td><td>Extremos −3,5/+7,5%; média dos marcos (3,3%) era viesada</td></tr>
       <tr><td>IPCA</td><td>2002–2025</td><td class="num">24</td><td class="num">6,1%</td><td class="num">5,8%</td><td class="num">2,4 p.p.</td><td>Máx. 12,53 (2002); mín. 2,95 (2017)</td></tr>
-      <tr><td>Selic — meta, dezembro</td><td>2002–2025</td><td class="num">24</td><td class="num">11,9%</td><td class="num">11,8%</td><td class="num">4,9 p.p.</td><td>Máx. 25,0 (2002); mín. 2,0 (2020)</td></tr>
-      <tr><td>Resultado primário (% PIB)</td><td>2002–2024</td><td class="num">23</td><td class="num">0,8%</td><td class="num">1,8%</td><td class="num">3,1 p.p.</td><td>2025 não confirmado nesta revisão; 2020 (−9,3%) é outlier; 2002 ≈ 3,96%</td></tr>
+      <tr><td>Selic — meta, dezembro</td><td>2002–2025</td><td class="num">24</td> <td class="num">11,7%</td><td class="num">11,5%</td><td class="num">4,8 p.p.</td><td>Máx. 25,0 (2002); mín. 2,0 (2020)</td></tr>
+      <tr><td>Resultado primário (% PIB)</td><td>2002–2024</td><td class="num">23</td><td class="num">0,9%</td><td class="num">1,8%</td><td class="num">3,1 p.p.</td><td>2025 não confirmado nesta revisão; 2020 (−9,3%) é outlier; 2002 ≈ 3,96%</td></tr>
       <tr><td>DBGG (% PIB, dezembro)</td><td>2006–2025</td><td class="num">20</td><td class="num">68,5%</td><td class="num">67,4%</td><td class="num">8,6 p.p.</td><td>2002–2005 (†) em metodologia anterior; máximo 86,9 (2020)</td></tr>
       <tr><td>Taxa de desocupação (PNADC)</td><td>2012–2025</td><td class="num">14</td><td class="num">9,6%</td><td class="num">9,3%</td><td class="num">2,9 p.p.</td><td>Pré-2012 não comparável (PME/PNAD); mín. 5,6 (2025); máx. 13,8 (2020)</td></tr>
       <tr><td>Índice de Gini</td><td>2012–2025</td><td class="num">14</td><td class="num">0,527</td><td class="num">0,527</td><td class="num">0,012</td><td>Quebra PNAD/PNADC impede pré-2012; recuo 2022–2025 (0,518→0,509)</td></tr>
@@ -480,7 +481,6 @@ footer.site a:hover{text-decoration:underline}
 <script>
 (function(){
   var $=function(id){return document.getElementById(id)};
-  // Navegação por seção (botões do header)
   document.querySelectorAll('.nav button').forEach(function(b){
     b.addEventListener('click',function(e){
       e.preventDefault();
@@ -488,32 +488,68 @@ footer.site a:hover{text-decoration:underline}
       if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
     });
   });
-  // ---------- Motor de gráficos (SVG inline, vanilla JS, sem dependências) ----------
+  // ---------- Motor de gráficos (SVG inline, vanilla JS) ----------
   var Y0=2002,Y1=2026,W=760,H=300,M={t:16,r:58,b:28,l:46};
   var NS='http://www.w3.org/2000/svg';
   function xp(y){return M.l+(y-Y0)/(Y1-Y0)*(W-M.l-M.r)}
-  function scale(vals){var lo=Math.min.apply(null,vals),hi=Math.max.apply(null,vals),sp=(hi-lo)||1;lo-=sp*.08;hi+=sp*.08;return function(v){return M.t+(1-(v-lo)/(hi-lo))*(H-M.t-M.b)}}
-  function lin(svg,x1,y1,x2,y2,c,w,dash){var l=document.createElementNS(NS,'line');l.setAttribute('x1',x1);l.setAttribute('y1',y1);l.setAttribute('x2',x2);l.setAttribute('y2',y2);l.setAttribute('stroke',c);l.setAttribute('stroke-width',w||1);if(dash)l.setAttribute('stroke-dasharray',dash);svg.appendChild(l)}
-  function txt(svg,x,y,str,anchor,fill,size){var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y);t.setAttribute('text-anchor',anchor||'start');t.setAttribute('font-size',size||'9.5');t.setAttribute('fill',fill||'#8a93a5');t.textContent=str;svg.appendChild(t)}
-  function circ(svg,cx,cy,r,c,label,dx){var c2=document.createElementNS(NS,'circle');c2.setAttribute('cx',cx);c2.setAttribute('cy',cy);c2.setAttribute('r',r||4);c2.setAttribute('fill',c);c2.setAttribute('stroke','#fff');c2.setAttribute('stroke-width','1.2');svg.appendChild(c2);if(label)txt(svg,cx+(dx||8),cy-6,label,'start',c,'9')}
-  function draw(id,series){
+  function pad2(lo,hi){var sp=(hi-lo)||1;return [lo-sp*.08,hi+sp*.08]}
+  function scale(vals){
+    var lo=Math.min.apply(null,vals),hi=Math.max.apply(null,vals);
+    var p=pad2(lo,hi);lo=p[0];hi=p[1];
+    return function(v){return M.t+(1-(v-lo)/(hi-lo))*(H-M.t-M.b)};
+  }
+  function lin(svg,x1,y1,x2,y2,c,w,dash){
+    var l=document.createElementNS(NS,'line');
+    l.setAttribute('x1',x1);l.setAttribute('y1',y1);
+    l.setAttribute('x2',x2);l.setAttribute('y2',y2);
+    l.setAttribute('stroke',c);l.setAttribute('stroke-width',w||1);
+    if(dash)l.setAttribute('stroke-dasharray',dash);
+    svg.appendChild(l);
+  }
+  function txt(svg,x,y,str,anchor,fill,size){
+    var t=document.createElementNS(NS,'text');
+    t.setAttribute('x',x);t.setAttribute('y',y);
+    t.setAttribute('text-anchor',anchor||'start');
+    t.setAttribute('font-size',size||'9.5');t.setAttribute('fill',fill||'#8a93a5');
+    t.textContent=str;svg.appendChild(t);
+  }
+  function circ(svg,cx,cy,r,c,label,dx,dash){
+    var c2=document.createElementNS(NS,'circle');
+    c2.setAttribute('cx',cx);c2.setAttribute('cy',cy);c2.setAttribute('r',r||4);
+    c2.setAttribute('fill',c);c2.setAttribute('stroke','#fff');c2.setAttribute('stroke-width','1.2');
+    if(dash)c2.setAttribute('stroke-dasharray',dash);
+    svg.appendChild(c2);
+    if(label)txt(svg,cx+(dx||8),cy-6,label,'start',c,'9');
+  }
+  function draw(id,series,label){
     var el=$(id);if(!el)return;
     var svg=document.createElementNS(NS,'svg');
     svg.setAttribute('viewBox','0 0 '+W+' '+H);
     svg.setAttribute('class','chart');
+    svg.setAttribute('role','img');
+    if(label){
+      svg.setAttribute('aria-label',label);
+      var tt=document.createElementNS(NS,'title');tt.textContent=label;svg.appendChild(tt);
+    }
     var leftVals=[],rightVals=[];
     series.forEach(function(s){
       var a=(s.right?rightVals:leftVals);
       if(s.d)a=a.concat(s.d);
       if(s.pts)s.pts.forEach(function(p){a.push(p[1])});
+      if(s.p26!=null)a.push(s.p26);          // p26 entra na escala
     });
     var sL=scale(leftVals.length?leftVals:[0,1]),sR=scale(rightVals.length?rightVals:[0,1]);
-    // gridlines + rótulos da escala esquerda
     var lo=Math.min.apply(null,leftVals),hi=Math.max.apply(null,leftVals);
-    for(var i=0;i<=4;i++){var v=lo+(hi-lo)*i/4,y=sL(v);lin(svg,M.l,y,W-M.r,y,'#e6eaf1',1);txt(svg,M.l-6,y+4,Math.round(v*100)/100,'end')}
-    // rótulos da escala direita
-    if(rightVals.length){var rl=Math.min.apply(null,rightVals),rh=Math.max.apply(null,rightVals);for(var j=0;j<=4;j++){var rv=rl+(rh-rl)*j/4;txt(svg,W-M.r+6,sR(rv)+4,Math.round(rv*100)/100,'start')}}
-    // rótulos do eixo X (anos)
+    for(var i=0;i<=4;i++){
+      var v=lo+(hi-lo)*i/4,y=sL(v);
+      lin(svg,M.l,y,W-M.r,y,'#e6eaf1',1);
+      txt(svg,M.l-6,y+4,Math.round(v*100)/100,'end');
+    }
+    if(rightVals.length){
+      var rl=Math.min.apply(null,rightVals),rh=Math.max.apply(null,rightVals);
+      for(var j=0;j<=4;j++){var rv=rl+(rh-rl)*j/4;
+        txt(svg,W-M.r+6,sR(rv)+4,Math.round(rv*100)/100,'start');}
+    }
     [2002,2006,2010,2014,2018,2022,2025,2026].forEach(function(y){txt(svg,xp(y),H-8,y,'middle')});
     series.forEach(function(s){
       var sc=s.right?sR:sL;
@@ -525,15 +561,15 @@ footer.site a:hover{text-decoration:underline}
         p.setAttribute('stroke-linejoin','round');
         if(s.dash)p.setAttribute('stroke-dasharray','5,4');
         svg.appendChild(p);
-        if(s.p26!=null){
-          var last=s.d[s.d.length-1];
-          var seg=document.createElementNS(NS,'line');
-          seg.setAttribute('x1',xp((s.x0||Y0)+s.d.length-1));seg.setAttribute('y1',sc(last));
-          seg.setAttribute('x2',xp(Y1));seg.setAttribute('y2',sc(s.p26));
-          seg.setAttribute('stroke',s.c);seg.setAttribute('stroke-width',s.w||2);
-          seg.setAttribute('stroke-dasharray','5,4');
-          svg.appendChild(seg);
-        }
+      }
+      // p26: desenhado para séries contínuas E pontuais
+      if(s.p26!=null){
+        var xLast,lx,ly;
+        if(s.d){xLast=(s.x0||Y0)+s.d.length-1;lx=xp(xLast);ly=sc(s.d[s.d.length-1]);}
+        else if(s.pts){var lp=s.pts[s.pts.length-1];lx=xp(lp[0]);ly=sc(lp[1]);}
+        else {lx=xp(Y0);ly=sc(s.p26);}
+        lin(svg,lx,ly,xp(Y1),sc(s.p26),s.c,(s.w||2)*.85,'5,4');
+        circ(svg,xp(Y1),sc(s.p26),4.5,s.c,null,null,'2,2');
       }
       if(s.pts){
         s.pts.forEach(function(p){
@@ -543,61 +579,70 @@ footer.site a:hover{text-decoration:underline}
     });
     el.appendChild(svg);
   }
-  // ---------- Dados (séries anuais 2002–2025; 2026 parcial) ----------
-  // Nota: valores reconstruídos a partir das estatísticas declaradas no documento — validar contra a planilha/série original antes de publicar.
-  var pib=[3.1,1.1,5.8,3.2,4.0,6.1,5.1,-0.1,7.5,3.9,1.9,3.0,0.5,-3.5,-3.3,1.3,1.8,1.2,1.4,-3.3,4.8,3.0,3.4,2.3];
+  // ---------- Dados ----------
+  // PIB: CORRIGIDO (2020=-3,3; 2021=4,8; 2022=3,0; 2023=3,2; 2024=3,4*; 2025=2,3**)
+  // * conferir vintage (revisão set/2025: 3,3)  ** hipótese não verificada
+  var pib=[3.1,1.1,5.8,3.2,4.0,6.1,5.1,-0.1,7.5,3.9,1.9,3.0,0.5,-3.5,-3.3,1.3,1.8,1.2,-3.3,4.8,3.0,3.2,3.4,2.3];
   var ipca=[12.53,9.30,7.60,5.69,3.14,4.46,5.90,4.31,5.91,6.50,5.84,5.91,6.41,10.67,6.29,2.95,3.75,4.31,4.52,10.06,5.79,4.62,4.83,5.25];
   var selic=[25.0,16.5,17.75,18.0,13.25,11.25,13.75,8.75,10.75,11.0,7.25,10.0,11.75,14.25,13.75,7.0,6.5,4.5,2.0,9.25,13.75,11.75,10.5,12.25];
   var dbgg=[55.5,56.6,55.6,58.6,55.6,58.0,60.9,61.7,63.0,65.0,63.7,62.2,56.3,66.2,69.8,74.4,75.3,74.3,86.9,78.3,71.7,72.5,75.3,78.7];
   var prim=[[2002,3.9],[2003,3.8],[2004,4.2],[2005,4.6],[2006,3.6],[2007,3.4],[2008,3.3],[2009,2.0],[2010,2.8],[2011,3.2],[2012,2.2],[2013,1.8],[2014,-0.6],[2015,-1.9],[2016,-2.5],[2017,-1.7],[2018,-1.6],[2019,-0.8],[2020,-9.3],[2021,0.7],[2022,1.3],[2023,-2.0],[2024,-0.2]];
   var des=[7.4,7.1,6.8,8.5,11.5,12.7,12.3,11.9,13.8,13.2,9.3,7.8,6.6,5.6];
   var ipcaScatter=[5.84,5.91,6.41,10.67,6.29,2.95,3.75,4.31,4.52,10.06,5.79,4.62,4.83,5.25];
-  var gin=[0.537,0.532,0.530,0.524,0.537,0.545,0.545,0.543,0.524,0.518,0.518,0.513,0.509,0.509];
-  var idhX100=[[2014,75.3],[2018,76.1],[2022,76.0]];
+  // Gini: CORRIGIDO — 13 pontos (2012-2024); 2023=0,518 (SIS); 0,509 = 2024; sem 2025
+  var gin=[0.537,0.532,0.530,0.524,0.537,0.545,0.545,0.543,0.524,0.518,0.518,0.518,0.509];
+  var idhX100=[[2014,75.3,'2014'],[2018,76.1,'2018'],[2022,76.0,'2022']];
   var pob=[[2018,25.3],[2022,31.6],[2024,23.1]];
   var sm=[200,240,260,300,350,380,415,465,510,545,622,678,724,788,880,937,954,998,1045,1100,1212,1320,1412,1518];
   var cam=[2.92,3.08,2.93,2.44,2.18,1.95,1.83,2.00,1.76,1.67,1.95,2.16,2.35,3.33,3.49,3.19,3.65,3.94,5.16,5.36,5.16,4.99,5.37,5.70];
   // ---------- Renderização ----------
+  // G1: PIB (esq) | IPCA + Selic (dir) — evita achatamento do PIB contra o IPCA
   draw('svg1',[
     {d:pib,c:'#123a5f',w:2},
-    {d:ipca,c:'#b3382c',w:2,p26:3.11},
+    {d:ipca,c:'#b3382c',w:2,right:true,p26:3.11},
     {d:selic,c:'#8a6d1a',w:2,right:true,p26:13.75}
-  ]);
+  ],'PIB real, IPCA e Selic-meta, 2002-2026');
   draw('svg2',[
     {d:dbgg,c:'#123a5f',w:2,p26:82.9},
-    {pts:prim,c:'#1e7d4c',w:2,right:true,p26:-0.62}
-  ]);
-  // Dispersão desemprego × IPCA (PNADC 2012–2025)
+    {pts:prim,c:'#1e7d4c',right:true,p26:-0.62}
+  ],'DBGG vs Resultado primario, 2002-2026');
+  // G3: dispersão com padding nos dois eixos
   (function(){
     var el=$('svg3');if(!el)return;
     var svg=document.createElementNS(NS,'svg');
     svg.setAttribute('viewBox','0 0 '+W+' '+H);
-    svg.setAttribute('class','chart');
+    svg.setAttribute('class','chart');svg.setAttribute('role','img');
+    svg.setAttribute('aria-label','Dispersao desemprego x IPCA, PNAD Continua 2012-2025');
     var xs=ipcaScatter,ys=des;
-    var xlo=Math.min.apply(null,xs),xhi=Math.max.apply(null,xs),ylo=Math.min.apply(null,ys),yhi=Math.max.apply(null,ys);
+    var p=pad2(Math.min.apply(null,xs),Math.max.apply(null,xs));var xlo=p[0],xhi=p[1];
+    p=pad2(Math.min.apply(null,ys),Math.max.apply(null,ys));var ylo=p[0],yhi=p[1];
     var xl=function(v){return M.l+(v-xlo)/(xhi-xlo)*(W-M.l-M.r)};
     var yl=function(v){return M.t+(1-(v-ylo)/(yhi-ylo))*(H-M.t-M.b)};
     for(var i=0;i<=4;i++){
-      var gv=xlo+(xhi-xlo)*i/4;lin(svg,xl(gv),M.t,xl(gv),H-M.b,'#e6eaf1',1);txt(svg,xl(gv),H-8,Math.round(gv*10)/10,'middle');
-      var hg=ylo+(yhi-ylo)*i/4;lin(svg,M.l,yl(hg),W-M.r,yl(hg),'#e6eaf1',1);txt(svg,M.l-6,yl(hg)+4,Math.round(hg*10)/10,'end');
+      var gv=xlo+(xhi-xlo)*i/4;lin(svg,xl(gv),M.t,xl(gv),H-M.b,'#e6eaf1',1);
+      txt(svg,xl(gv),H-8,Math.round(gv*10)/10,'middle');
+      var hg=ylo+(yhi-ylo)*i/4;lin(svg,M.l,yl(hg),W-M.r,yl(hg),'#e6eaf1',1);
+      txt(svg,M.l-6,yl(hg)+4,Math.round(hg*10)/10,'end');
     }
-    ipcaScatter.forEach(function(ix,idx){
-      var d=des[idx];
-      circ(svg,xl(ix),yl(d),4.5,'#7a4f9c');
-      if([2,5,8,9,10,13].indexOf(idx)>-1)txt(svg,xl(ix)+7,yl(d)-6,2012+idx,'start','#7a4f9c','9');
+    xs.forEach(function(ix,idx){
+      circ(svg,xl(ix),yl(ys[idx]),4.5,'#7a4f9c');
+      if([2,5,8,9,10,13].indexOf(idx)>-1)txt(svg,xl(ix)+7,yl(ys[idx])-6,2012+idx,'start','#7a4f9c','9');
     });
     el.appendChild(svg);
   })();
+  // G4a: Gini (esq) + Pobreza (dir) — escalas independentes
   draw('svg4',[
     {d:gin,c:'#2a6f97',w:2,x0:2012},
-    {pts:idhX100,c:'#b3382c',right:true},
     {pts:pob,c:'#8a6d1a',right:true}
-  ]);
+  ],'Gini e Pobreza, 2012-2024');
+  // G4b: IDH em painel próprio (escala própria)
+  draw('svg4b',[
+    {pts:idhX100,c:'#b3382c'}
+  ],'IDH (x100), pontos observados 2014-2022');
   draw('svg5',[
     {d:sm,c:'#0f2c49',w:2,p26:1621},
     {d:cam,c:'#b8860b',w:2,right:true,p26:5.10}
-  ]);
+  ],'Salario minimo nominal e Cambio PTAX, 2002-2026');
 })();
-</script>
-</body>
+</script></body>
 </html>
