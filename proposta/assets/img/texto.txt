@@ -1,0 +1,1 @@
+ recupera-pc/ fica apontada mas não existe (404.html trata); isPartOf removido; imagens copiadas; sem robots.txt/sitemap.xml/.nojekyll por ora; privacidade confirmada em menu/compartilhado/; card 03 removido; card 04 renomeado para "Recuperar PC antigo com Linux" e apontando para recupera-pc/.
